@@ -180,19 +180,23 @@
                       
                                                          </div>
                                                         <div class="modal-body">
-                                                             <form action="#" method="post">
+                                                             <form method="post">
+                                                              {% csrf_token %}
                                                                       <div class="row">
                                                                            <div class="col-lg-12 col-md-12 mt-3">
-                                                                               <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                                                                               {% comment %} <input type="text" class="form-control" name="name" placeholder="Enter Name"> {% endcomment %}
+                                                                               {{form.name}}
                                                                             </div>
                                                                             <div class="col-lg-12 col-md-12 mt-3">
-                                                                              <input type="text" class="form-control" name="mobile" placeholder="Enter MobileNumber">
+                                                                              {% comment %} <input type="text" class="form-control" name="mobile" placeholder="Enter MobileNumber"> {% endcomment %}
+                                                                              {{form.phone}}
                                                                             </div>
                                                                             <div class="col-lg-12 col-md-12 mt-3">
-                                                                                <select class="form-control">
+                                                                              {{form.taluk}}
+                                                                                {% comment %} <select class="form-control">
                                                                                        <option>tvm</option>
                                                                                        <option>palkkad</option>
-                                                                                </select>
+                                                                                </select> {% endcomment %}
                                                                             </div>
                                                                             <div class=" col-12 col-sm-12 col-lg-12 col-md-12 mt-3">
                                                                                <div class="float-right">
@@ -259,18 +263,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      {% for i in taluk %}
                                         <tr>
-                                            <td class="text-center">ehas</td>
-                                            <td class="text-center">9629813469</td>
-                                            <td class="text-center">kkv</td>
+                                            <td class="text-center">{{i.name}}</td>
+                                            <td class="text-center">{{i.phone}}</td>
+                                            <td class="text-center">{{i.taluk}}</td>
                                             {% if user.is_authenticated %}
                                             <td class="text-center">
                                                 <ul class="nav justify-content-center">
                                                         <li class="nav-item ">
-                                                            <a class="nav-link text-success" href="talukreg.html"><i class="fas fa fa-edit me-3"></i>Edit</a>
+                                                            <a class="nav-link text-success" href="{% url 'kvs_app:taluk_update' i.id %}"><i class="fas fa fa-edit me-3"></i>Edit</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link text-danger" href="#"><i class="fa fa-trash me-3"></i>Delete</a>
+                                                            <a class="nav-link text-danger" href="{% url 'kvs_app:taluk_delete' i.id %}"><i class="fa fa-trash me-3"></i>Delete</a>
                                                         </li>
                                                 
                                                 </ul>
@@ -278,6 +283,7 @@
                                             </td>
                                             {% endif %}
                                         </tr>
+                                        {% endfor %}
                                                     
                                     </tbody>
                             </table>

@@ -180,17 +180,16 @@
                       
                                                          </div>
                                                         <div class="modal-body">
-                                                             <form action="#" method="post">
+                                                             <form method="post">
+                                                              {% csrf_token %}
                                                                       <div class="row">
                                                                            <div class="col-lg-12 col-md-12 mt-3">
-                                                                               <input type="text" class="form-control" name="name" placeholder="Enter Sakha Number">
+                                                                               {% comment %} <input type="text" class="form-control" name="name" placeholder="Enter Sakha Number"> {% endcomment %}
+                                                                               {{form.sakha_no}}
                                                                             </div>
                                                                            
                                                                             <div class="col-lg-12 col-md-12 mt-3">
-                                                                                <select class="form-control">
-                                                                                       <option>tvm</option>
-                                                                                       <option>palkkad</option>
-                                                                                </select>
+                                                                                {{form.taluk}}
                                                                             </div>
                                                                             <div class=" col-12 col-sm-12 col-lg-12 col-md-12 mt-3">
                                                                                <div class="float-right">
@@ -256,17 +255,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      {% for i in sakha %}
                                         <tr>
-                                            <td class="text-center" >002</td>
-                                            <td class="text-center">kollam</td>
+                                            <td class="text-center" >{{i.sakha_no}}</td>
+                                            <td class="text-center">{{i.taluk}}</td>
                                             {% if user.is_authenticated %}
                                             <td class="text-center">
                                                 <ul class="nav justify-content-center">
                                                         <li class="nav-item ">
-                                                            <a class="nav-link text-success" href="sakhareg.html"><i class="fas fa fa-edit me-3"></i>Edit</a>
+                                                            <a class="nav-link text-success" href="{% url 'kvs_app:sakha_update' i.id %}"><i class="fas fa fa-edit me-3"></i>Edit</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link text-danger" href="#"><i class="fa fa-trash me-3"></i>Delete</a>
+                                                            <a class="nav-link text-danger" href="{% url 'kvs_app:sakha_delete' i.id %}"><i class="fa fa-trash me-3"></i>Delete</a>
                                                         </li>
                                                 
                                                 </ul>
@@ -274,6 +274,7 @@
                                             </td>
                                             {% endif %}
                                         </tr>
+                                        {% endfor %}
                                         
                                                           
                                     </tbody>

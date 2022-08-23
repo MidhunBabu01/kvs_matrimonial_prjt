@@ -189,14 +189,15 @@
                                 </div>
                                 <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 col-12" id="col-form">
                                   <div class="form-card">
-                                    <form action="mail.php" method="post">
+                                    <form method="post">
+                                      {% csrf_token %}
                                       <div class="row ">
-                                               <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <input type="text" name="name" placeholder="Enter The Name" class="form-control">
-                                               </div>
-                                               <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <input type="text" name="email" placeholder="Enter The Email" class="form-control">
-                                               </div>
+                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                          <input type="text" name="name" placeholder="Enter The Name" class="form-control">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                          <input type="text" name="email" placeholder="Enter The Email" class="form-control">
+                                        </div>
                                       </div>
                                       <div class="row">
                                         <div class="col-lg-6 col-md-6 col-xl-6 p-2">
@@ -211,11 +212,11 @@
                                         <textarea class="form-control" rows="5" cols="90" name="message" placeholder="Enter the message"></textarea>
                                       </div>
                                       
-                                   </div>
+                                    </div>
                                    <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 p-2">
                                       <div style="float:right">
-                                        <input type="submit" class="btn btn-danger " namme="submit" value="submit">
+                                        <input type="submit" class="btn btn-danger " name="submit" value="submit">
                                       </div>
                                     </div>
                                     
