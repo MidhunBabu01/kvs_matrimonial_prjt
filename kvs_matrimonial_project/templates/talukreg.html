@@ -90,10 +90,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item" id="nav-item">
-              <a class="nav-link text-white" href="index.html">Home</a>
+              <a class="nav-link text-white" href="{% url 'kvs_app:index' %}">Home</a>
             </li>
             <li class="nav-item" id="nav-item">
-              <a class="nav-link text-white" href="executiveforum.html">Executive Forum</a>
+              <a class="nav-link text-white" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a>
             </li>
               
             <li class="nav-item dropdown">
@@ -101,7 +101,7 @@
                     <ul class="dropdown-menu sub">
                       <li><a class="dropdown-item text-white" href="taluk.html">Taluk</a></li>
                     
-                      <li><a class="dropdown-item text-white" href="sakha.html">Sakha</a></li>
+                      <li><a class="dropdown-item text-white" href="{% url 'kvs_app:sakha' %}">Sakha</a></li>
       
                     </ul>
               </li>
@@ -109,7 +109,7 @@
                 <a class="nav-link text-white" href="materimonialservices.html">Materimonial Services</a>
               </li>
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="marriageregister.html">Marriage Register</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
               </li>
               <!-- <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-bs-toggle="dropdown">Services</a>
@@ -117,7 +117,7 @@
                   <li><a class="dropdown-item text-white" href="#">Materimonial Services</a></li>
                    <li><a class="dropdown-item text-white" href="#">Vivahapathrika</a></li>
                   <li><a class="dropdown-item text-white" href="#">Nichyakarar</a></li> 
-                  <li><a class="dropdown-item text-white" href="marriageregister.html">Marriage Register</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a></li>
                   <li><a class="dropdown-item text-white" href="membershipform.html">Membership Form</a></li>
                   <li><a class="dropdown-item text-white" href="#">Recipts | Vouchers</a></li>
                   <li><a class="dropdown-item text-white" href="#">Mints Book</a></li>
@@ -125,7 +125,7 @@
                 </ul>
               </li> -->
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="contact.html">Contact</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:contact' %}">Contact</a>
               </li>  
           </ul>
         </div>
@@ -142,7 +142,7 @@
                              <h1 class="text-center text-white">State Commitee</h1> 
                                <div class="text-center">
                                         <ul class="nav justify-content-center">
-                                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                                             <li class="nav-item"><a class="nav-link"><i class="fa  fa-chevron-right"></i></a></li> 
                                             <li class="nav-item"><a class="nav-link" href="talukreg.html">Taluk Regestration</a></li>
                                        </ul>
@@ -225,12 +225,12 @@
                     <h4 class="foot_head">Quick Link</h4>
                     
                       <ul class="quick_1">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="executiveforum.html">Executive Forum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
                             <li class="nav-item"><a class="nav-link">State Commitee</a></li>
                             <li class="nav-item"><a class="nav-link">Union</a></li>
                             <li class="nav-item"><a class="nav-link">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
                   </div>
                 </div>
