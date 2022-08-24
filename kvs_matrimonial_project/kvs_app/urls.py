@@ -13,10 +13,17 @@ urlpatterns = [
     path('sakha', views.sakha,name='sakha'),
     path('sakha-update/<int:sakha_id>', views.sakha_update,name='sakha_update'),
     path('sakha-delete/<int:sakha_id>', views.sakha_delete,name='sakha_delete'),
-    path('matrimonial-service', views.matrimonial_service,name='matrimonial_service'),
-    path('profile-details', views.profile_details,name='profile_details'),
+    path('matrimonial-service-bride', views.bride,name='bride'),
+    path('matrimonial-service-grooms', views.grooms,name='grooms'),
+    path('matrimonial-service-pending', views.pending,name='pending'),
+    path('profile-details/<int:details_id>', views.profile_details,name='profile_details'),
     path('marrige-register', views.marrige_register,name='marrige_register'),
     path('contact', views.contact,name='contact'),
+    path('matrimoni-delete/<int:dlt_id>', views.matrimoni_delete,name='matrimoni_delete'),
+    
+    
+
+    
     
     
 

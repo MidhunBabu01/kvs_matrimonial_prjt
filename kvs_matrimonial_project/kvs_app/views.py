@@ -1,9 +1,12 @@
+import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.models import User,auth
-from .forms import StateCommiteForm,TalukForm,SakhaForm
-from .models import Sakha, StateCommitie,Taluk
+from .forms import StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm
+from .models import Matrimonial, Sakha, StateCommitie,Taluk
+import re
+now = datetime.datetime.now()
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -109,16 +112,51 @@ def sakha_delete(request,sakha_id):
     return redirect('kvs_app:sakha')
 
 
-def matrimonial_service(request):
-    return render (request,'materimonialservices.html')
+
+def bride(request):
+    bride = Matrimonial.objects.filter(gender__name='Bride',status='Approved').order_by('-id')
+    return render (request,'materimonialservices.html',{'result':bride})
+
+def grooms(request):
+    grooms = Matrimonial.objects.filter(gender__name='Groom',status='Approved').order_by('-id')
+    return render (request,'materimonialservices.html',{'result':grooms})
+
+def pending(request):
+    pending = Matrimonial.objects.filter(status='Pending').order_by('-id')
+    return render (request,'materimonialservices.html',{'result':pending})
 
 
-def profile_details(request):
-    return render(request,'viewprofile.html')
+
+
+
+
+def profile_details(request,details_id):
+    details = Matrimonial.objects.filter(id=details_id)
+    return render(request,'viewprofile.html',{'details':details})
+
+
+
+
+def matrimoni_delete(request,dlt_id):
+    dlt = Matrimonial.objects.filter(id=dlt_id)
+    dlt.delete()
+    return redirect('kvs_app:bride')
 
 
 def marrige_register(request):
-    return render(request,'marriageregister.html')
+    if request.method == 'POST':
+        form = MatrimonialForm(request.POST,request.FILES)
+        if form.is_valid():
+            data = form.save(commit=False)
+            year = form.cleaned_data['dob']
+            year = re.split(r'-',str(year))[0]
+            age = int(now.year)-int(year)
+            data.age = age
+            data.save()
+            return redirect('kvs_app:marrige_register')
+    else:
+        form = MatrimonialForm()
+    return render(request,'marriageregister.html',{'form':form})
 
 from django.core.mail import  EmailMessage
 from django.conf import settings

@@ -105,8 +105,15 @@
         
                       </ul>
                 </li>
-                <li class="nav-item" id="nav-item">
-                  <a class="nav-link text-white" href="{% url 'kvs_app:matrimonial_service' %}">Materimonial Services</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-bs-toggle="dropdown">Matrimonial Services</a>
+                    <ul class="dropdown-menu sub">
+                      <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
+                    
+                      <li><a class="dropdown-item text-white" href="#">Grooms</a></li>
+                      <li><a class="dropdown-item text-white" href="#">Pendings</a></li>
+      
+                    </ul>
                 </li>
                 <li class="nav-item" id="nav-item">
                   <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
