@@ -7,6 +7,7 @@ from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,M
 from .models import Matrimonial, Sakha, StateCommitie,Taluk
 import re
 now = datetime.datetime.now()
+from django.http.response import JsonResponse
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -203,6 +204,31 @@ def contact(request):
     return render(request,'contact.html')
 
 
+
+# ACCOUNT SECTION
+
+def login(request):
+    if 'username' in request.session:
+        return redirect("kvs_app:index")
+    elif request.method =='POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = auth.authenticate(username=username,password=password) 
+        if user is not None:
+            request.session['username'] = username
+            auth.login(request,user)
+            return JsonResponse(
+                {'success':True},
+                safe=False
+            )
+        else:
+            auth.login
+            return JsonResponse(
+                {'success':False},
+                safe=False
+            )
+    else:
+        return render(request,'login.html')
 
 
 

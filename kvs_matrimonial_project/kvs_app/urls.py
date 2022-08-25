@@ -23,16 +23,11 @@ urlpatterns = [
     path('matrimonial-update', views.matrimonial_update,name='matrimonial_update'),
     path('matrimonial-update/<int:update_id>', views.matrimonial_update,name='matrimonial_update'),
     
-    
-    
-    
-
-    
-    
-    
 
     # ACCOUNT SECTION
     path('logout', views.logout,name='logout'),
+    path('login', views.login,name='login'),
+    
     
 
 
