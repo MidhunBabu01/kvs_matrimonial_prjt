@@ -5,7 +5,7 @@
   <title>Kerala Viswakarma Sabha</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -67,26 +67,30 @@
           <div class="container-fluid">
                   <div class="row">
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                               <ul class="nav">
-                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                               </ul>
+                              <div id="social-left">
+                                  <ul class="nav">
+                                        <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                  </ul>
+                                </div>     
                          </div>
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                            <ul class="nav justifycontentend">
-                                {% if user.is_authenticated %}
-                                <li class="nav-item"><p><a href="{% url 'kvs_app:logout' %}">Logout</a></p></li>
-                                {% endif %}
-                                <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
-                                <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
-                                <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
-                           </ul>
+                            <div id="social-right">
+                              <ul class="nav justifycontentend">
+                                  {% if user.is_authenticated %}
+                                  <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
+                                  {% endif %}
+                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
+                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
+                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
+                            </ul>
+                            </div>
                         </div>
                   </div>
           </div>
     </div>
     <nav class="navbar navbar-expand-sm bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="#">Kerala Viswakarma Sabha</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -252,7 +256,7 @@
 <!-- footer -->
 <footer >
   <div class="container-fluid">
-         <div class="row p-5">
+         <div class="row p-2">
                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                          <div class="foot_about">
                                  <h4 class="foot_head">Abouts</h4>
@@ -272,9 +276,7 @@
                       <ul class="quick_1">
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
-                            <li class="nav-item"><a class="nav-link">State Commitee</a></li>
-                            <li class="nav-item"><a class="nav-link">Union</a></li>
-                            <li class="nav-item"><a class="nav-link">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
                   </div>
@@ -286,8 +288,9 @@
                       <div class="social-link">
                                <ul class="quick_2">
                                
-                                <li class="nav-item"><a class="nav-link"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                <li class="nav-item"><a class="nav-link"><i class="fa fa-phone me-2"></i>+91  9048675860</a></li>
+                                <li class="nav-item"><a class="nav-link" href="mailto:keralaviswakarmasabhas277@gmail.com"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tel:+919048675860"><i class="fa fa-phone me-2"></i>+91 9048675860</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tel:++917012958534"><i class="fa fa-phone me-2"></i>+91 7012958534</a></li>
                                </ul>
                       </div>
                 

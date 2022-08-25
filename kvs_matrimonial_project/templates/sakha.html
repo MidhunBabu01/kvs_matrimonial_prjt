@@ -49,42 +49,37 @@
   </script>
 </head>
 <body class="materimonialservices">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-  <div id="preloader">
-    
-              <div id="status"><h1 class="text-center">The website is under maintenance</h1></div>
-            </div>
-            
-          </div>
-   
-    </div>
-
-  </div>
-<header>
+ 
+  <header>
     <div class="social-head">
           <div class="container-fluid">
                   <div class="row">
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                               <ul class="nav">
-                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                               </ul>
+                              <div id="social-left">
+                                  <ul class="nav">
+                                        <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                  </ul>
+                                </div>     
                          </div>
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                            <ul class="nav justifycontentend">
-                                <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
-                                <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
-                                <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
-                           </ul>
+                            <div id="social-right">
+                              <ul class="nav justifycontentend">
+                                  {% if user.is_authenticated %}
+                                  <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
+                                  {% endif %}
+                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
+                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
+                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
+                            </ul>
+                            </div>
                         </div>
                   </div>
           </div>
     </div>
     <nav class="navbar navbar-expand-sm bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <a class="navbar-brand" href="#">Kerala Viswakarma Sabha</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
@@ -97,7 +92,7 @@
             </li>
               
             <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-bs-toggle="dropdown">Union</a>
+                  <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Union</a>
                     <ul class="dropdown-menu sub">
                       <li><a class="dropdown-item text-white" href="{% url 'kvs_app:taluk' %}">Taluk</a></li>
                     
@@ -105,8 +100,17 @@
       
                     </ul>
               </li>
-              <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:bride' %}">Materimonial Services</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial Services</a>
+                  <ul class="dropdown-menu sub">
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
+                  
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:grooms' %}">Grooms</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:pending' %}">Pendings</a></li>
+                    {% endif %}
+    
+                  </ul>
               </li>
               <li class="nav-item" id="nav-item">
                 <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
@@ -140,7 +144,7 @@
                      <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12" id="head-breadcrump">
                       
                              <h1 class="text-center text-white">Union</h1> 
-                               <div class="text-center">
+                               <div class="text-breadcrumb4">
                                         <ul class="nav justify-content-center">
                                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                                             <li class="nav-item"><a class="nav-link"><i class="fa  fa-chevron-right"></i></a></li> 
@@ -170,7 +174,7 @@
    
                                                             <!-- model add member -->      
                                                                       <!-- Modal -->
-                                    <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal fade modal_fade" id="myModal" role="dialog">
                                            <div class="modal-dialog">
                     
                                                 <!-- Modal content-->
@@ -289,9 +293,9 @@
 
 <div class="mt-4"></div>
 <!-- footer -->
-<footer>
+<footer >
   <div class="container-fluid">
-         <div class="row p-5">
+         <div class="row p-2">
                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                          <div class="foot_about">
                                  <h4 class="foot_head">Abouts</h4>
@@ -311,9 +315,7 @@
                       <ul class="quick_1">
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
-                            <li class="nav-item"><a class="nav-link">State Commitee</a></li>
-                            <li class="nav-item"><a class="nav-link">Union</a></li>
-                            <li class="nav-item"><a class="nav-link">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
                   </div>
@@ -324,8 +326,10 @@
                       <address>KERALA VISWAKARMA SABHA (KVS)<br>Reg No: S.277/2003,Cherooty Rd<br>Kozhikode, Kerala </address>
                       <div class="social-link">
                                <ul class="quick_2">
-                                <li class="nav-item"><a class="nav-link"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                <li class="nav-item"><a class="nav-link"><i class="fa fa-phone me-2"></i>+91  9048675860</a></li>
+                               
+                                <li class="nav-item"><a class="nav-link" href="mailto:keralaviswakarmasabhas277@gmail.com"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tel:+919048675860"><i class="fa fa-phone me-2"></i>+91 9048675860</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tel:++917012958534"><i class="fa fa-phone me-2"></i>+91 7012958534</a></li>
                                </ul>
                       </div>
                 
@@ -340,7 +344,7 @@
       <div class="container">
              <div class="row">
                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
-                       <p>Copyright © 2022  <a href="https://a2zalphabetsolutionz.com/"> A2Z Alphabetsolutionz</a>. All rights reserved. </p>  
+                       <p id="Copyright">Copyright © 2022  <a href="https://a2zalphabetsolutionz.com/"> A2Z Alphabetsolutionz</a>. All rights reserved. </p>  
                    </div>
              </div>
       </div>

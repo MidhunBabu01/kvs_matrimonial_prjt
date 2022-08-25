@@ -214,7 +214,7 @@ footer {
 
     border-radius: 5px;
 }
-textarea
+.textarea
 {
     width: 100%;
 
@@ -467,7 +467,7 @@ and (max-device-width:360px)
     }
     #social-left
     {
-        width: 275px !important;
+        width: 278px !important;
         font-size: 10px !important;
     }
     #social-right
@@ -594,6 +594,7 @@ and (max-device-width: 480px)
 #fa-search
 {
     margin-left:4px !important;
+     
 }
 .search-bar {
    
@@ -632,7 +633,7 @@ and (max-device-width: 480px)
     }
      #social-left
      {
-         width: 280px !important;
+         width: 350px !important;
          font-size: 12px !important;
      }
      #social-right
@@ -641,7 +642,7 @@ and (max-device-width: 480px)
      }
   .social-link
   {
-     width: 339px !important;
+     width: 350px !important;
      font-size: 12px !important;
   }
   #copyright
@@ -658,7 +659,7 @@ and (max-device-width: 480px)
      margin-left: 0px !important;
  }
  .num_rows {
-     width: 204px !important;
+    width:204px !important;
  }
  .tb_search {
     float:left !important;
@@ -762,6 +763,7 @@ and (max-device-width: 540px)
 #fa-search
 {
     margin-left:4px !important;
+
 }
 .search-bar {
    
@@ -801,7 +803,7 @@ and (max-device-width: 540px)
 }
  #social-left
  {
-     width: 280px !important;
+     width: 300px !important;
      font-size: 12px !important;
  }
 #social-right
@@ -809,7 +811,7 @@ and (max-device-width: 540px)
     margin-top: -3px !important;
 }
 .social-link {
-    width: 445px !important;
+    width: 442px !important;
     font-size: 17px !important;
 }
 #copyright
@@ -826,7 +828,7 @@ and (max-device-width: 540px)
  margin-left: 0px !important;
 }
 .num_rows {
- width: 204px !important;
+ width: 230px !important;
 }
 
 /* taluk.html */
@@ -919,6 +921,7 @@ margin-top: -52px !important;
 and (min-device-width:540px)
 and (max-device-width:720px)
 {
+ 
  /* header and footer */
  .navbar-brand
  {
@@ -932,7 +935,7 @@ and (max-device-width:720px)
  }
  #social-left
  {
-     width: 280px !important;
+     width: 400px !important;
      font-size: 12px !important;
  }
 #social-right
