@@ -1,4 +1,5 @@
 import datetime
+from unittest import result
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -8,6 +9,15 @@ from .models import Matrimonial, Sakha, StateCommitie,Taluk
 import re
 now = datetime.datetime.now()
 from django.http.response import JsonResponse
+from django.db.models import Q
+
+# MAIL SENDING SECTION
+from django.core.mail import  EmailMessage
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.http import HttpResponse, HttpResponseRedirect
+
+
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -116,15 +126,15 @@ def sakha_delete(request,sakha_id):
 
 def bride(request):
     bride = Matrimonial.objects.filter(gender__name='Bride',status='Approved').order_by('-id')
-    return render (request,'materimonialservices.html',{'result':bride})
+    return render(request,'materimonialservices.html',{'result':bride})
 
 def grooms(request):
     grooms = Matrimonial.objects.filter(gender__name='Groom',status='Approved').order_by('-id')
-    return render (request,'materimonialservices.html',{'result':grooms})
+    return render (request,'materimonialservices-grooms.html',{'result':grooms})
 
 def pending(request):
     pending = Matrimonial.objects.filter(status='Pending').order_by('-id')
-    return render (request,'materimonialservices.html',{'result':pending})
+    return render(request,'materimonialservices-pending.html',{'result':pending})
 
 
 def matrimonial_update(request,update_id):
@@ -132,19 +142,31 @@ def matrimonial_update(request,update_id):
         update = Matrimonial.objects.filter(id=update_id).first()
         form = MatrimonialUpdateForm(request.POST,request.FILES,instance=update)
         if form.is_valid():
-            pending = form.cleaned_data['gender']
             form.save()
             return redirect('kvs_app:index')
-            # print(pending)
-            # pending = form.cleaned_data['gender']
-            # if pending == 'Groom':
-            #     return redirect('kvs_app:groom')
-            # elif pending == 'Bride':
-            #     return redirect('kvs_app:index')
     else:
         update = Matrimonial.objects.filter(id=update_id).first()
         form = MatrimonialUpdateForm(instance=update)
     return render(request,'matrimony-update.html',{'form':form})
+
+
+def matrimony_bride_search(request):
+    Query = None
+    result = None
+    if 'q' in request.GET:
+        Query = request.GET.get('q')
+        result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Bride')
+    return render(request,'bride-search-result.html',{'result':result})
+
+
+def matrimony_grooms_search(request):
+    Query = None
+    result = None
+    if 'q' in request.GET:
+        Query = request.GET.get('q')
+        result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Groom')
+    return render(request,'grooms-search-result.html',{'result':result})
+
 
 
 
@@ -178,10 +200,7 @@ def marrige_register(request):
         form = MatrimonialForm()
     return render(request,'marriageregister.html',{'form':form})
 
-from django.core.mail import  EmailMessage
-from django.conf import settings
-from django.template.loader import render_to_string
-from django.http import HttpResponse, HttpResponseRedirect
+
 
 def contact(request):
     if request.method == 'POST':

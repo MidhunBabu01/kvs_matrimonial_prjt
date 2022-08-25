@@ -22,6 +22,10 @@ urlpatterns = [
     path('matrimoni-delete/<int:dlt_id>', views.matrimoni_delete,name='matrimoni_delete'),
     path('matrimonial-update', views.matrimonial_update,name='matrimonial_update'),
     path('matrimonial-update/<int:update_id>', views.matrimonial_update,name='matrimonial_update'),
+    path('matrimony-bride-search', views.matrimony_bride_search,name='matrimony_bride_search'),
+    path('matrimony-groom-search', views.matrimony_grooms_search,name='matrimony_grooms_search'),
+    
+    
     
 
     # ACCOUNT SECTION
