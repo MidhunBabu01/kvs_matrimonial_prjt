@@ -106,15 +106,17 @@
                       </ul>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-bs-toggle="dropdown">Matrimonial Services</a>
-                    <ul class="dropdown-menu sub">
-                      <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
-                    
-                      <li><a class="dropdown-item text-white" href="#">Grooms</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Pendings</a></li>
-      
-                    </ul>
-                </li>
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-bs-toggle="dropdown">Matrimonial Services</a>
+                  <ul class="dropdown-menu sub">
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
+                  
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:grooms' %}">Grooms</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:pending' %}">Pendings</a></li>
+                    {% endif %}
+    
+                  </ul>
+              </li>
                 <li class="nav-item" id="nav-item">
                   <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
                 </li>
@@ -190,7 +192,7 @@
                                     </button>
                                     {% if user.is_authenticated %}
                                     <button type="button" class="btn btn-primary custom-text2 ">
-                                      <a href="#">  <i class="fa fa-edit me-2"></i></a>  
+                                      <a href="{% url 'kvs_app:matrimonial_update' i.id %}">  <i class="fa fa-edit me-2"></i></a>  
                                     </button>
                                     <button type="button" class="btn btn-primary custom-text2 ">
                                       <a href="{% url 'kvs_app:matrimoni_delete' i.id %}">  <i class="fa fa-trash me-2"></i></a>  

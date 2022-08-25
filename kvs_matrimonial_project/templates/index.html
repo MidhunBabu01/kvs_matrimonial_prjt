@@ -114,7 +114,9 @@
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
                   
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:grooms' %}">Grooms</a></li>
+                    {% if user.is_authenticated %}
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:pending' %}">Pendings</a></li>
+                    {% endif %}
     
                   </ul>
               </li>

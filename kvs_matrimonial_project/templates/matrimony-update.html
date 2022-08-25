@@ -314,7 +314,12 @@
                               <label class="form-label">Total family member's</label>
                               {{form.total_family_members}}
                             </div>
-                            
+                            {% if user.is_authenticated %}
+                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                              <label class="form-label">Pending</label>
+                              {{form.status}}
+                            </div>
+                            {% endif %}
                             
                         </div>
                         

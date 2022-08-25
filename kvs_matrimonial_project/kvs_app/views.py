@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.models import User,auth
-from .forms import StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm
+from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm,MatrimonialUpdateForm
 from .models import Matrimonial, Sakha, StateCommitie,Taluk
 import re
 now = datetime.datetime.now()
@@ -126,6 +126,25 @@ def pending(request):
     return render (request,'materimonialservices.html',{'result':pending})
 
 
+def matrimonial_update(request,update_id):
+    if request.method == 'POST':
+        update = Matrimonial.objects.filter(id=update_id).first()
+        form = MatrimonialUpdateForm(request.POST,request.FILES,instance=update)
+        if form.is_valid():
+            pending = form.cleaned_data['gender']
+            form.save()
+            return redirect('kvs_app:index')
+            # print(pending)
+            # pending = form.cleaned_data['gender']
+            # if pending == 'Groom':
+            #     return redirect('kvs_app:groom')
+            # elif pending == 'Bride':
+            #     return redirect('kvs_app:index')
+    else:
+        update = Matrimonial.objects.filter(id=update_id).first()
+        form = MatrimonialUpdateForm(instance=update)
+    return render(request,'matrimony-update.html',{'form':form})
+
 
 
 
@@ -153,7 +172,7 @@ def marrige_register(request):
             age = int(now.year)-int(year)
             data.age = age
             data.save()
-            return redirect('kvs_app:marrige_register')
+            return redirect('kvs_app:index')
     else:
         form = MatrimonialForm()
     return render(request,'marriageregister.html',{'form':form})

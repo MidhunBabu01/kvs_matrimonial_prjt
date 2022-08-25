@@ -20,6 +20,10 @@ urlpatterns = [
     path('marrige-register', views.marrige_register,name='marrige_register'),
     path('contact', views.contact,name='contact'),
     path('matrimoni-delete/<int:dlt_id>', views.matrimoni_delete,name='matrimoni_delete'),
+    path('matrimonial-update', views.matrimonial_update,name='matrimonial_update'),
+    path('matrimonial-update/<int:update_id>', views.matrimonial_update,name='matrimonial_update'),
+    
+    
     
     
 
