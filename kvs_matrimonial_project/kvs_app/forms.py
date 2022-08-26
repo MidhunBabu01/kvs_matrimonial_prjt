@@ -62,7 +62,7 @@ class MatrimonialForm(forms.ModelForm):
             'mother_name' : forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Mother Name'}),
             'mother_occupation' : forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Mother Occupation'}),
             'sister' : forms.NumberInput(attrs={'class':'form-control','placeholder':'Enter The Number of Sisters'}),
-            'total_family_members' : forms.NumberInput(attrs={'class':'form-control'}),
+            'total_family_members' : forms.NumberInput(attrs={'class':'form-control','placeholder':'Number of Total family members'}),
             'marital_status' : forms.Select(attrs={'class':'form-control'}),
             'subcaste' : forms.Select(attrs={'class':'form-control'}),
             'education_qualification' : forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Qualification'}),

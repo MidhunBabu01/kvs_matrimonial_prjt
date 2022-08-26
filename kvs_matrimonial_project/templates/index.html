@@ -253,6 +253,16 @@
   </div>
 </section>
 <!-- end services -->
+{% for message in messages %}
+  {% if message.tags == 'success' %}
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    var m="{{message}}";
+    swal("{{message}}",'','success')
+    {% comment %} swal("Perfect!", m, "success") {% endcomment %}
+  </script>
+  {% endif %}
+{% endfor %}
 <!-- footer -->
 <footer >
   <div class="container-fluid">

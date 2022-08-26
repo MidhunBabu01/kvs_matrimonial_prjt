@@ -207,15 +207,15 @@
                                       {% csrf_token %}
                                       <div class="row ">
                                         <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <input type="text" name="name" placeholder="Enter The Name" class="form-control">
+                                          <input type="text" name="name" placeholder="Enter The Name" class="form-control", required>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <input type="text" name="email" placeholder="Enter The Email" class="form-control">
+                                          <input type="text" name="email" placeholder="Enter The Email" class="form-control", required>
                                         </div>
                                       </div>
                                       <div class="row">
                                         <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                         <input type="text" name="phone" placeholder="Enter The phone" class="form-control">
+                                         <input type="text" name="phone" placeholder="Enter The phone" class="form-control", required>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-xl-6 p-2">
                                          <input type="text" name="sub1" placeholder="Enter The Subject" class="form-control">
@@ -251,6 +251,16 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31287.03596674416!2d75.92124860829476!3d11.416291637361153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba668feaaaaaaab%3A0xdedfe9bd922edf2a!2sKerala%20Viswakarma%20Sabha!5e0!3m2!1sen!2sin!4v1654931517165!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         
 </section>
+{% for message in messages %}
+  {% if message.tags == 'success' %}
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    var m="{{message}}";
+    swal("Email send succesfully!","",'success')
+    {% comment %} swal("Perfect!", m, "success") {% endcomment %}
+  </script>
+  {% endif %}
+{% endfor %}
 <!-- footer -->
 <footer >
   <div class="container-fluid">

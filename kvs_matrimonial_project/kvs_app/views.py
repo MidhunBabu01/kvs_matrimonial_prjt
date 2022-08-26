@@ -16,7 +16,7 @@ from django.core.mail import  EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.http import HttpResponse, HttpResponseRedirect
-
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -143,6 +143,7 @@ def matrimonial_update(request,update_id):
         form = MatrimonialUpdateForm(request.POST,request.FILES,instance=update)
         if form.is_valid():
             form.save()
+            messages.success(request,'Succesfully Updated')
             return redirect('kvs_app:index')
     else:
         update = Matrimonial.objects.filter(id=update_id).first()
@@ -192,7 +193,8 @@ def marrige_register(request):
             age = int(now.year)-int(year)
             data.age = age
             data.save()
-            return redirect('kvs_app:index')
+            messages.success(request,'Please wait for the Admin approval')
+            return redirect('kvs_app:marrige_register')
     else:
         form = MatrimonialForm()
     return render(request,'marriageregister.html',{'form':form})
@@ -215,6 +217,7 @@ def contact(request):
         )
         email.fail_silently = False
         email.send()
+        messages.success(request,'Email send succesfully')
         print('Email Send')
         return redirect('kvs_app:contact')
     return render(request,'contact.html')
