@@ -169,9 +169,6 @@ def matrimony_grooms_search(request):
 
 
 
-
-
-
 def profile_details(request,details_id):
     details = Matrimonial.objects.filter(id=details_id)
     return render(request,'viewprofile.html',{'details':details})
