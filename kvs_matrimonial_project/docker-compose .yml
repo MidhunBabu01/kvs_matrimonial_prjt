@@ -1,0 +1,40 @@
+version: '3'
+services:
+  db:
+    image: postgres:14.0
+    restart: always
+    environment:
+      - POSTGRES_USER=kvsUser
+      - POSTGRES_PASSWORD=kvsPassword
+    volumes:
+      - kvs_db_data:/var/lib/postgresql/data
+    networks:
+      - kvs_backend_tier
+  kvs:
+    restart: always
+    build: .
+    depends_on:
+      - db
+    env_file: .env
+    command: python manage.py runserver 0.0.0.0:8010
+    links:
+      - db:postgres
+    volumes:
+      - .:/app
+    ports:
+      - "8010:8010"
+    expose:
+      - "8010"
+    networks:
+      - kvs_backend_tier
+
+volumes:
+  kvs_db_data:
+    driver: local
+  static_volume:
+    driver: local
+
+
+networks:
+  kvs_backend_tier:
+    driver: bridge

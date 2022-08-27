@@ -12,7 +12,21 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import ast
 
+
+def get_bool_from_env(name, default_value):
+    if name in os.environ:
+        value = os.environ[name]
+        try:
+            return ast.literal_eval(value)
+        except ValueError as e:
+            raise ValueError("{} is an invalid value for {}".format(value, name)) from e
+    return default_value
+
+
+def get_list(text):
+    return [item.strip() for item in text.split(",")]
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,8 +40,7 @@ SECRET_KEY = 'django-insecure-0=l*4tva*3+)wh-5x21rk24rhqup9!*209j!9=40sj=_39!$kl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['192.168.1.14','127.0.0.1']
 
 # Application definition
 
@@ -75,17 +88,27 @@ WSGI_APPLICATION = 'kvs_matrimonial_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'kvs_db',
+#         'USER' : 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost'
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'kvs_db',
-        'USER' : 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost'
+        'default': {
+            'ENGINE': os.environ.get('DB_ENGINE'),
+            'NAME': os.environ.get('DB_NAME'),
+            'USER': os.environ.get('DB_USER', " get_bool_from_env('DB_NAME',"),
+            'PASSWORD': os.environ.get('DB_PASSWORD', ""),
+            'HOST': os.environ.get('DB_HOST', ""),
+            'PORT': os.environ.get('DB_PORT', "5432"),
+            'TIME_ZONE': os.environ.get('TIME_ZONE', "Asia/Kolkata"),
+        }
     }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
