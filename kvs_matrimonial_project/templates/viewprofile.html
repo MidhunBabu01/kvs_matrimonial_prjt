@@ -194,8 +194,12 @@
                                           
                                                       <!-- personal -->
                                                 <div href="#" class="arrowBox arrow-right custom-text2">Personalized Details</div>
-                                                  
-                                                      <h5 class="custom-text ">language: {{i.languages}}</h5>
+                                                      {% if user.is_authenticated %}
+                                                      <h5 class="custom-text ">Mobile: {{i.phone}}</h5>
+                                                      {% endif %}
+                                                      <h5 class="custom-text ">Brother: {{i.brother}}</h5>
+                                                      <h5 class="custom-text ">Sister: {{i.sister}}</h5>
+                                                      <h5 class="custom-text ">Language: {{i.languages}}</h5>
                                                       <h5 class="custom-text ">Hobbies: {{i.hobbies}}</h5>
                                                   
                                                 

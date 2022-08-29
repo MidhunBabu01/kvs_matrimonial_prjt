@@ -37,13 +37,12 @@
   }
  #card-bg {
     background: linear-gradient(277deg, #dddddd, transparent);
-    width:600px;
+    width:820px;
 }
 
 #card_bg
 {
-    margin-left: 260px;
-    margin-right: 260px;
+    margin-left: 120px;
 }
 .floatright
 {
@@ -53,15 +52,19 @@
 {
     background: linear-gradient(277deg, #dddddd, transparent);
 }
-
+.btn-primary
+{
+    background-color: #00a74c !important;
+    border-color: #00a74c !important;
+}
 .arrowBox{
     position: relative;
     width:220px;
-    background: #060606;
+    background: #00a74c;
     height:40px;
     line-height: 40px;
     margin-bottom:30px; 
- 
+   text-align: center;
     color:#fff;
   }
   .arrow-right:after{
@@ -71,13 +74,15 @@
     top: 0;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-left: 20px solid#060606; 
+    border-left: 20px solid#00a74c; 
 }
 
 .materimonial-img
 {
     width: 150px;
     height: 150px;
+    margin-top: 50px;
+    border-radius: 100%;
 }
 .materimonialservices
 {
@@ -527,12 +532,20 @@ and (max-device-width:360px)
    }
    #card-bg {
    
-    width:280px !important;
+    width:216px !important;
 }
+
 .arrowBox {
-  
+    position: relative;
     width: 180px !important;
-  
+    background: #00a74c;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    margin-left: -30px !important;
+   
 }
 .custom-text2
 {
@@ -582,18 +595,20 @@ and (max-device-width:360px)
 }
 @media only screen
 and (min-device-width: 360px)
-and (max-device-width: 480px)
+and (max-device-width: 420px)
 {
        /* search */
-#form-search
+       .form-search
 {
    
-    margin-left: -29px !important;
- 
+    /* margin-left: -29px !important; */
+  float:right !important;
 }
 #fa-search
 {
-    margin-left:4px !important;
+    margin-left:-40px !important;
+    /*background:red !important;*/
+    /*nokia7.2*/
      
 }
 .search-bar {
@@ -659,7 +674,7 @@ and (max-device-width: 480px)
      margin-left: 0px !important;
  }
  .num_rows {
-    width:204px !important;
+    width:249px !important;
  }
  .tb_search {
     float:left !important;
@@ -695,7 +710,7 @@ and (max-device-width: 480px)
     }
     #card-bg {
     
-     width:360px !important;
+     width:340px !important;
  }
  .arrowBox {
    
@@ -750,7 +765,7 @@ and (max-device-width: 480px)
  
 }
 @media only screen
-and (min-device-width: 480px)
+and (min-device-width: 420px)
 and (max-device-width: 540px)
 {
          /* search */
@@ -758,11 +773,14 @@ and (max-device-width: 540px)
 {
    
     margin-left: -52px !important;
+    /*background:blue !important;*/
  
 }
 #fa-search
 {
     margin-left:4px !important;
+    
+      
 
 }
 .search-bar {
@@ -860,11 +878,11 @@ margin-top: -52px !important;
 }
 #card-bg {
 
- width:500px !important;
+ width:430px !important;
 }
 .arrowBox {
 
- width: 410px !important;
+ width: 356px !important;
 
 }
 .custom-text2
@@ -921,6 +939,7 @@ margin-top: -52px !important;
 and (min-device-width:540px)
 and (max-device-width:720px)
 {
+   
  
  /* header and footer */
  .navbar-brand
@@ -965,6 +984,7 @@ and (max-device-width:720px)
 .tb_search {
 float: right;
 margin-top: -39px !important;
+
 }
 /* taluk.html */
 .tb_search_taluk
