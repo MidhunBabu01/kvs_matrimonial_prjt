@@ -1,15 +1,3 @@
-@font-face {
-    font-family:Alegreya;
-    src: url("/keralaviswakarmasabha2022/font/Alegreya-Italic-VariableFont_wght.ttf");
-    font-family: patrickhand;
-    src: url("/keralaviswakarmasabha2022/font/PatrickHand-Regular.ttf");
-    font-family:josefinslab;
-    src: url("/keralaviswakarmasabha2022/font/JosefinSlab-VariableFont_wght.ttf");
-    font-family:ElMessiri;
-    src: url("/keralaviswakarmasabha2022/font/ElMessiri-VariableFont_wght.ttf");
-    font-family: BerkshireSwash;
-    src: url("/keralaviswakarmasabha2022/font/BerkshireSwash-Regular.ttf");
-  }
 
  .custom-text
   {
@@ -35,6 +23,17 @@
     font-family:BerkshireSwash;
    
   }
+  .custom-text5
+  {
+    font-family: Montserrat;
+   
+  }
+  .custom-text6
+  {
+    font-family: Roboto;
+  
+ }
+
  #card-bg {
     background: linear-gradient(277deg, #dddddd, transparent);
     width:820px;
@@ -42,7 +41,8 @@
 
 #card_bg
 {
-    margin-left: 120px;
+    margin-left: 260px;
+    margin-right: 260px;
 }
 .floatright
 {
@@ -67,7 +67,7 @@
    text-align: center;
     color:#fff;
   }
-  .arrow-right:after{
+  .arrow-right::after{
     content: "";
     position: absolute;
     right: -20px;
@@ -208,15 +208,15 @@ footer {
   
     padding-top: 14px;
     padding-bottom: 14px;
-    box-shadow: #000 1px 1px 1px 1px;
-    border-radius: 5px;
+    box-shadow: #000 2px 2px 2px 2px;
+    border-radius: 10px;
     
 }
 .box-warapper{
     background-color:#ffffff;
     padding-top: 14px;
     padding-bottom: 14px;
-
+    height: 630px;
     border-radius: 5px;
 }
 .textarea
@@ -421,11 +421,31 @@ div#n2-ss-5 .n-uc-VU1qjFbjQtxP-inner {
     height: 50px;
 
   }
+  .text-padding
+  {
+    padding:15px;
+   
+  }
+  .text_justifiy 
+  {
+    text-align: justify;
+  }
 /*  */
 @media only screen
 and (min-device-width: 220px)
 and (max-device-width:360px)
 {   
+    .box-warapper{
+        background-color:#ffffff;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        height:max-content !important;
+        border-radius: 5px;
+    }
+    .text-padding {
+        padding: 15px;
+        font-size: 12px !important;
+    }
     /* search */
 .form_search
 {
@@ -597,6 +617,17 @@ and (max-device-width:360px)
 and (min-device-width: 360px)
 and (max-device-width: 420px)
 {
+    .box-warapper{
+        background-color:#ffffff;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        height:max-content !important;
+        border-radius: 5px;
+    }
+    .text-padding {
+        padding: 15px;
+        font-size: 14px !important;
+    }
        /* search */
        .form-search
 {
@@ -768,6 +799,17 @@ and (max-device-width: 420px)
 and (min-device-width: 420px)
 and (max-device-width: 540px)
 {
+    .box-warapper{
+        background-color:#ffffff;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        height:max-content !important;
+        border-radius: 5px;
+    }
+    .text-padding {
+        padding: 15px;
+        font-size: 14px !important;
+    }
          /* search */
 #form-search
 {
@@ -939,7 +981,17 @@ margin-top: -52px !important;
 and (min-device-width:540px)
 and (max-device-width:720px)
 {
-   
+    .box-warapper{
+        background-color:#ffffff;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        height:max-content !important;
+        border-radius: 5px;
+    }
+    .text-padding {
+        padding: 15px;
+        font-size: 14px !important;
+    }
  
  /* header and footer */
  .navbar-brand
@@ -1072,6 +1124,17 @@ margin-top: -52px !important;
 and (min-device-width:720px)
 and (max-device-width:760px)
 {
+    .box-warapper{
+        background-color:#ffffff;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        height:max-content !important;
+        border-radius: 5px;
+    }
+    .text-padding {
+        padding: 15px;
+        font-size: 14px !important;
+    }
     .navbar-brand
     {
         width: 150px !important;
@@ -1122,6 +1185,17 @@ margin-top: -37px !important;
 and (min-device-width:760px)
 and (max-device-width:1024px)
 {
+    .box-warapper{
+        background-color:#ffffff;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        height:860px !important;
+        border-radius: 5px;
+    }
+    .text-padding {
+        padding: 15px;
+        font-size: 14px !important;
+    }
     .navbar-brand
     {
         width: 150px !important;

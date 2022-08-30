@@ -47,6 +47,11 @@
   _N2.r(["documentReady","smartslider-frontend","smartslider-backgroundanimation","SmartSliderWidgetArrowImage","ss-simple"],function(){new _N2.SmartSliderSimple('n2-ss-5', {"admin":false,"callbacks":"","background.video.mobile":1,"loadingTime":2000,"alias":{"id":0,"smoothScroll":0,"slideSwitch":0,"scroll":1},"align":"normal","isDelayed":0,"responsive":{"mediaQueries":{"all":false,"desktopportrait":["(min-width: 1200px)"],"tabletportrait":["(orientation: landscape) and (max-width: 1199px) and (min-width: 901px)","(orientation: portrait) and (max-width: 1199px) and (min-width: 701px)"],"mobileportrait":["(orientation: landscape) and (max-width: 900px)","(orientation: portrait) and (max-width: 700px)"]},"base":{"slideOuterWidth":1200,"slideOuterHeight":500,"sliderWidth":1200,"sliderHeight":500,"slideWidth":1200,"slideHeight":500},"hideOn":{"desktopLandscape":false,"desktopPortrait":false,"tabletLandscape":false,"tabletPortrait":false,"mobileLandscape":false,"mobilePortrait":false},"onResizeEnabled":true,"type":"fullwidth","sliderHeightBasedOn":"real","focusUser":1,"focusEdge":"auto","breakpoints":[{"device":"tabletPortrait","type":"max-screen-width","portraitWidth":1199,"landscapeWidth":1199},{"device":"mobilePortrait","type":"max-screen-width","portraitWidth":700,"landscapeWidth":900}],"enabledDevices":{"desktopLandscape":0,"desktopPortrait":1,"tabletLandscape":0,"tabletPortrait":1,"mobileLandscape":0,"mobilePortrait":1},"sizes":{"desktopPortrait":{"width":1200,"height":500,"max":3000,"min":1200},"tabletPortrait":{"width":701,"height":292,"customHeight":false,"max":1199,"min":701},"mobilePortrait":{"width":320,"height":133,"customHeight":false,"max":900,"min":320}},"overflowHiddenPage":0,"focus":{"offsetTop":"#wpadminbar","offsetBottom":""}},"controls":{"mousewheel":0,"touch":"horizontal","keyboard":1,"blockCarouselInteraction":1},"playWhenVisible":1,"playWhenVisibleAt":0.5,"lazyLoad":0,"lazyLoadNeighbor":0,"blockrightclick":0,"maintainSession":0,"autoplay":{"enabled":1,"start":1,"duration":8000,"autoplayLoop":1,"allowReStart":0,"pause":{"click":1,"mouse":"0","mediaStarted":1},"resume":{"click":0,"mouse":"0","mediaEnded":1,"slidechanged":0},"interval":1,"intervalModifier":"loop","intervalSlide":"current"},"perspective":1500,"layerMode":{"playOnce":0,"playFirstLayer":1,"mode":"skippable","inAnimation":"mainInEnd"},"bgAnimations":{"global":[{"type":"Flat","rows":5,"columns":7,"tiles":{"delay":1,"sequence":"Random"},"main":{"type":"next","duration":0.8,"next":{"ease":"easeInQuart","opacity":0}}}],"color":"RGBA(51,51,51,1)","speed":"normal"},"mainanimation":{"type":"horizontal","duration":1500,"delay":0,"ease":"easeOutQuad","shiftedBackgroundAnimation":0},"carousel":1,"initCallbacks":function(){new _N2.SmartSliderWidgetArrowImage(this);}});});
   });
   </script>
+  {% comment %} <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Gentium Book Plus' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'> {% endcomment %}
 </head>
 <body>
     <!-- <div class="container">
@@ -188,70 +193,140 @@
   <div class="n2-ss-slider-controls n2-ss-slider-controls-absolute-left-center"><div style="--widget-offset:15px;" class="n2-ss-widget nextend-arrow n2-ow-all nextend-arrow-previous  nextend-arrow-animated-fade" data-hide-mobileportrait="1" id="n2-ss-5-arrow-previous" role="button" aria-label="previous arrow" tabindex="0"><img width="32" height="32" class="skip-lazy" data-skip-lazy="1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMS42ODggMTQuNjg4aC03Ljk1NWwxLjgzMy0xLjY1LS4wMDQtLjAwM2MuMjY3LS4yNC40MzgtLjU4NS40MzgtLjk3MyAwLS43MjQtLjU4OC0xLjMxMi0xLjMxMy0xLjMxMi0uMzM3IDAtLjY0Mi4xMy0uODc0LjM0bC0uMDA0LS4wMDMtNC4zNzYgMy45MzcuMDA0LjAwNEM5LjE3IDE1LjI2OCA5IDE1LjYxMiA5IDE2cy4xNy43MzIuNDM4Ljk3MmwtLjAwNC4wMDQgNC4zNzUgMy45MzcuMDAyLS4wMDNjLjIzMy4yMS41MzguMzQuODc2LjM0LjcyNCAwIDEuMzEyLS41ODggMS4zMTItMS4zMTMgMC0uMzg3LS4xNy0uNzMtLjQzOC0uOTcybC4wMDQtLjAwMy0xLjgzMy0xLjY1aDcuOTU0Yy43MjUgMCAxLjMxMy0uNTg3IDEuMzEzLTEuMzEyIDAtLjcyNS0uNTg4LTEuMzEzLTEuMzEzLTEuMzEzek0xNiAyQzguMjY4IDIgMiA4LjI2OCAyIDE2czYuMjY4IDE0IDE0IDE0IDE0LTYuMjY4IDE0LTE0UzIzLjczMiAyIDE2IDJ6bTAgMjUuMzc1QzkuNzE4IDI3LjM3NSA0LjYyNSAyMi4yODIgNC42MjUgMTZTOS43MTggNC42MjUgMTYgNC42MjUgMjcuMzc1IDkuNzE4IDI3LjM3NSAxNiAyMi4yODIgMjcuMzc1IDE2IDI3LjM3NXoiCiAgICAgICAgICBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjgiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8L3N2Zz4=" alt="previous arrow"></div></div><div class="n2-ss-slider-controls n2-ss-slider-controls-absolute-right-center"><div style="--widget-offset:15px;" class="n2-ss-widget nextend-arrow n2-ow-all nextend-arrow-next  nextend-arrow-animated-fade" data-hide-mobileportrait="1" id="n2-ss-5-arrow-next" role="button" aria-label="next arrow" tabindex="0"><img width="32" height="32" class="skip-lazy" data-skip-lazy="1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xOC4xOSAxMS4wODdjLS4yMzUtLjIwNi0uNTQtLjMzNy0uODc4LS4zMzctLjcyNCAwLTEuMzEyLjU4OC0xLjMxMiAxLjMxMyAwIC4zODcuMTcuNzMuNDM4Ljk3MmwxLjgzIDEuNjUySDEwLjMxQzkuNTg4IDE0LjY4NyA5IDE1LjI3NSA5IDE2cy41ODggMS4zMTMgMS4zMTMgMS4zMTNoNy45NTRsLTEuODMzIDEuNjVjLS4yNjMuMjQzLS40MzQuNTg3LS40MzQuOTc0IDAgLjcyNS41ODggMS4zMTMgMS4zMTMgMS4zMTMuMzM3IDAgLjY0Mi0uMTMuODc1LS4zNGw0LjM3OC0zLjkzNGMuMjYzLS4yNDQuNDM0LS41ODguNDM0LS45NzZzLS4xNy0uNzMyLS40MzgtLjk3MmwtNC4zNy0zLjk0ek0xNiAyQzguMjY4IDIgMiA4LjI2OCAyIDE2czYuMjY4IDE0IDE0IDE0IDE0LTYuMjY4IDE0LTE0UzIzLjczMiAyIDE2IDJ6bTAgMjUuMzc1QzkuNzE4IDI3LjM3NSA0LjYyNSAyMi4yODIgNC42MjUgMTZTOS43MTggNC42MjUgMTYgNC42MjUgMjcuMzc1IDkuNzE4IDI3LjM3NSAxNiAyMi4yODIgMjcuMzc1IDE2IDI3LjM3NXoiCiAgICAgICAgICBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjgiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8L3N2Zz4=" alt="next arrow"></div></div></div></div><ss3-loader></ss3-loader></div></div><div class="n2_clear"></div></div></ss3-force-full-width></div>
 <!-- slider end -->
 <!-- Abouts -->
+
 <section>
-      <div class="container">
-             <div class="row">
-                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                       <div class="about_us">
-                             <h3 class="text-center about_head">Welcome To  Kerala Vishwakarma Sabha</h3>
-                             <p class="text-center about_para"> "The Kerala Vishwakarma Sabha is committed to moving forward with a clear objective of uniting the community members so that they can become an organized force of the Vishwakarma community in Kerala.
-                              Vishwakarma's, the third largest Hindu community in Kerala, has a history of organizational activities up to the present day. It will never strengthen the community but will lead to mutual animosity and weakening.
-                              As a member of the Kerala Vishwakarma Sabha, our aim is to awaken the community to become a cohesive force for the community lovers who want to change this situation."</p>
-                        </div>     
-                     </div>
-             </div>
-      </div>
+  <div class="container">
+         <div class="row">
+                 <div class="col-lg-12 col-xl-12 col-md-12
+col-sm-12 col-12">
+                   <div class="about_us">
+                         <h3 class="text-center
+about_head">Welcome To  Kerala Vishwakarma Sabha</h3>
+                         <p class="text-center about_para
+custom-text6">The VISWAKARMMAS are believed to be the decedents of the
+Creator of the Universe,LORD VISWABRAHMA . In “ Mundakopanishad ”
+Manthra :
+                        <span style="font-weight: 600;"> "Bhrahma
+Devanaam Pradhama Samba Bhuva"</span> promulgates the non-existence of
+any other geneology before the Lord Bhrahma.VEDAS are unquestionably
+regarded as the oldest literary composition in any language in the
+world wherein RIGVEDA is the foremost among all. The word VISWAKARMMA
+was firstly used in Rigveda to depict Lord Viswabrahma as the Creator
+of the Universe in its 80 and 81 SUKTAS in the 10th MANDALA.</p>
+                    </div>
+                 </div>
+         </div>
+  </div>
 </section>
 <!-- end Abouts -->
 <!-- services -->
 <section id="services-wrapper">
-  <div class="container p-2">
-         <div class="row">
-             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" id="col">
-                   <div class="box-warapper ">
-                        <div class="justify-content-center" style="text-align: -webkit-center;">
-                                <div class="icon-box">
-                                    <i class="fa fa-2x fa-eye" id="icon"></i>
-                                </div>
-                        </div>        
-                            <h3 class="text-center">Our Vission</h3>
-                            <p class="text-center  text-padding">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate enim quis nibh consequat ornare. Fusce quam leo, lobortis ut dignissim quis, mattis egestas leo.
-                            </p>
+<div class="container p-2">
+     <div class="row">
+         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" id="col">
+               <div class="box-warapper ">
+                    <div class="justify-content-center"
+style="text-align: -webkit-center;">
+                            <div class="icon-box">
+                                <i class="fa fa-2x fa-eye" id="icon"></i>
+                            </div>
                     </div>
-             </div>
-             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" id="col">
-              <div class="box-warapper ">
-                <div class="justify-content-center" style="text-align: -webkit-center;">
-                       <div class="icon-box">
-                            <i class="fa fa-2x fa-space-shuttle" id="icon"></i>
-                       </div>
-                </div>       
-                       <h3 class="text-center">Our Mission</h3>
-                       <p class="text-center text-padding">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate enim quis nibh consequat ornare. Fusce quam leo, lobortis ut dignissim quis, mattis egestas leo.
-                       </p>
-               </div>
-        </div>
-             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" id="col">
-              <div class="box-warapper ">
-                <div class="justify-content-center" style="text-align: -webkit-center;">
-                       <div class="icon-box">
-                            <i class="fa fa-2x fa-trophy" id="icon"></i>
-                       </div>
-                </div>       
-                       <h3 class="text-center">Our Goal</h3>
-                       <p class="text-center  text-padding">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate enim quis nibh consequat ornare. Fusce quam leo, lobortis ut dignissim quis, mattis egestas leo.
-                       </p>
-               </div>
-        </div>
-           
-         
+                        <h3 class="text-center">Our Vission</h3>
+                        <p class="text_justifiy   text-padding
+custom-text6">
+                          In the process of time,  Viswakarmas
+known after the name the Creator of
+                          Universe  owing to their skillful
+creative contribution to the entire human
+                          race. At the outset they supplied the
+essentials needed in the making of
+                          basic human necessities such as food,
+clothe and shelter. Their constructive
+                          benefaction in the advent of cultural
+development in  later stages of human
+                          evolution was very significant. Their
+adroit gifts for the development of
+                          art, literature, music and spirituality
+were fabulous than their own
+                          grandeur in agricultural, industrial and
+tertiary sector. But in the
+                          later stages of evolution the community
+gradually lost their extensive
+                          predominance in  the socio- economic and
+cultural spheres due to
+                          socio-economic transition. Thus it
+becomes the primary organizational
+                          vision of SABHA to regain the lost
+majesty of Viswakarmmas to benefit
+                          the entire humanity.
+                        </p>
+                </div>
          </div>
-        
-  </div>
+         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" id="col">
+          <div class="box-warapper ">
+            <div class="justify-content-center" style="text-align:
+-webkit-center;">
+                   <div class="icon-box">
+                        <i class="fa fa-2x fa-space-shuttle" id="icon"></i>
+                   </div>
+            </div>
+                   <h3 class="text-center">Our Mission</h3>
+                   <p class="text_justifiy text-padding custom-text6">
+                    The past glory of the country subsists in her
+marvellous colossal fabrics.
+                    But even modern science fail to unveil the
+mystery behind their design,
+                    engineering and craftsmanship either to
+maintain or to reconstruct them for
+                    the posterity without losing their ingenuity.
+Many such environmental-friendly
+                    wonders now face irrecoverable ruin. All the
+creations of Viswakarmas were based
+                    on the principle of Preservation of Mother
+Nature. Hence the mission of Sabha is
+                    to bring back the magnificence of Country's
+exquisite past through the development
+                    of reverse engineering .
+                   </p>
+           </div>
+    </div>
+         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" id="col">
+          <div class="box-warapper ">
+            <div class="justify-content-center" style="text-align:
+-webkit-center;">
+                   <div class="icon-box">
+                        <i class="fa fa-2x fa-trophy" id="icon"></i>
+                   </div>
+            </div>
+                   <h3 class="text-center">Our Goal</h3>
+                   <p class="text_justifiy   text-padding custom-text6">
+                    Sabha aims to equip a future generaton having
+a Bharatheeya educational,cultural
+                     and ethical vision.Today the new generation
+transcends an appalling
+                     socio-cultural and economical arena amidst
+terrorism,narcotism and sedition.
+                     Neverthless the country needs a posterity
+with high scientific temperament
+                     containing pure patriotic insight. Such a
+generation can only elevate patriotic
+                    intellectuals who would stand up for the
+country and the Universe as well to
+                       recite the impressive world famous
+slogan<span style="font-weight: 600;" class="custom-text3"> " Loka
+Samastha Sukhino Bhavanthu". </span>
+                       So in the making of a New glorified lndia
+Sabha owes to bestow our part.
+                   </p>
+           </div>
+    </div>
+
+
+     </div>
+
+</div>
 </section>
+
 <!-- end services -->
 {% for message in messages %}
   {% if message.tags == 'success' %}

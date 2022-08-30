@@ -55,7 +55,15 @@ class SubCaste_choices(models.Model):
 
 
 
-import re
+class Star(models.Model):
+    def __str__(self):
+        return self.name
+    name = models.CharField(max_length=25)
+
+
+
+
+
 import re
 now = datetime.datetime.now()
 class Matrimonial(models.Model):
@@ -68,6 +76,7 @@ class Matrimonial(models.Model):
     phone = models.CharField(max_length=10,blank=False,null=False)
     email = models.EmailField(blank=True,null=True)
     gender = models.ForeignKey(Gender_choices,on_delete=models.CASCADE,blank=False,null=False)
+    star = models.ForeignKey(Star,on_delete=models.CASCADE,blank=True,null=True)
     height = models.IntegerField(blank=False,null=False)
     work_place = models.CharField(max_length=25,blank=True,null=True)
     languages = models.CharField(max_length=250,blank=False,null=False)
@@ -80,8 +89,8 @@ class Matrimonial(models.Model):
     sister = models.IntegerField(blank=False,null=False)
     total_family_members = models.IntegerField(blank=True,null=True)
     marital_choices = (
-        ('Married','Married'),
         ('Un Married','Un Married'),
+        ('Second Marriage','Second Marriage'),
         ('Divorced','Divorced'),
         ('Widow','Widow')
     )
@@ -108,6 +117,8 @@ class Matrimonial(models.Model):
     )
     district = models.CharField(max_length=250,choices=DISTRICT_CHOICES,blank=False,null=False)
     taluk = models.CharField(max_length=50,blank=False,null=False)
+    gaurdian_name = models.CharField(max_length=50,blank=True,null=True)
+    # gaurdian_mobile = models.CharField(max_length=10,blank=True,null=True)
     status_choices = (
         ('Pending','Pending'),
         ('Approved','Approved')

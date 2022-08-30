@@ -177,165 +177,175 @@
                              
                                 <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 p-2">
                                   <div class="form-card1">
-                                      <form method="post" enctype='multipart/form-data'>
-                                        {% csrf_token %}
-                                        <div class="row ">
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                      <label class="form-label"> Name</label>
+                                    <form method="post" enctype='multipart/form-data'>
+                                            {% csrf_token %}
+                                            <div class="row ">
+                                                    <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                        <label class="form-label">Bride /Groom</label>
+                                                          {{form.gender}}
+                                                    </div>
+                                                    
+                                                    <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                      <label class="form-label">Name</label>  
                                                       {{form.name}}
-                                                      {% comment %} <input type="text" name="name" placeholder="Enter The Name" class="form-control"> {% endcomment %}
-                                                </div>
-                                                
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label"> DOB</label>  
+                                                      {% comment %} <input type="date" name="dob" placeholder="Enter The DOB" class="form-control"> {% endcomment %}
+                                                    </div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                  <label class="form-label">DOB</label>  
                                                   {{form.dob}}
-                                                  {% comment %} <input type="date" name="dob" placeholder="Enter The DOB" class="form-control"> {% endcomment %}
+                                              {% comment %} <input type="text" name="phone" placeholder="Enter The Contact" class="form-control"> {% endcomment %}
+                                              </div>
+                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                <label class="form-label">Star</label>
+                                                {{form.star}}
+                                                {% comment %} <input type="text" name="email" placeholder="Enter The Email" class="form-control"> {% endcomment %}
+                                              </div>
+                                            
+                                          </div>
+                                          <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                      <label class="form-label">Marital status</label>
+                                                        {{form.marital_status}}
+                                                  </div>
+                                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                      <label class="form-label">Subcaste</label>  
+                                                      {{form.subcaste}}
+                                                  </div>
+                                                  
+                                                  
+                                              </div>
+                                              <div class="row">
+                                            
+                                                  <div class="col-lg-6 col-md-6 col-sm-12 col-xl-6 p-2">
+                                                    <label class="form-label"> Upload  Photo</label><br>  
+                                                    {{form.photo}}
+                                                  </div>
+                                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                    <label class="form-label">Education Qualification</label> 
+                                                    {{form.education_qualification}} 
                                                 </div>
+                                            
+                                              </div>
+                                          <div class="row">
+                                                    
+                                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2 ">
+                                                      <label class="form-label"> Occupation </label> 
+                                                      {{form.occupation}} 
+                                                      {% comment %} <input type="text" name="Occupation" placeholder="Enter Education Occupation" class="form-control"> {% endcomment %}
+                                                  </div>
+                                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                    <label class="form-label">District</label> 
+                                                    {{form.district}} 
+                                                  </div>
+                                                  
                                         </div>
                                         <div class="row">
-                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">Mobile</label>  
-                                              {{form.phone}}
-                                          {% comment %} <input type="text" name="phone" placeholder="Enter The Contact" class="form-control"> {% endcomment %}
-                                          </div>
-                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label"> Email</label>
-                                            {{form.email}}
-                                            {% comment %} <input type="text" name="email" placeholder="Enter The Email" class="form-control"> {% endcomment %}
-                                          </div>
+                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                    <label class="form-label">Taluk</label> 
+                                                    {{form.taluk}} 
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                                  <label class="form-label">Height</label>
+                                                  {{form.height}}
+                                                </div>
                                         
                                       </div>
                                       <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">Bride /Groom</label>
-                                                     {{form.gender}}
-                                              </div>
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">Marital status</label>  
-                                                  {{form.marital_status}}
-                                              </div>
-                                              
-                                              
-                                          </div>
-                                          <div class="row">
-                                        
-                                      
                                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label"> Subcaste</label>  
-                                              {{form.subcaste}}
-                                          </div>
-                                          <div class="col-lg-6 col-md-6 col-sm-12 col-xl-6 p-2">
-                                            <label class="form-label"> Upload  Photo</label><br>  
-                                            {{form.photo}}
-                                          </div>
-                                        
-                                          </div>
-                                      <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">Education Qualification</label> 
-                                                  {{form.education_qualification}} 
-                                              </div>
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2 ">
-                                                  <label class="form-label"> Occupation </label> 
-                                                  {{form.occupation}} 
-                                                  {% comment %} <input type="text" name="Occupation" placeholder="Enter Education Occupation" class="form-control"> {% endcomment %}
-                                              </div>
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2 ">
-                                                  <label class="form-label"> district</label>  
-                                                  {{form.district}}
-                                              </div>
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label">Taluk</label>  
-                                                  {{form.taluk}}
+                                                <label class="form-label">Workplace</label>  
+                                                {{form.work_place}}
+                                            {% comment %} <input type="text" name="language" placeholder="Enter The language" class="form-control"> {% endcomment %}
                                             </div>
+                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                              <label class="form-label">Languages</label>
+                                              {{form.languages}}
+                                            </div>
+                                
+                                    </div>
+                                    <div class="row">
+                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                              <label class="form-label">Hobbies</label>  
+                                              {{form.hobbies}}
+                                          </div>
+                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                            <label class="form-label">Brothers</label>
+                                            {{form.brother}}
+                                          </div>
+                          
                                     </div>
                                     <div class="row">
                                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label">Height</label> 
-                                                {{form.height}} 
+                                                <label class="form-label">Sisters</label>  
+                                                {{form.sister}}
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">Workplace</label>
-                                              {{form.work_place}}
+                                              <label class="form-label">Father's Name</label>
+                                              {{form.father_name}}
                                             </div>
-                                    
+                      
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                          <label class="form-label">Father's occupation</label>  
+                                          {{form.father_occupation}}
+                                      </div>
+                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                        <label class="form-label">Mother's Name</label>
+                                        {{form.mother_name}}
+                                      </div>
+                                    </div>
+                
+                                    <div class="row">
+                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                        <label class="form-label">Mother's Occupation</label>
+                                        {{form.mother_occupation}}
+                                      </div>
+                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                        <label class="form-label">Family Members</label>
+                                        {{form.total_family_members}}
+                                      </div>
+                                      
+                                      
                                   </div>
                                   <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label">language</label>  
-                                            {{form.languages}}
-                                        {% comment %} <input type="text" name="language" placeholder="Enter The language" class="form-control"> {% endcomment %}
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <label class="form-label">Hobbies</label>
-                                          {{form.hobbies}}
-                                        </div>
-                            
-                                </div>
-                                <div class="row">
-                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <label class="form-label">Brothers</label>  
-                                          {{form.brother}}
-                                      </div>
-                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                        <label class="form-label">Sisters</label>
-                                        {{form.sister}}
-                                      </div>
-                      
-                                </div>
-                                <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label">Father's Name</label>  
-                                            {{form.father_name}}
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <label class="form-label">Father's Occupation</label>
-                                          {{form.father_occupation}}
-                                        </div>
-                  
-                                </div>
-                                <div class="row">
-                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                      <label class="form-label">Mother's Name</label>  
-                                      {{form.mother_name}}
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                    <label class="form-label">Mother's Occupation</label>
-                                    {{form.mother_occupation}}
-                                  </div>
-            
-                          </div>
-                                  
+                                    <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                      <label class="form-label">Name of Guardian/Contact person</label>
+                                      {{form.gaurdian_name}}
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                      <label class="form-label">Mobile/Contact No.</label>
+                                      {{form.phone}}
+                                    </div>
                                     
-                                          
-                                
-                          <div class="row">
-                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                              <label class="form-label">Total family member's</label>
-                              {{form.total_family_members}}
-                            </div>
-                            {% if user.is_authenticated %}
-                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                              <label class="form-label">Pending</label>
-                              {{form.status}}
-                            </div>
-                            {% endif %}
-                            
-                        </div>
-                        
-                      <div class="row">
-                        
-                        <div class="col-lg-12 col-md-12 col-xl-12 col-12 p-2">
+                                    
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                    <label class="form-label">Email</label>
+                                    {{form.email}}
+                                  </div>
+                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                    <label class="form-label">Status</label>
+                                    {{form.status}}
+                                  </div>
+                                  
+                              </div>
+                                  
+                                <div class="row">
+                                  
+                                  <div class="col-lg-12 col-md-12 col-xl-12 col-12 p-2">
+                              
+                                    <div class="justify-content-end">
+                                      <input type="submit" class="btn btn-danger " namme="submit" value="submit">
+                                    </div>
+                                  </div>
+                                  
+                              </div>
                     
-                          <div class="justify-content-end">
-                            <input type="submit" class="btn btn-danger " namme="submit" value="submit">
-                          </div>
-                        </div>
-                        
-                    </div>
-                      
-                                          
-                                      </form>
+                                        
+                                    </form>
                                   </div>
                                       
                                 </div>

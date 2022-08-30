@@ -193,10 +193,12 @@ def marrige_register(request):
             age = int(now.year)-int(year)
             data.age = age
             data.save()
+            print('UPDATED')
             messages.success(request,'Please wait for the Admin approval')
             return redirect('kvs_app:marrige_register')
     else:
         form = MatrimonialForm()
+        print('NOT UPDATED')
     return render(request,'marriageregister.html',{'form':form})
 
 
@@ -213,7 +215,7 @@ def contact(request):
             'Kerala Viswakarma Sabha', #subject
             template, #body
             emaill, #sender mail id
-            ['midhunkb57@gmail.com'] #recever mail id
+            ['artisankendram@gmail.com'] #recever mail id
         )
         email.fail_silently = False
         email.send()
