@@ -1,3 +1,19 @@
+@font-face {
+    font-family:Alegreya;
+    src: url("/keralaviswakarmasabha2022/font/Alegreya-Italic-VariableFont_wght.ttf");
+    font-family: patrickhand;
+    src: url("/keralaviswakarmasabha2022/font/PatrickHand-Regular.ttf");
+    font-family:josefinslab;
+    src: url("/keralaviswakarmasabha2022/font/JosefinSlab-VariableFont_wght.ttf");
+    font-family:ElMessiri;
+    src: url("/keralaviswakarmasabha2022/font/ElMessiri-VariableFont_wght.ttf");
+    font-family: BerkshireSwash;
+    src: url("/keralaviswakarmasabha2022/font/BerkshireSwash-Regular.ttf");
+    font-family:Montserrat;
+    src:url("/keralaviswakarmasabha2022/font/Montserrat-VariableFont_wght.ttf");
+    font-family:Roboto;
+    src:url("/keralaviswakarmasabha2022/font/RobotoCondensed-Regular.ttf")format("truetype");
+  }
 
  .custom-text
   {
@@ -31,8 +47,8 @@
   .custom-text6
   {
     font-family: Roboto;
-  
- }
+   
+  }
 
  #card-bg {
     background: linear-gradient(277deg, #dddddd, transparent);
@@ -41,8 +57,8 @@
 
 #card_bg
 {
-    margin-left: 260px;
-    margin-right: 260px;
+    margin-left: 176px;
+  
 }
 .floatright
 {
@@ -216,7 +232,7 @@ footer {
     background-color:#ffffff;
     padding-top: 14px;
     padding-bottom: 14px;
-    height: 630px;
+    height: 600px;
     border-radius: 5px;
 }
 .textarea
@@ -552,7 +568,7 @@ and (max-device-width:360px)
    }
    #card-bg {
    
-    width:216px !important;
+    width:300px !important;
 }
 
 .arrowBox {
@@ -741,7 +757,7 @@ and (max-device-width: 420px)
     }
     #card-bg {
     
-     width:340px !important;
+     width:330px !important;
  }
  .arrowBox {
    
@@ -868,7 +884,7 @@ and (max-device-width: 540px)
  }
 #social-right
 {
-    margin-top: -3px !important;
+    margin-top: -35px !important;
 }
 .social-link {
     width: 442px !important;
@@ -1185,6 +1201,9 @@ margin-top: -37px !important;
 and (min-device-width:760px)
 and (max-device-width:1024px)
 {
+    #card_bg {
+        margin-left: 50px !important;
+    }
     .box-warapper{
         background-color:#ffffff;
         padding-top: 14px;
