@@ -76,18 +76,18 @@ class Matrimonial(models.Model):
     phone = models.CharField(max_length=10,blank=False,null=False)
     email = models.EmailField(blank=True,null=True)
     gender = models.ForeignKey(Gender_choices,on_delete=models.CASCADE,blank=False,null=False)
-    star = models.ForeignKey(Star,on_delete=models.CASCADE,blank=True,null=True)
+    star = models.ForeignKey(Star,on_delete=models.CASCADE,blank=False,null=False)
     height = models.IntegerField(blank=False,null=False)
     work_place = models.CharField(max_length=25,blank=True,null=True)
-    languages = models.CharField(max_length=250,blank=False,null=False)
+    languages = models.CharField(max_length=250,blank=True,null=True)
     hobbies = models.CharField(max_length=250,blank=True,null=True)
     brother = models.IntegerField(blank=False,null=False)
     father_name = models.CharField(max_length=25,blank=False,null=False)
-    father_occupation = models.CharField(max_length=25,blank=True,null=True)
+    father_occupation = models.CharField(max_length=25,blank=False,null=False)
     mother_name = models.CharField(max_length=25,blank=False,null=False)
-    mother_occupation = models.CharField(max_length=25,blank=True,null=True)
+    mother_occupation = models.CharField(max_length=25,blank=False,null=False)
     sister = models.IntegerField(blank=False,null=False)
-    total_family_members = models.IntegerField(blank=True,null=True)
+    total_family_members = models.IntegerField(blank=False,null=False)
     marital_choices = (
         ('Un Married','Un Married'),
         ('Second Marriage','Second Marriage'),
@@ -95,8 +95,8 @@ class Matrimonial(models.Model):
         ('Widow','Widow')
     )
     marital_status = models.CharField(choices=marital_choices,max_length=25,blank=False,null=False)
-    subcaste = models.ForeignKey(SubCaste_choices,on_delete=models.CASCADE,blank=False,null=False)
-    photo = models.ImageField(upload_to = 'pictures',blank=False,null=False)
+    subcaste = models.ForeignKey(SubCaste_choices,on_delete=models.CASCADE,blank=True,null=True)
+    photo = models.ImageField(upload_to = 'pictures',blank=True,null=True)
     education_qualification = models.CharField(max_length=250,blank=False,null=False)
     occupation = models.CharField(max_length=250,blank=False,null=False)
     DISTRICT_CHOICES = (
@@ -117,7 +117,7 @@ class Matrimonial(models.Model):
     )
     district = models.CharField(max_length=250,choices=DISTRICT_CHOICES,blank=False,null=False)
     taluk = models.CharField(max_length=50,blank=False,null=False)
-    gaurdian_name = models.CharField(max_length=50,blank=True,null=True)
+    gaurdian_name = models.CharField(max_length=50,blank=False,null=False)
     # gaurdian_mobile = models.CharField(max_length=10,blank=True,null=True)
     status_choices = (
         ('Pending','Pending'),

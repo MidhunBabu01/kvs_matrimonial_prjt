@@ -79,7 +79,7 @@
     </div>
     <nav class="navbar navbar-expand-sm bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Kerala Viswakarma Sabha(KVS)</a>
+        <a class="navbar-brand" href="#">Kerala Viswakarma Sabha (KVS)</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -102,7 +102,7 @@
                     </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial Services</a>
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial</a>
                   <ul class="dropdown-menu sub">
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
                   
@@ -181,12 +181,16 @@
         <div class="container">
             <div class="row">
                   {% for i in result %}
-                  <div class="col-12 col-sm-12 col-md-4 col-xl-4 col-lg-4">
+                  <div class="col-12 col-sm-12 col-md-4 col-xl-4 col-lg-4" style="margin-top:30px">
                     
                        <div class="card card-bg" id="card-bg2">
                             <div class="card-img"> 
                                 <div class="justify-content-center text-center">
+                                    {% if i.photo == '' %}
+                                    <img src="{% static 'images/user.png' %}" class="card-img-top materimonial-img card-img">
+                                    {% else %}
                                     <img src="{{i.photo.url}}" class="card-img-top materimonial-img card-img">
+                                    {% endif %}
                                 </div>
                                  
                             </div>
@@ -264,7 +268,7 @@
                                <ul class="quick_2">
                                
                                 <li class="nav-item"><a class="nav-link" href="mailto:keralaviswakarmasabhas277@gmail.com"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tel:+919048675860"><i class="fa fa-phone me-2"></i>+91 9048675860</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tel:+917012958534"><i class="fa fa-phone me-2"></i>+91 7012958534</a></li>
                                 <li class="nav-item"><a class="nav-link" href="https://wa.link/cf15qb"><i class="fa fa-whatsapp me-2"></i>+91 9995487001</a></li>
                                </ul>
                       </div>

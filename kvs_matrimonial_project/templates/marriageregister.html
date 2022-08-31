@@ -89,7 +89,7 @@
     </div>
     <nav class="navbar navbar-expand-sm bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Kerala Viswakarma Sabha(KVS)</a>
+        <a class="navbar-brand" href="#">Kerala Viswakarma Sabha (KVS)</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -112,7 +112,7 @@
                     </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial Services</a>
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial</a>
                   <ul class="dropdown-menu sub">
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
                   
@@ -180,24 +180,24 @@
                                         {% csrf_token %}
                                         <div class="row ">
                                                 <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                    <label class="form-label">Bride /Groom</label>
+                                                    <label class="form-label"><span style="color:red;font-weight:600">*</span>Bride/Groom</label>
                                                       {{form.gender}}
                                                 </div>
                                                 
                                                 <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">Name</label>  
+                                                  <label class="form-label"><span style="color:red;font-weight:600">*</span>Name</label>  
                                                   {{form.name}}
                                                   {% comment %} <input type="date" name="dob" placeholder="Enter The DOB" class="form-control"> {% endcomment %}
                                                 </div>
                                         </div>
                                         <div class="row">
                                           <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">DOB</label>  
+                                              <label class="form-label"><span style="color:red;font-weight:600">*</span>DOB</label>  
                                               {{form.dob}}
                                           {% comment %} <input type="text" name="phone" placeholder="Enter The Contact" class="form-control"> {% endcomment %}
                                           </div>
                                           <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label">Star</label>
+                                            <label class="form-label"><span style="color:red;font-weight:600">*</span>Star</label>
                                             {{form.star}}
                                             {% comment %} <input type="text" name="email" placeholder="Enter The Email" class="form-control"> {% endcomment %}
                                           </div>
@@ -205,7 +205,7 @@
                                       </div>
                                       <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">Marital status</label>
+                                                  <label class="form-label"><span style="color:red;font-weight:600">*</span>Marital status</label>
                                                      {{form.marital_status}}
                                               </div>
                                               <div class="col-lg-6 col-md-6 col-xl-6 p-2">
@@ -218,11 +218,11 @@
                                           <div class="row">
                                         
                                               <div class="col-lg-6 col-md-6 col-sm-12 col-xl-6 p-2">
-                                                <label class="form-label"> Upload  Photo</label><br>  
+                                                <label class="form-label">Upload  Photo</label><br>  
                                                 {{form.photo}}
                                               </div>
                                               <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label">Education Qualification</label> 
+                                                <label class="form-label"><span style="color:red;font-weight:600">*</span>Education Qualification</label> 
                                                 {{form.education_qualification}} 
                                             </div>
                                         
@@ -230,23 +230,23 @@
                                       <div class="row">
                                                 
                                               <div class="col-lg-6 col-md-6 col-xl-6 p-2 ">
-                                                  <label class="form-label"> Occupation </label> 
+                                                  <label class="form-label"><span style="color:red;font-weight:600">*</span>Occupation </label> 
                                                   {{form.occupation}} 
                                                   {% comment %} <input type="text" name="Occupation" placeholder="Enter Education Occupation" class="form-control"> {% endcomment %}
                                               </div>
                                               <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label">District</label> 
+                                                <label class="form-label"><span style="color:red;font-weight:600">*</span>District</label> 
                                                 {{form.district}} 
                                               </div>
                                               
                                     </div>
                                     <div class="row">
                                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label">Taluk</label> 
+                                                <label class="form-label"><span style="color:red;font-weight:600">*</span>Taluk</label> 
                                                 {{form.taluk}} 
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">Height</label>
+                                              <label class="form-label"><span style="color:red;font-weight:600">*</span>Height</label>
                                               {{form.height}}
                                             </div>
                                     
@@ -269,40 +269,40 @@
                                           {{form.hobbies}}
                                       </div>
                                       <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                        <label class="form-label">Brothers</label>
+                                        <label class="form-label"><span style="color:red;font-weight:600">*</span>Brothers</label>
                                         {{form.brother}}
                                       </div>
                       
                                 </div>
                                 <div class="row">
                                         <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label">Sisters</label>  
+                                            <label class="form-label"><span style="color:red;font-weight:600">*</span>Sisters</label>  
                                             {{form.sister}}
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <label class="form-label">Father's Name</label>
+                                          <label class="form-label"><span style="color:red;font-weight:600">*</span>Father's Name</label>
                                           {{form.father_name}}
                                         </div>
                   
                                 </div>
                                 <div class="row">
                                   <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                      <label class="form-label">Father's occupation</label>  
+                                      <label class="form-label"><span style="color:red;font-weight:600">*</span>Father's occupation</label>  
                                       {{form.father_occupation}}
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                    <label class="form-label">Mother's Name</label>
+                                    <label class="form-label"><span style="color:red;font-weight:600">*</span>Mother's Name</label>
                                     {{form.mother_name}}
                                   </div>
                                 </div>
             
                           <div class="row">
                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                              <label class="form-label">Mother's Occupation</label>
+                              <label class="form-label"><span style="color:red;font-weight:600">*</span>Mother's Occupation</label>
                               {{form.mother_occupation}}
                             </div>
                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                              <label class="form-label">Family Members</label>
+                              <label class="form-label"><span style="color:red;font-weight:600">*</span>Family Members</label>
                               {{form.total_family_members}}
                             </div>
                             
@@ -310,11 +310,11 @@
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                            <label class="form-label">Name of Guardian/Contact person</label>
+                            <label class="form-label"><span style="color:red;font-weight:600">*</span>Name of Guardian/Contact person</label>
                             {{form.gaurdian_name}}
                           </div>
                           <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                            <label class="form-label">Mobile/Contact No.</label>
+                            <label class="form-label"><span style="color:red;font-weight:600">*</span>Mobile/Contact No.</label>
                             {{form.phone}}
                           </div>
                           
@@ -396,7 +396,7 @@
                                <ul class="quick_2">
                                
                                 <li class="nav-item"><a class="nav-link" href="mailto:keralaviswakarmasabhas277@gmail.com"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tel:+919048675860"><i class="fa fa-phone me-2"></i>+91 9048675860</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tel:+917012958534"><i class="fa fa-phone me-2"></i>+91 7012958534</a></li>
                                 <li class="nav-item"><a class="nav-link" href="https://wa.link/cf15qb"><i class="fa fa-whatsapp me-2"></i>+91 9995487001</a></li>
                                </ul>
                       </div>
