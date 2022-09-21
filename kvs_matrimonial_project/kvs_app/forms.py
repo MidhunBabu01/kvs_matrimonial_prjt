@@ -35,7 +35,8 @@ class SakhaForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'sakha_no' : forms.NumberInput(attrs={'class':'form-control','placeholder':'Sakha Number'}),
-            'taluk' : forms.Select(attrs={'class':'form-control','placeholder':'Taluk'})
+            'taluk' : forms.Select(attrs={'class':'form-control','placeholder':'Taluk'}),
+            'sakaha_name' : forms.TextInput(attrs={'class':'form-control','placeholder':'Sakha Name'}),
         }
 
 

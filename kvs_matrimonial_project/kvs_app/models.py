@@ -33,6 +33,7 @@ class Sakha(models.Model):
     def __str__(self):
         return self.sakha_no
     sakha_no = models.CharField(max_length=50,blank=False,null=False)
+    sakaha_name = models.CharField(max_length=50,blank=True,null=True)
     taluk  = models.ForeignKey(Taluk_choices,on_delete=models.CASCADE,blank=False,null=False)
 
 

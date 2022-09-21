@@ -88,7 +88,7 @@
               <a class="nav-link text-white" href="{% url 'kvs_app:index' %}">Home</a>
             </li>
             <li class="nav-item" id="nav-item">
-              <a class="nav-link text-white" href="{% url 'kvs_app:executiveforum' %}">Executive Form</a>
+              <a class="nav-link text-white" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a>
             </li>
               
             <li class="nav-item dropdown">
@@ -175,7 +175,9 @@
                                             <div class="col-lg-12 col-md-12 mt-3">
                                                 {{form.sakha_no}}
                                             </div>
-                        
+                                            <div class="col-lg-12 col-md-12 mt-3">
+                                              {{form.sakaha_name}}
+                                            </div>
                                             <div class="col-lg-12 col-md-12 mt-3">
                                                 {{form.taluk}}
                                             </div>
@@ -225,7 +227,7 @@
                     
                       <ul class="quick_1">
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Form</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>

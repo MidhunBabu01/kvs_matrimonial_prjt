@@ -80,14 +80,14 @@
                          </div>
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
                             <div id="social-right">
-                              <ul class="nav justifycontentend">
-                                  {% if user.is_authenticated %}
-                                  <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
-                                  {% endif %}
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
-                            </ul>
+                                <ul class="nav justifycontentend">
+                                    {% if user.is_authenticated %}
+                                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
+                                    {% endif %}
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                   </div>
@@ -105,7 +105,7 @@
               <a class="nav-link text-white" href="{% url 'kvs_app:index' %}">Home</a>
             </li>
             <li class="nav-item" id="nav-item">
-              <a class="nav-link text-white" href="{% url 'kvs_app:executiveforum' %}">Executive Form</a>
+              <a class="nav-link text-white" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a>
             </li>
               
             <li class="nav-item dropdown">
@@ -305,7 +305,7 @@ VISWAKARMMAS  later came to be known after the name of the Creator of Universe  
                     
                       <ul class="quick_1">
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Form</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
