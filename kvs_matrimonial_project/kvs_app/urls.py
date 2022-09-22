@@ -24,6 +24,18 @@ urlpatterns = [
     path('matrimonial-update/<int:update_id>', views.matrimonial_update,name='matrimonial_update'),
     path('matrimony-bride-search', views.matrimony_bride_search,name='matrimony_bride_search'),
     path('matrimony-groom-search', views.matrimony_grooms_search,name='matrimony_grooms_search'),
+    path('health-insurance', views.health_insurance,name='health_insurance'),
+    # path('services-update/<int:update_id>', views.health_insurance_update,name='health_insurance_update'),
+    path('insurance_delete/<int:dlt_id>', views.insurance_delete,name='insurance_delete'),
+    path('accident-insurance', views.accident_insurance,name='accident_insurance'),
+    path('insurance-pending', views.insurance_pending,name='insurance_pending'),
+    path('insurance-update/<int:update_id>', views.insurance_update,name='insurance_update'),
+    
+    
+    
+    
+    
+    
     
     
     

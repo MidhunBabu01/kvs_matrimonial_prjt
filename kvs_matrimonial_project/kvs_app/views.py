@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.models import User,auth
-from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm,MatrimonialUpdateForm
-from .models import Matrimonial, Sakha, StateCommitie,Taluk
+from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm,MatrimonialUpdateForm,Services_Add_Form,Services_Admin_Edit_Form
+from .models import Matrimonial, Sakha, Services, StateCommitie,Taluk
 import re
 now = datetime.datetime.now()
 from django.http.response import JsonResponse
@@ -200,6 +200,77 @@ def marrige_register(request):
         form = MatrimonialForm()
         print('NOT UPDATED')
     return render(request,'marriageregister.html',{'form':form})
+
+
+
+
+def health_insurance(request):
+    result = Services.objects.filter(category__name='Health Insurance',status='Approved')
+    if request.method == 'POST':
+        form = Services_Add_Form(request.POST)
+        if form.is_valid():
+            form.save()
+            print('success')
+            messages.success(request,'Wait for the Admin Approval')
+            return redirect('kvs_app:index')
+    else:
+        form = Services_Add_Form()
+    return render(request,'health-insurance.html',{'form':form,'result':result})
+
+
+
+# def health_insurance_update(request,update_id):
+#     update = Services.objects.filter(id=update_id).first()
+#     if request.method == 'POST':
+#         form = Services_Add_Form(request.POST,instance=update)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('kvs_app:index')
+#     else:
+#         form = Services_Add_Form(instance=update)
+#     return render(request,'insurance-update.html',{'form':form})
+
+
+def insurance_delete(request,dlt_id):
+    dlt = Services.objects.filter(id=dlt_id)
+    dlt.delete()
+    messages.success(request,'Succesfully Deleted')
+    return redirect('kvs_app:index')
+
+
+
+def accident_insurance(request):
+    result = Services.objects.filter(category__name='Accident Insurance',status='Approved').order_by('-id')
+    if request.method == 'POST':
+        form = Services_Add_Form(request.POST)
+        if form.is_valid():
+            form.save()
+            print('success')
+            messages.success(request,'Wait for the Admin Approval')
+            return redirect('kvs_app:index')
+    else:
+        form = Services_Add_Form()
+    return render(request,'accident-insurance.html',{'form':form,'result':result})
+
+
+
+
+def insurance_pending(request):
+    pending = Services.objects.filter(status='Pending').order_by('-id')
+    return render(request,'insurance-pending.html',{'pending':pending})
+
+
+def insurance_update(request,update_id):
+    update = Services.objects.filter(id=update_id).first()
+    if request.method == 'POST':
+        form = Services_Admin_Edit_Form(request.POST,instance=update)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Succesfully Updated')
+            return redirect('kvs_app:index')
+    else:
+        form = Services_Admin_Edit_Form(instance=update)
+    return render(request,'pending-insurance-update.html',{'form':form})
 
 
 

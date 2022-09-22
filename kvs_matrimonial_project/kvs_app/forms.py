@@ -1,5 +1,5 @@
 from django import forms
-from .models import StateCommitie,Taluk,Sakha,Matrimonial
+from .models import StateCommitie,Taluk,Sakha,Matrimonial,Services
 
 
 
@@ -111,4 +111,50 @@ class MatrimonialUpdateForm(forms.ModelForm):
             'taluk' : forms.TextInput(attrs={'class':'form-control'}),
             'status' : forms.Select(attrs={'class':'form-control'}),
 
+        }
+
+
+
+class Services_Add_Form(forms.ModelForm):
+    class Meta:
+        model = Services
+        fields = '__all__'
+        exclude = ['status']
+        widgets = {
+            'category' : forms.Select(attrs={'class':'form-control'}),
+            'name' : forms.TextInput(attrs={'class':'form-control'}),
+            'mobile_no' : forms.NumberInput(attrs={'class':'form-control'}),
+            'joining_date' : forms.DateInput(attrs={'class':'form-control','type':'date'}),
+            'id_details' : forms.Select(attrs={'class':'form-control'}),
+            'id_no' : forms.TextInput(attrs={'class':'form-control'}),
+            'sakha_no' : forms.TextInput(attrs={'class':'form-control'}),
+            'taluk' : forms.TextInput(attrs={'class':'form-control'}),
+            'payment_details' : forms.Select(attrs={'class':'form-control'}),
+            'proposed_by_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'proposed_by_contact_no' : forms.NumberInput(attrs={'class':'form-control'}),
+            # 'status': forms.Select(attrs={'class':'form-control'}),
+            
+        }
+
+
+
+
+class Services_Admin_Edit_Form(forms.ModelForm):
+    class Meta:
+        model = Services
+        fields = '__all__'
+        widgets = {
+            'category' : forms.Select(attrs={'class':'form-control'}),
+            'name' : forms.TextInput(attrs={'class':'form-control'}),
+            'mobile_no' : forms.NumberInput(attrs={'class':'form-control'}),
+            'joining_date' : forms.DateInput(attrs={'class':'form-control','type':'date'}),
+            'id_details' : forms.Select(attrs={'class':'form-control'}),
+            'id_no' : forms.TextInput(attrs={'class':'form-control'}),
+            'sakha_no' : forms.TextInput(attrs={'class':'form-control'}),
+            'taluk' : forms.TextInput(attrs={'class':'form-control'}),
+            'payment_details' : forms.Select(attrs={'class':'form-control'}),
+            'proposed_by_name' : forms.TextInput(attrs={'class':'form-control'}),
+            'proposed_by_contact_no' : forms.NumberInput(attrs={'class':'form-control'}),
+            'status' : forms.Select(attrs={'class':'form-control'})
+            
         }

@@ -1,4 +1,5 @@
 import datetime
+from unicodedata import category
 from django.db import models
 import django
 
@@ -125,3 +126,68 @@ class Matrimonial(models.Model):
         ('Approved','Approved')
     )
     status = models.CharField(max_length=25,choices=status_choices,default='Pending')
+
+
+
+
+
+class Insurence_category(models.Model):
+    class Meta:
+        verbose_name_plural = 'Insurence category'
+    def __str__(self):
+        return self.name
+    name = models.CharField(max_length=50)
+    
+
+class Id_details_choices(models.Model):
+    class Meta:
+        verbose_name_plural = 'Id card choices'
+    def __str__(self):
+        return self.name
+    name = models.CharField(max_length=50)
+
+
+class Payment_details_choices(models.Model):
+    class Meta:
+        verbose_name_plural = 'Payment Details choices'
+    def __str__(self):
+        return self.name
+    name = models.CharField(max_length=50)
+
+
+
+
+class Services(models.Model):
+    class Meta:
+        verbose_name_plural = 'Services'
+    category = models.ForeignKey(Insurence_category,on_delete=models.CASCADE,blank=False,null=False)
+    name = models.CharField(max_length=25,blank=False,null=False)
+    mobile_no = models.CharField(max_length=10,blank=False,null=False)
+    joining_date = models.DateField(blank=True,null=True)
+    id_details = models.ForeignKey(Id_details_choices,on_delete=models.CASCADE,blank=False,null=False)
+    id_no = models.CharField(max_length=25,blank=False,null=False)
+    sakha_no = models.CharField(max_length=25,blank=False,null=False)
+    taluk = models.CharField(max_length=25,blank=False,null=False)
+    payment_details = models.ForeignKey(Payment_details_choices,on_delete=models.CASCADE,blank=False,null=False)
+    proposed_by_name = models.CharField(max_length=25,blank=True,null=True)
+    proposed_by_contact_no = models.CharField(max_length=25,blank=True,null=True)
+    STATUS_CHOISES = (
+        ('Pending','Pending'),
+        ('Approved','Approved')
+    )
+    status = models.CharField(max_length=25,choices=STATUS_CHOISES,default='Pending')
+
+
+
+class Join_Kvs(models.Model):
+    name = models.CharField(max_length=25,blank=False,null=False)
+    mobile = models.CharField(max_length=10,blank=False,null=False)
+    address = models.TextField(blank=False,null=False)
+    place = models.CharField(max_length=25,blank=False,null=False)
+    taluk = models.CharField(max_length=25,blank=False,null=False)
+    sakha_no = models.CharField(max_length=25,default='New Member')
+    id_proof = models.ForeignKey(Id_details_choices,on_delete=models.CASCADE,blank=False,null=False)
+    id_proof_no = models.CharField(max_length=25,blank=False,null=False)
+    payment_details = models.ForeignKey(Payment_details_choices,on_delete=models.CASCADE,blank=True,null=True)
+
+
