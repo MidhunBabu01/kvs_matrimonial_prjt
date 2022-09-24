@@ -1,5 +1,5 @@
 from django import forms
-from .models import StateCommitie,Taluk,Sakha,Matrimonial,Services
+from .models import Join_Kvs, StateCommitie,Taluk,Sakha,Matrimonial,Services
 
 
 
@@ -157,4 +157,42 @@ class Services_Admin_Edit_Form(forms.ModelForm):
             'proposed_by_contact_no' : forms.NumberInput(attrs={'class':'form-control'}),
             'status' : forms.Select(attrs={'class':'form-control'})
             
+        }
+
+
+class Join_Kvs_Add_Form(forms.ModelForm):
+    class Meta:
+        model = Join_Kvs
+        fields = '__all__'
+        exclude = ['status']
+        widgets = {
+            'name': forms.TextInput(attrs={'class':'form-control'}),
+            'mobile': forms.NumberInput(attrs={'class':'form-control'}),
+            'address': forms.Textarea(attrs={'class':'form-control','rows':4}),
+            'place': forms.TextInput(attrs={'class':'form-control'}),
+            'taluk': forms.TextInput(attrs={'class':'form-control'}),
+            'sakha_no': forms.TextInput(attrs={'class':'form-control'}),
+            'id_proof': forms.Select(attrs={'class':'form-control'}),
+            'id_proof_no': forms.TextInput(attrs={'class':'form-control'}),
+            'payment_details': forms.Select(attrs={'class':'form-control'}),
+
+        }
+
+
+class Join_Kvs_Admin_Update(forms.ModelForm):
+    class Meta:
+        model = Join_Kvs
+        fields = '__all__'
+        widgets = {
+            'name': forms.TextInput(attrs={'class':'form-control'}),
+            'mobile': forms.NumberInput(attrs={'class':'form-control'}),
+            'address': forms.Textarea(attrs={'class':'form-control','rows':4}),
+            'place': forms.TextInput(attrs={'class':'form-control'}),
+            'taluk': forms.TextInput(attrs={'class':'form-control'}),
+            'sakha_no': forms.TextInput(attrs={'class':'form-control'}),
+            'id_proof': forms.Select(attrs={'class':'form-control'}),
+            'id_proof_no': forms.TextInput(attrs={'class':'form-control'}),
+            'payment_details': forms.Select(attrs={'class':'form-control'}),
+            'status': forms.Select(attrs={'class':'form-control'}),
+
         }

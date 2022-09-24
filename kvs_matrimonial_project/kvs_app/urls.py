@@ -30,16 +30,13 @@ urlpatterns = [
     path('accident-insurance', views.accident_insurance,name='accident_insurance'),
     path('insurance-pending', views.insurance_pending,name='insurance_pending'),
     path('insurance-update/<int:update_id>', views.insurance_update,name='insurance_update'),
+    path('join-kvs', views.join_kvs,name='join_kvs'),
+    path('join-kvs-delete/<int:dlt_id>', views.join_kvs_delete,name='join_kvs_delete'),
+    path('join-kvs-update/<int:update_id>', views.join_kvs_update,name='join_kvs_update'),
+    path('join-kvs-pending', views.join_kvs_pending,name='join_kvs_pending'),
     
     
     
-    
-    
-    
-    
-    
-    
-
     # ACCOUNT SECTION
     path('logout', views.logout,name='logout'),
     path('login', views.login,name='login'),

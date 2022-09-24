@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.models import User,auth
-from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm,MatrimonialUpdateForm,Services_Add_Form,Services_Admin_Edit_Form
-from .models import Matrimonial, Sakha, Services, StateCommitie,Taluk
+from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm,MatrimonialUpdateForm,Services_Add_Form,Services_Admin_Edit_Form,Join_Kvs_Add_Form,Join_Kvs_Admin_Update
+from .models import Join_Kvs, Matrimonial, Sakha, Services, StateCommitie,Taluk
 import re
 now = datetime.datetime.now()
 from django.http.response import JsonResponse
@@ -91,7 +91,7 @@ def taluk_delete(request,taluk_id):
 
 
 def sakha(request):
-    sakha = Sakha.objects.all()
+    sakha = Sakha.objects.all().order_by('-id')
     if request.method == 'POST':
         form = SakhaForm(request.POST)
         if form.is_valid():
@@ -205,7 +205,7 @@ def marrige_register(request):
 
 
 def health_insurance(request):
-    result = Services.objects.filter(category__name='Health Insurance',status='Approved')
+    result = Services.objects.filter(category__name='Health Insurance',status='Approved').order_by('-id')
     if request.method == 'POST':
         form = Services_Add_Form(request.POST)
         if form.is_valid():
@@ -271,6 +271,51 @@ def insurance_update(request,update_id):
     else:
         form = Services_Admin_Edit_Form(instance=update)
     return render(request,'pending-insurance-update.html',{'form':form})
+
+
+
+def join_kvs(request):
+    membership_list = Join_Kvs.objects.filter(status='Approved').order_by('-id')
+    if request.method == 'POST':
+        form = Join_Kvs_Add_Form(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Membership will be Approved only after verification of Admin')
+            return redirect('kvs_app:join_kvs')
+    else:
+        form = Join_Kvs_Add_Form()
+    return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
+
+
+
+def join_kvs_update(request,update_id):
+    update = Join_Kvs.objects.filter(id=update_id).first()
+    if request.method == 'POST':
+        form = Join_Kvs_Admin_Update(request.POST,instance=update)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Succesfully Updated')
+            return redirect('kvs_app:join_kvs')
+    else:
+        form = Join_Kvs_Admin_Update(instance=update)
+    return render(request,'join-kvs-update.html',{'form':form})
+
+
+
+
+def join_kvs_pending(request):
+    pending = Join_Kvs.objects.filter(status = 'Pending').order_by('-id')
+    return render(request,'join-kvs-pending.html',{'pending':pending})
+
+
+
+def join_kvs_delete(request,dlt_id):
+    dlt = Join_Kvs.objects.filter(id=dlt_id)
+    dlt.delete()
+    messages.success(request,'Succesfully Deleted')
+    return redirect('kvs_app:join_kvs')
+
+
 
 
 

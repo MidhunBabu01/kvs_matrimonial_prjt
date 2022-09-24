@@ -180,6 +180,8 @@ class Services(models.Model):
 
 
 class Join_Kvs(models.Model):
+    class Meta:
+        verbose_name_plural = 'Join Kvs'
     name = models.CharField(max_length=25,blank=False,null=False)
     mobile = models.CharField(max_length=10,blank=False,null=False)
     address = models.TextField(blank=False,null=False)
@@ -189,5 +191,10 @@ class Join_Kvs(models.Model):
     id_proof = models.ForeignKey(Id_details_choices,on_delete=models.CASCADE,blank=False,null=False)
     id_proof_no = models.CharField(max_length=25,blank=False,null=False)
     payment_details = models.ForeignKey(Payment_details_choices,on_delete=models.CASCADE,blank=True,null=True)
+    STATUS_CHOISES = (
+        ('Pending','Pending'),
+        ('Approved','Approved')
+    )
+    status = models.CharField(max_length=25,choices=STATUS_CHOISES,default='Pending')
 
 

@@ -5,16 +5,14 @@
     <title>Kerala Viswakarma Sabha</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!------ Include the above in your HEAD tag ---------->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!------ Include the above in your HEAD tag ---------->
-  
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!------ Include the above in your HEAD tag ---------->
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
   
@@ -47,13 +45,19 @@
     _N2.r(["documentReady","smartslider-frontend","smartslider-backgroundanimation","SmartSliderWidgetArrowImage","ss-simple"],function(){new _N2.SmartSliderSimple('n2-ss-5', {"admin":false,"callbacks":"","background.video.mobile":1,"loadingTime":2000,"alias":{"id":0,"smoothScroll":0,"slideSwitch":0,"scroll":1},"align":"normal","isDelayed":0,"responsive":{"mediaQueries":{"all":false,"desktopportrait":["(min-width: 1200px)"],"tabletportrait":["(orientation: landscape) and (max-width: 1199px) and (min-width: 901px)","(orientation: portrait) and (max-width: 1199px) and (min-width: 701px)"],"mobileportrait":["(orientation: landscape) and (max-width: 900px)","(orientation: portrait) and (max-width: 700px)"]},"base":{"slideOuterWidth":1200,"slideOuterHeight":500,"sliderWidth":1200,"sliderHeight":500,"slideWidth":1200,"slideHeight":500},"hideOn":{"desktopLandscape":false,"desktopPortrait":false,"tabletLandscape":false,"tabletPortrait":false,"mobileLandscape":false,"mobilePortrait":false},"onResizeEnabled":true,"type":"fullwidth","sliderHeightBasedOn":"real","focusUser":1,"focusEdge":"auto","breakpoints":[{"device":"tabletPortrait","type":"max-screen-width","portraitWidth":1199,"landscapeWidth":1199},{"device":"mobilePortrait","type":"max-screen-width","portraitWidth":700,"landscapeWidth":900}],"enabledDevices":{"desktopLandscape":0,"desktopPortrait":1,"tabletLandscape":0,"tabletPortrait":1,"mobileLandscape":0,"mobilePortrait":1},"sizes":{"desktopPortrait":{"width":1200,"height":500,"max":3000,"min":1200},"tabletPortrait":{"width":701,"height":292,"customHeight":false,"max":1199,"min":701},"mobilePortrait":{"width":320,"height":133,"customHeight":false,"max":900,"min":320}},"overflowHiddenPage":0,"focus":{"offsetTop":"#wpadminbar","offsetBottom":""}},"controls":{"mousewheel":0,"touch":"horizontal","keyboard":1,"blockCarouselInteraction":1},"playWhenVisible":1,"playWhenVisibleAt":0.5,"lazyLoad":0,"lazyLoadNeighbor":0,"blockrightclick":0,"maintainSession":0,"autoplay":{"enabled":1,"start":1,"duration":8000,"autoplayLoop":1,"allowReStart":0,"pause":{"click":1,"mouse":"0","mediaStarted":1},"resume":{"click":0,"mouse":"0","mediaEnded":1,"slidechanged":0},"interval":1,"intervalModifier":"loop","intervalSlide":"current"},"perspective":1500,"layerMode":{"playOnce":0,"playFirstLayer":1,"mode":"skippable","inAnimation":"mainInEnd"},"bgAnimations":{"global":[{"type":"Flat","rows":5,"columns":7,"tiles":{"delay":1,"sequence":"Random"},"main":{"type":"next","duration":0.8,"next":{"ease":"easeInQuart","opacity":0}}}],"color":"RGBA(51,51,51,1)","speed":"normal"},"mainanimation":{"type":"horizontal","duration":1500,"delay":0,"ease":"easeOutQuad","shiftedBackgroundAnimation":0},"carousel":1,"initCallbacks":function(){new _N2.SmartSliderWidgetArrowImage(this);}});});
     });
     </script>
+    {% comment %} <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Gentium Book Plus' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'> {% endcomment %}
+  </head>
 <body class="materimonialservices">
   <!-- <div class="container">
     <div class="row">
       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
   <div id="preloader">
     
-              <div id="status"><h1 class="text-center">The website is under maintenance </h1></div>
+              <div id="status"><h1 class="text-center">The website is under maintenance</h1></div>
             </div>
             
           </div>
@@ -61,28 +65,29 @@
     </div>
 
   </div> -->
-  <header>
+<header>
     <div class="social-head">
           <div class="container-fluid">
                   <div class="row">
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                              <div id="social-left">
+                          <div id="social-left">
                                   <ul class="nav">
-                                        <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                  </ul>
-                                </div>     
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                </ul>
+                          </div>
+                               
                          </div>
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                            <div id="social-right">
-                              <ul class="nav justifycontentend">
-                                  {% if user.is_authenticated %}
-                                  <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
-                                  {% endif %}
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
-                            </ul>
-                            </div>
+                                <div id="social-right">
+                                        <ul class="nav justifycontentend">
+                                            {% if user.is_authenticated %}
+                                            <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
+                                            {% endif %}
+                                            <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
+                                            <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
+                                            <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
+                                      </ul>
+                                </div>
                         </div>
                   </div>
           </div>
@@ -160,19 +165,16 @@
       </div>
   </nav>
 </header>
+
 <!-- Abouts -->
 <section id="cd-breadcrumb">
       <div class="container">
              <div class="row">
                      <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12" id="head-breadcrump">
                       
-                             <h1 class="text-center text-white">Marriage register</h1> 
-                               <div class="text-breadcrumb2">
-                                        <ul class="nav justify-content-center">
-                                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
-                                            <li class="nav-item"><a class="nav-link"><i class="fa  fa-chevron-right"></i></a></li> 
-                                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a></li>
-                                       </ul>
+                             <h1 class="text-center text-white">Join Kvs</h1> 
+                               <div class="text-breadcrump4">
+                                        
                               
                             
                         </div>     
@@ -181,207 +183,210 @@
       </div>
 </section>
 <!-- end breadcrumb -->
-<!-- map -->
-<section id="contact_section">
-           <div class="container">
-                  
-                        <div class="row">
-                             
-                                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 p-2">
-                                  <div class="form-card1">
-                                      <form method="post" enctype='multipart/form-data'>
-                                        {% csrf_token %}
-                                        <div class="row ">
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                    <label class="form-label"><span style="color:red;font-weight:600">*</span>Bride/Groom</label>
-                                                      {{form.gender}}
-                                                </div>
-                                                
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label"><span style="color:red;font-weight:600">*</span>Name</label>  
-                                                  {{form.name}}
-                                                  {% comment %} <input type="date" name="dob" placeholder="Enter The DOB" class="form-control"> {% endcomment %}
-                                                </div>
-                                        </div>
-                                        <div class="row">
-                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label"><span style="color:red;font-weight:600">*</span>DOB</label>  
-                                              {{form.dob}}
-                                          {% comment %} <input type="text" name="phone" placeholder="Enter The Contact" class="form-control"> {% endcomment %}
-                                          </div>
-                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label"><span style="color:red;font-weight:600">*</span>Star</label>
-                                            {{form.star}}
-                                            {% comment %} <input type="text" name="email" placeholder="Enter The Email" class="form-control"> {% endcomment %}
-                                          </div>
-                                        
-                                      </div>
-                                      <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label"><span style="color:red;font-weight:600">*</span>Marital status</label>
-                                                     {{form.marital_status}}
-                                              </div>
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">Subcaste</label>  
-                                                  {{form.subcaste}}
-                                              </div>
-                                              
-                                              
-                                          </div>
-                                          <div class="row">
-                                        
-                                              <div class="col-lg-6 col-md-6 col-sm-12 col-xl-6 p-2">
-                                                <label class="form-label">Upload  Photo</label><br>  
-                                                {{form.photo}}
-                                              </div>
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label"><span style="color:red;font-weight:600">*</span>Education Qualification</label> 
-                                                {{form.education_qualification}} 
-                                            </div>
-                                        
-                                          </div>
-                                      <div class="row">
-                                                
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2 ">
-                                                  <label class="form-label"><span style="color:red;font-weight:600">*</span>Occupation </label> 
-                                                  {{form.occupation}} 
-                                                  {% comment %} <input type="text" name="Occupation" placeholder="Enter Education Occupation" class="form-control"> {% endcomment %}
-                                              </div>
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label"><span style="color:red;font-weight:600">*</span>District</label> 
-                                                {{form.district}} 
-                                              </div>
-                                              
-                                    </div>
-                                    <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label"><span style="color:red;font-weight:600">*</span>Taluk</label> 
-                                                {{form.taluk}} 
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label"><span style="color:red;font-weight:600">*</span>Height</label>
-                                              {{form.height}}
-                                            </div>
-                                    
-                                  </div>
-                                  <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label">Workplace</label>  
-                                            {{form.work_place}}
-                                        {% comment %} <input type="text" name="language" placeholder="Enter The language" class="form-control"> {% endcomment %}
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <label class="form-label">Languages</label>
-                                          {{form.languages}}
-                                        </div>
-                            
-                                </div>
-                                <div class="row">
-                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <label class="form-label">Hobbies</label>  
-                                          {{form.hobbies}}
-                                      </div>
-                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                        <label class="form-label"><span style="color:red;font-weight:600">*</span>Brothers</label>
-                                        {{form.brother}}
-                                      </div>
-                      
-                                </div>
-                                <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label"><span style="color:red;font-weight:600">*</span>Sisters</label>  
-                                            {{form.sister}}
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <label class="form-label"><span style="color:red;font-weight:600">*</span>Father's Name</label>
-                                          {{form.father_name}}
-                                        </div>
-                  
-                                </div>
-                                <div class="row">
-                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                      <label class="form-label"><span style="color:red;font-weight:600">*</span>Father's occupation</label>  
-                                      {{form.father_occupation}}
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                    <label class="form-label"><span style="color:red;font-weight:600">*</span>Mother's Name</label>
-                                    {{form.mother_name}}
-                                  </div>
-                                </div>
-            
-                          <div class="row">
-                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                              <label class="form-label"><span style="color:red;font-weight:600">*</span>Mother's Occupation</label>
-                              {{form.mother_occupation}}
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                              <label class="form-label"><span style="color:red;font-weight:600">*</span>Family Members</label>
-                              {{form.total_family_members}}
-                            </div>
-                            
-                            
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                            <label class="form-label"><span style="color:red;font-weight:600">*</span>Name of Guardian/Contact person</label>
-                            {{form.gaurdian_name}}
-                          </div>
-                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                            <label class="form-label"><span style="color:red;font-weight:600">*</span>Mobile/Contact No.</label>
-                            {{form.phone}}
-                          </div>
-                          
-                          
-                      </div>
-                      <div class="row">
-                        <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                          <label class="form-label">Email</label>
-                          {{form.email}}
-                        </div>
-                        
-                    </div>
-                        
-                      <div class="row">
-                        
-                        <div class="col-lg-12 col-md-12 col-xl-12 col-12 p-2">
+<div class="mt-4"></div>
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="container">                                                                     
+                       <div class="row mt-2">
+                         <div class="col-sm-12 col-md-12 col-xl-12 col-lg-12">
+                            <div class="float-right">
+                                <button type="button" class="btn btn-warning " id="btn-model" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus  mx-3"></i>Add Member</button>
+   
+                                                            <!-- model add member -->      
+                                                                      <!-- Modal -->
+                                    <div class="modal fade modal_fade " id="myModal" role="dialog">
+                                           <div class="modal-dialog">
                     
-                          <div class="justify-content-end">
-                            <input type="submit" class="btn btn-danger " namme="submit" value="submit">
-                          </div>
-                        </div>
-                        
-                    </div>
+                                                <!-- Modal content-->
+                                               <div class="modal-content">
+                                                       <div class="modal-header">
+                                                            <button type="button" class="close btn btn-dark" data-dismiss="modal">&times;</button>
                       
-                                          
-                                      </form>
-                                  </div>
-                                      
-                                </div>
+                                                         </div>
+                                                        <div class="modal-body">
+                                                             <form  method="post">
+                                                              {% csrf_token %}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 mt-3">
+                                                                        <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> Name</label>
+                                                                        {{form.name}}
+                                                                      </div>
+                                                                    <div class="col-lg-12 col-md-12 mt-3">
+                                                                        <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> Address</label>
+                                                                        {{form.address}}
+                                                                      </div>
+                                                                    <div class="col-lg-12 col-md-12 mt-3">
+                                                                        <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> Place</label>
+                                                                        {{form.place}}
+                                                                      </div>
+                                                                    <div class="col-lg-12 col-md-12 mt-3">
+                                                                        <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> Taluk</label>
+                                                                        {{form.taluk}}
+                                                                      </div>
+                                                                    <div class="col-lg-12 col-md-12 mt-3">
+                                                                        <label  class="form-label">Sakha No</label>
+                                                                        {{form.sakha_no}}
+                                                                      </div>
+                                                                    <div class="col-lg-12 col-md-12 mt-3">
+                                                                        <label class="form-label"><span style="color: red; font-weight: 500;">*</span> ID Proof</label>
+                                                                        {{form.id_proof}}
+                                                                    </div>
+                                                                    <div class="col-lg-12 col-md-12 mt-3">
+                                                                        <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> ID No</label>
+                                                                        {{form.id_proof_no}}
+                                                                      </div>
+                                                                        <div class="col-lg-12 col-md-12 mt-3">
+                                                                            <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> Contact Number</label>
+                                                                            {{form.mobile}}
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-lg-12 col-md-12 mt-3">
+                                                                            <label  class="form-label">Payment Details</label>
+                                                                            {{form.payment_details}}
+                                                                        </div>
+                                                                        <div class=" col-12 col-sm-12 col-lg-12 col-md-12 mt-3">
+                                                                            <div class="float-right">
+                                                                              <input type="submit" class=" btn btn-outline-warning"value="submit">
+                                                                            </div>
+                                        
+                                                                        </div>
+                                                                  </div>
+                                    
+                                                            </form>
+                                                       </div>
+                      
+                                                 </div>
+                      
+                                            </div>
+                                    </div>
+                                                            <!-- end  -->
+                            </div>
+                                                    
                         </div>
-                 
-           </div>
+                 </div>
+            </div>
+            <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6 col-xl-6 col-md-6">
+                                <div class="num_rows">
+                                     <div class="form-group"> 	<!--		Show Numbers Of Rows 		-->
+                                        <select class  ="form-control" name="state" id="maxRows">
+                                                                                
+                                                                                
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="70">70</option>
+                                            <option value="100">100</option>
+                                            <option value="5000">Show ALL Rows</option>
+                                        </select>
+                                                                              
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 col-xl-6 col-md-6">
+                                <div class="">
+                                    <div class="tb_search tb_search_taluk">
+                                        <input type="text" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="Search.." class="form-control">
+                                    </div>
+                                </div>
+                                                                        
+                            </div>
+                        </div>
+                   </div>
+                            <div style="margin-top: 30px;"></div>
+                            {% if user.is_authenticated %}
+                            <table class="table table-hover table-bordered table-responsive" id="table-id">
+                                    <thead>
+                                        <tr>
+                                          <th class="text-center">Name</th>
+                                            <th class="text-center">Mobile</th>
+                                            <th class="text-center">Address</th>
+                                            <th class="text-center">Place</th>
+                                            <th class="text-center">Taluk</th>
+                                            <th class="text-center">Sakha No</th>
+                                            <th class="text-center">ID Proof</th>
+                                            <th class="text-center">ID No</th>
+                                            <th class="text-center">Payment Details</th>
+                                          
+                                            <th class="text-center">Action</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      {% for i in membership_list %}
+                                        <tr>
+                                          
+                                            <th class="text-center">{{i.name}}</th>
+                                            <th class="text-center">{{i.mobile}}</th>
+                                            <th class="text-center">{{i.address}}</th>
+                                            <th class="text-center">{{i.place}}</th>
+                                            <th class="text-center">{{i.taluk}}</th>
+                                            <th class="text-center">{{i.sakha_no}}</th>
+                                            <th class="text-center">{{i.id_proof}}</th>
+                                            <th class="text-center">{{i.id_proof_no}}</th>
+                                            <th class="text-center">{{i.payment_details}}</th>
+                                            <td class="text-center">
+                                                <ul class="nav justify-content-center">
+                                                    <li class="nav-item ">
+                                                        <a class="nav-link text-success" href="{% url 'kvs_app:join_kvs_update' i.id %}"><i class="fas fa fa-edit me-3"></i>Edit</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-danger" href="{% url 'kvs_app:join_kvs_delete' i.id %}"><i class="fa fa-trash me-3"></i>Delete</a>
+                                                    </li> 
+                                                
+                                                </ul>
+                                                
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                {% else %}
+                                <table class="table table-hover table-borderless table-responsive" id="table-id">
+                                  <thead>
+                                      <tr>
+                                        <th class="">Name</th>
+                                          <th class="">Mobile</th>
+                                          <th class="">Place</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    {% for i in membership_list %}
+                                      <tr>
+                                        
+                                          <th class="">{{i.name}}</th>
+                                          <th class="">{{i.mobile}}</th>
+                                          <th class="">{{i.place}}</th>
+                  
+                                      </tr>
+                                      {% endfor %}
+                                  </tbody>
+                              </table>
+                              {% endif %}
+                        </div>
+                </div>
+            </div>
+      </div>          
+     </div>
 </section>
-<!-- end -->
+<!-- map -->
 
+<div class="mt-4"></div>
 <!-- footer -->
-
-{% for message in messages %}
-  {% if message.tags == 'success' %}
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script>
-    var m="{{message}}";
-    swal("Submitted Succesfully!",m,'success')
-    {% comment %} swal("Perfect!", m, "success") {% endcomment %}
-  </script>
-  {% endif %}
-{% endfor %}
-<footer >
+<footer>
   <div class="container-fluid">
          <div class="row p-2">
                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                          <div class="foot_about">
                                  <h4 class="foot_head">About Us</h4>
-                                 <p class="foot_para">Kerala Viswakarma Sabha ( KVS ) is committed to moving forward with a clear vision of uniting the community members so that they can become an organized force of  Viswakarma community in Kerala.</p>
+                                 <p class="foot_para">The Viswakarma (sometimes Viswakarma) community refer to themselves as 
+                                   the Viswabrahmin, and are sometimes described as an Indian caste</p>
                                    <ul class="nav">
                                          <li class="nav-item"><a class="nav-link"><i class="fa  fa-facebook"></i></a></li>
                                          <li class="nav-item"><a class="nav-link"><i class="fa fa-twitter"></i></a></li>
@@ -394,10 +399,10 @@
                     <h4 class="foot_head">Quick Link</h4>
                     
                       <ul class="quick_1">
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
+                          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                          <li class="nav-item"><a class="nav-link" href="executiveforum.html">Executive Forum</a></li>
+                          <li class="nav-item"><a class="nav-link" href="marriageregister.html" >Marriage Register</a></li>
+                          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                       </ul>
                   </div>
                 </div>
@@ -407,10 +412,9 @@
                       <address>KERALA VISWAKARMA SABHA (KVS)<br>Reg No: S.277/2003,Cherooty Rd<br>Kozhikode, Kerala </address>
                       <div class="social-link">
                                <ul class="quick_2">
-                               
-                                <li class="nav-item"><a class="nav-link" href="mailto:keralaviswakarmasabhas277@gmail.com"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tel:+917012958534"><i class="fa fa-phone me-2"></i>+91 7012958534</a></li>
-                                <li class="nav-item"><a class="nav-link" href="https://wa.link/cf15qb"><i class="fa fa-whatsapp me-2"></i>+91 9995487001</a></li>
+                                     <li class="nav-item"><a class="nav-link" href="mailto:keralaviswakarmasabhas277@gmail.com"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                     <li class="nav-item"><a class="nav-link" href="tel:+917012958534"><i class="fa fa-phone me-2"></i>(+91)7012958534</a></li>
+                                     <li class="nav-item"><a class="nav-link" href="tel:+919048675860"><i class="fa fa-phone me-2"></i>(+91)9048675860</a></li>
                                </ul>
                       </div>
                 
@@ -425,12 +429,22 @@
       <div class="container">
              <div class="row">
                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
-                       <p id="Copyright">Copyright © 2022  <a href="https://a2zalphabetsolutionz.com/"> A2Z Alphabetsolutionz</a>. All rights reserved. </p>  
+                       <p id="copyright">Copyright © 2022  <a href="https://a2zalphabetsolutionz.com/"> A2Z Alphabetsolutionz</a>. All rights reserved. </p>  
                    </div>
              </div>
       </div>
 </footer>
 <!-- end footer -->
+{% for message in messages %}
+  {% if message.tags == 'success' %}
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    var m="{{message}}";
+    {% comment %} swal("{{message}}",'','success') {% endcomment %}
+    swal("Perfect!", m, "success")
+  </script>
+  {% endif %}
+{% endfor %}
 <script>
   $(window).on('load', function() { // makes sure the whole site is loaded 
   $('#status').fadeOut(6000); // will first fade out the loading animation 
@@ -439,6 +453,158 @@
 })
 </script>
 <!-- js -->
+<script>
+    getPagination('#table-id');
+    $('#maxRows').trigger('change');
+    function getPagination (table){
+    
+        $('#maxRows').on('change',function(){
+          $('.pagination').html('');						// reset pagination div
+          var trnum = 0 ;									// reset tr counter 
+          var maxRows = parseInt($(this).val());			// get Max Rows from select option
+          
+          var totalRows = $(table+' tbody tr').length;		// numbers of rows 
+         $(table+' tr:gt(0)').each(function(){			// each TR in  table and not the header
+           trnum++;									// Start Counter 
+           if (trnum > maxRows ){						// if tr number gt maxRows
+             
+             $(this).hide();							// fade it out 
+           }if (trnum <= maxRows ){$(this).show();}// else fade in Important in case if it ..
+         });											//  was fade out to fade it in 
+         if (totalRows > maxRows){						// if tr total rows gt max rows option
+           var pagenum = Math.ceil(totalRows/maxRows);	// ceil total(rows/maxrows) to get ..  
+                                 //	numbers of pages 
+           for (var i = 1; i <= pagenum ;){			// for each page append pagination li 
+           $('.pagination').append('<li data-page="'+i+'">\
+                        <span>'+ i++ +'<span class="sr-only">(current)</span></span>\
+                      </li>').show();
+           }											// end for i 
+       
+           
+        } 												// end if row count > max rows
+        $('.pagination li:first-child').addClass('active'); // add active class to the first li 
+          
+          
+          //SHOWING ROWS NUMBER OUT OF TOTAL DEFAULT
+         showig_rows_count(maxRows, 1, totalRows);
+          //SHOWING ROWS NUMBER OUT OF TOTAL DEFAULT
+    
+          $('.pagination li').on('click',function(e){		// on click each page
+          e.preventDefault();
+          var pageNum = $(this).attr('data-page');	// get it's number
+          var trIndex = 0 ;							// reset tr counter
+          $('.pagination li').removeClass('active');	// remove active class from all li 
+          $(this).addClass('active');					// add active class to the clicked 
+          
+          
+          //SHOWING ROWS NUMBER OUT OF TOTAL
+         showig_rows_count(maxRows, pageNum, totalRows);
+          //SHOWING ROWS NUMBER OUT OF TOTAL
+          
+          
+          
+           $(table+' tr:gt(0)').each(function(){		// each tr in table not the header
+             trIndex++;								// tr index counter 
+             // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
+             if (trIndex > (maxRows*pageNum) || trIndex <= ((maxRows*pageNum)-maxRows)){
+               $(this).hide();		
+             }else {$(this).show();} 				//else fade in 
+           }); 										// end of for each tr in table
+            });										// end of on click pagination list
+      });
+                        // end of on select change 
+       
+                  // END OF PAGINATION 
+      
+    }	
+    
+    
+        
+    
+    // SI SETTING
+    $(function(){
+    // Just to append id number for each row  
+    default_index();
+            
+    });
+    
+    //ROWS SHOWING FUNCTION
+    function showig_rows_count(maxRows, pageNum, totalRows) {
+     //Default rows showing
+          var end_index = maxRows*pageNum;
+          var start_index = ((maxRows*pageNum)- maxRows) + parseFloat(1);
+          var string = 'Showing '+ start_index + ' to ' + end_index +' of ' + totalRows + ' entries';               
+          $('.rows_count').html(string);
+    }
+    
+    // CREATING INDEX
+    function default_index() {
+    $('table tr:eq(0)').prepend('<th> ID </th>')
+    
+            var id = 0;
+    
+            $('table tr:gt(0)').each(function(){	
+              id++
+              $(this).prepend('<td>'+id+'</td>');
+            });
+    }
+    
+    // All Table search script
+    function FilterkeyWord_all_table() {
+    
+    // Count td if you want to search on all table instead of specific column
+    
+    var count = $('.table').children('tbody').children('tr:first-child').children('td').length; 
+    
+          // Declare variables
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("search_input_all");
+    var input_value =     document.getElementById("search_input_all").value;
+          filter = input.value.toLowerCase();
+    if(input_value !=''){
+          table = document.getElementById("table-id");
+          tr = table.getElementsByTagName("tr");
+    
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 1; i < tr.length; i++) {
+            
+            var flag = 0;
+             
+            for(j = 0; j < count; j++){
+              td = tr[i].getElementsByTagName("td")[j];
+              if (td) {
+               
+                  var td_text = td.innerHTML;  
+                  if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
+                  //var td_text = td.innerHTML;  
+                  //td.innerHTML = 'shaban';
+                    flag = 1;
+                  } else {
+                    //DO NOTHING
+                  }
+                }
+              }
+            if(flag==1){
+                       tr[i].style.display = "";
+            }else {
+               tr[i].style.display = "none";
+            }
+          }
+      }else {
+        //RESET TABLE
+        $('#maxRows').trigger('change');
+      }
+    }
+    </script>
+    <script>
+      $("#search_input_all").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("tbody tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+      });
+  </script>
+<!-- js -->
 <script src="{% static 'js/bundle.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
@@ -446,11 +612,12 @@
 <script src="{% static 'js/bootstrap.esm.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 's/n2.min.js' %}"></script>
+<script src="{% static 'js/n2.min.js' %}"></script>
 <script src="{% static 'js/smartslider-backgroundanimation.min.js' %}"></script>
 <script src="{% static 'js/smartslider-frontend.min.js' %}"></script>
 <script src="{% static 'js/w-arrow-image.min.js' %}"></script>
 <script src="{% static 'js/ss-simple.min.js' %}"></script>
+
 
 </body>
 </html>

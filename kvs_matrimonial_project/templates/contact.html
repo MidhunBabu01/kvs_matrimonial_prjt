@@ -89,9 +89,9 @@
                   </div>
           </div>
     </div>
-    <nav class="navbar navbar-expand-sm bg-color navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Kerala Viswakarma Sabha (KVS)</a>
+        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Kerala Viswakarma Sabha (KVS)</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -128,19 +128,32 @@
               <li class="nav-item" id="nav-item">
                 <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
               </li>
-              <!-- <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-bs-toggle="dropdown">Services</a>
-                <ul class="dropdown-menu sub">
-                  <li><a class="dropdown-item text-white" href="#">Materimonial Services</a></li>
-                   <li><a class="dropdown-item text-white" href="#">Vivahapathrika</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Nichyakarar</a></li> 
-                  <li><a class="dropdown-item text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a></li>
-                  <li><a class="dropdown-item text-white" href="membershipform.html">Membership Form</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Recipts | Vouchers</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Mints Book</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Nalvazhi</a></li> 
-                </ul>
-              </li> -->
+              {% if user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join Kvs</a>
+                  <ul class="dropdown-menu sub">
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs' %}">Approved</a></li>
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs_pending' %}">Pendings</a></li>
+                  </ul>
+              </li>
+              {% else %}
+              <li class="nav-item" id="nav-item">
+                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join Kvs</a>
+              </li>
+              {% endif %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Services</a>
+                  <ul class="dropdown-menu sub">
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:health_insurance' %}">Health Insurance</a></li>
+                  
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:accident_insurance' %}">Accident Insurance</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:insurance_pending' %}">Pendings</a></li>
+                    {% endif %}
+    
+                  </ul>
+              </li>
+             
               <li class="nav-item" id="nav-item">
                 <a class="nav-link text-white" href="{% url 'kvs_app:contact' %}">Contact</a>
               </li>  
