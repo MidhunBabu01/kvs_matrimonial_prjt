@@ -460,13 +460,7 @@ div#n2-ss-5 .n-uc-VU1qjFbjQtxP-inner {
     scroll-behavior: auto;
     scrollbar-width: thin;
 }
-.table-bordered tr td,th{
-    border:1px solid #000 !important;
-}
-.tbody-health th
-{
-    font-weight:400 ;
-}
+
 #col-health
 {
     margin-left: 326px;
