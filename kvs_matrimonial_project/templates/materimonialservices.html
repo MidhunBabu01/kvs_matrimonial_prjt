@@ -118,7 +118,7 @@
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join Kvs</a>
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join KVS</a>
                   <ul class="dropdown-menu sub">
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs' %}">Approved</a></li>
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs_pending' %}">Pendings</a></li>
@@ -126,7 +126,7 @@
               </li>
               {% else %}
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join Kvs</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join KVS</a>
               </li>
               {% endif %}
               <li class="nav-item dropdown">
