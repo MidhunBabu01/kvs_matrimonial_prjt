@@ -143,9 +143,8 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Services</a>
                   <ul class="dropdown-menu sub">
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:health_insurance' %}">Health Insurance</a></li>
-                  
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:accident_insurance' %}">Accident Insurance</a></li>
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:health_insurance' %}">Health Insurance</a></li>
                     {% if user.is_authenticated %}
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:insurance_pending' %}">Pendings</a></li>
                     {% endif %}
