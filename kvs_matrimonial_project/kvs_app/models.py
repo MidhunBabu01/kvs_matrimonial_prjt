@@ -187,7 +187,7 @@ class Join_Kvs(models.Model):
     address = models.TextField(blank=False,null=False)
     place = models.CharField(max_length=25,blank=False,null=False)
     taluk = models.CharField(max_length=25,blank=False,null=False)
-    sakha_no = models.CharField(max_length=25,default='New Member')
+    sakha_no = models.CharField(max_length=25,blank=True,null=True)
     id_proof = models.ForeignKey(Id_details_choices,on_delete=models.CASCADE,blank=False,null=False)
     id_proof_no = models.CharField(max_length=25,blank=False,null=False)
     payment_details = models.ForeignKey(Payment_details_choices,on_delete=models.CASCADE,blank=True,null=True)
