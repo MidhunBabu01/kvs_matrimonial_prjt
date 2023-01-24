@@ -41,7 +41,12 @@
 <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'css/fonticons.css' %}" type="text/css" >
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<style>
+    .img-fluid{
+      width:80px;
+      height:80px;
+    }
+</style>
 </head>
 <body class="materimonialservices">
   <!-- <div class="container">
@@ -376,7 +381,7 @@
                     
                       </div>
                       <div class="modal-body">
-                              <form method="post">
+                              <form method="post" enctype = 'multipart/form-data'>
                                 {% csrf_token %}
                                   <div class="row">
                                       <div class="col-lg-12 col-md-12 mt-3">
@@ -391,6 +396,10 @@
                                           {% comment %} <input type="text" class="form-control" name="place" placeholder="Enter place"> {% endcomment %}
                                           {{form.place}}
                                       </div>
+                                      <div class="col-lg-12 col-md-12 mt-3">
+                                        {% comment %} <input type="text" class="form-control" name="place" placeholder="Enter place"> {% endcomment %}
+                                        {{form.photo}}
+                                    </div>
                                       <div class=" col-12 col-sm-12 col-lg-12 col-md-12 mt-3">
                                           <div class="float-right">
                                               <input type="submit" class=" btn btn-warning"value="submit">
@@ -452,6 +461,7 @@
                                                           <tr>
                                                               <th class="text-center">Name</th>
                                                               <th class="text-center">Mobile Number</th>
+                                                              <th class="text-center">Photo</th>
                                                               <th class="text-center">Place</th>
                                                               {% if user.is_authenticated %}
                                                               <th class="text-center">Action</th>
@@ -463,6 +473,11 @@
                                                           <tr>
                                                               <td class="text-center">{{i.name}}</td>
                                                               <td class="text-center">{{i.phone}}</td>
+                                                              {% if i.photo %}
+                                                              <td class="text-center"><img src="{{i.photo.url}}" class="img-fluid"></td>
+                                                              {% else %}
+                                                              <td class="text-center">None</td>
+                                                              {% endif %}
                                                               <td class="text-center">{{i.place}}</td>
                                                               {% if user.is_authenticated %}
                                                               <td class="text-center">

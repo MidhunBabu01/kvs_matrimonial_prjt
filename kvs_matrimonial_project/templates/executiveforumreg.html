@@ -193,29 +193,33 @@
                  
                         <div class="card" id="card-statecommite">
                               <div class="card-body">
-                                  <form method="post">
-                                    {% csrf_token %}
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 mt-3">
-                                                {% comment %} <input type="text" class="form-control" name="name" placeholder="Enter Name"> {% endcomment %}
-                                                {{form.name}}
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 mt-3">
-                                                {% comment %} <input type="text" class="form-control" name="mobile" placeholder="Enter MobileNumber"> {% endcomment %}
-                                                {{form.phone}}
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 mt-3">
-                                                {% comment %} <input type="text" class="form-control" name="place" placeholder="Enter place"> {% endcomment %}
-                                                {{form.place}}
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 mt-3">
-                                                <div class="float-right">
-                                                    <input type="submit" class=" btn btn-warning"value="submit">
-                                                </div>
-                                              
-                                            </div>
+                                <form method="post" enctype = 'multipart/form-data'>
+                                  {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 mt-3">
+                                            {% comment %} <input type="text" class="form-control" name="name" placeholder="Enter Name"> {% endcomment %}
+                                            {{form.name}}
                                         </div>
-                                  
+                                        <div class="col-lg-12 col-md-12 mt-3">
+                                            {% comment %} <input type="text" class="form-control" name="mobile" placeholder="Enter MobileNumber"> {% endcomment %}
+                                            {{form.phone}}
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 mt-3">
+                                            {% comment %} <input type="text" class="form-control" name="place" placeholder="Enter place"> {% endcomment %}
+                                            {{form.place}}
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 mt-3">
+                                          {% comment %} <input type="text" class="form-control" name="place" placeholder="Enter place"> {% endcomment %}
+                                          {{form.photo}}
+                                      </div>
+                                        <div class=" col-12 col-sm-12 col-lg-12 col-md-12 mt-3">
+                                            <div class="float-right">
+                                                <input type="submit" class=" btn btn-warning"value="submit">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
                                 </form>
                               </div>
                         </div>

@@ -26,7 +26,7 @@ def index(request):
 def executiveforum(request):
     state_commite = StateCommitie.objects.all().order_by('-id')
     if request.method == 'POST':
-        form = StateCommiteForm(request.POST)
+        form = StateCommiteForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return redirect('kvs_app:executiveforum')
@@ -38,7 +38,7 @@ def executiveforum(request):
 def executiveforum_update(request,update_id):
     update = StateCommitie.objects.filter(id=update_id).first()
     if request.method == 'POST':
-        form = StateCommiteForm(request.POST,instance=update)
+        form = StateCommiteForm(request.POST,request.FILES,instance=update)
         if form.is_valid():
             form.save()
             return redirect('kvs_app:executiveforum')

@@ -11,7 +11,8 @@ class StateCommiteForm(forms.ModelForm):
         widgets = {
             'name' : forms.TextInput(attrs={'class':'form-control','placeholder':'Name'}),
             'phone' : forms.NumberInput(attrs={'class':'form-control','placeholder':'Mobile'}),
-            'place' : forms.TextInput(attrs={'class':'form-control','placeholder':'Place'})
+            'place' : forms.TextInput(attrs={'class':'form-control','placeholder':'Place'}),
+            'photo' : forms.ClearableFileInput(attrs={'class':'form-control'}),
         }
 
 
@@ -167,13 +168,18 @@ class Join_Kvs_Add_Form(forms.ModelForm):
         exclude = ['status']
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
+            'sex': forms.Select(attrs={'class':'form-control'}),
+            'age': forms.NumberInput(attrs={'class':'form-control'}),
             'mobile': forms.NumberInput(attrs={'class':'form-control'}),
             'address': forms.Textarea(attrs={'class':'form-control','rows':4}),
             'place': forms.TextInput(attrs={'class':'form-control'}),
             'taluk': forms.TextInput(attrs={'class':'form-control'}),
+            'district': forms.Select(attrs={'class':'form-control'}),
+            'union': forms.Select(attrs={'class':'form-control'}),
             'sakha_no': forms.TextInput(attrs={'class':'form-control'}),
             'id_proof': forms.Select(attrs={'class':'form-control'}),
             'id_proof_no': forms.TextInput(attrs={'class':'form-control'}),
+            'membership_no': forms.TextInput(attrs={'class':'form-control'}),
             'payment_details': forms.Select(attrs={'class':'form-control'}),
 
         }
@@ -185,14 +191,19 @@ class Join_Kvs_Admin_Update(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
+            'sex': forms.Select(attrs={'class':'form-control'}),
+            'age': forms.NumberInput(attrs={'class':'form-control'}),
             'mobile': forms.NumberInput(attrs={'class':'form-control'}),
             'address': forms.Textarea(attrs={'class':'form-control','rows':4}),
             'place': forms.TextInput(attrs={'class':'form-control'}),
             'taluk': forms.TextInput(attrs={'class':'form-control'}),
+            'district': forms.Select(attrs={'class':'form-control'}),
+            'union': forms.Select(attrs={'class':'form-control'}),
             'sakha_no': forms.TextInput(attrs={'class':'form-control'}),
             'id_proof': forms.Select(attrs={'class':'form-control'}),
             'id_proof_no': forms.TextInput(attrs={'class':'form-control'}),
-            'payment_details': forms.Select(attrs={'class':'form-control'}),
+            'membership_no': forms.TextInput(attrs={'class':'form-control'}),
             'status': forms.Select(attrs={'class':'form-control'}),
+            'payment_details': forms.Select(attrs={'class':'form-control'}),
 
         }

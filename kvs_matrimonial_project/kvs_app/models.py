@@ -10,6 +10,7 @@ class StateCommitie(models.Model):
     name = models.CharField(max_length=50,blank=False,null=False)
     phone = models.CharField(max_length=10,blank=False,null=False)
     place = models.CharField(max_length=250,blank=False,null=False)
+    photo = models.ImageField(upload_to='state commitie', blank=True,null=True)
 
 
 
@@ -177,16 +178,39 @@ class Services(models.Model):
     )
     status = models.CharField(max_length=25,choices=STATUS_CHOISES,default='Pending')
 
-
+class Sex_Choices(models.Model):
+    name = models.CharField(max_length=10,blank=True,null=True)
+    def __str__(self):
+        return self.name
 
 class Join_Kvs(models.Model):
     class Meta:
         verbose_name_plural = 'Join Kvs'
     name = models.CharField(max_length=25,blank=False,null=False)
+    sex = models.ForeignKey(Sex_Choices,on_delete=models.CASCADE,blank=True,null=True)
+    age = models.IntegerField(blank=True,null=True)
     mobile = models.CharField(max_length=10,blank=False,null=False)
     address = models.TextField(blank=False,null=False)
     place = models.CharField(max_length=25,blank=False,null=False)
     taluk = models.CharField(max_length=25,blank=False,null=False)
+    DISTRICT_CHOICES = (
+        ('Trivandrum','Trivandrum'),
+        ('Kollam','Kollam'),
+        ('Pathanamthitta','Pathanamthitta'),
+        ('Alappuzha','Alappuzha'),
+        ('Kottayam','Kottayam'),
+        ('Idukki','Idukki'),
+        ('Ernakulam','Ernakulam'),
+        ('Thrissur','Thrissur'),
+        ('Palakkad','Palakkad'),
+        ('Malappuram','Malappuram'),
+        ('Kozhikode','Kozhikode'),
+        ('Wayanad','Wayanad'),
+        ('Kannur','Kannur'),
+        ('Kasaragod','Kasaragod'),
+    )
+    district = models.CharField(max_length=50,choices=DISTRICT_CHOICES,blank=True,null=True)
+    union = models.ForeignKey(Taluk_choices,on_delete=models.CASCADE,blank=True,null=True)
     sakha_no = models.CharField(max_length=25,blank=True,null=True)
     id_proof = models.ForeignKey(Id_details_choices,on_delete=models.CASCADE,blank=False,null=False)
     id_proof_no = models.CharField(max_length=25,blank=False,null=False)
@@ -195,6 +219,7 @@ class Join_Kvs(models.Model):
         ('Pending','Pending'),
         ('Approved','Approved')
     )
+    membership_no = models.CharField(max_length=50,blank=True,null=True)
     status = models.CharField(max_length=25,choices=STATUS_CHOISES,default='Pending')
 
 
