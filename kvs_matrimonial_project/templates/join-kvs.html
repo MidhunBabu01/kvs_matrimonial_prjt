@@ -231,10 +231,7 @@
                                                                         <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> Place</label>
                                                                         {{form.place}}
                                                                       </div>
-                                                                    <div class="col-lg-12 col-md-12 mt-3">
-                                                                        <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> Taluk</label>
-                                                                        {{form.taluk}}
-                                                                      </div>
+                                                                    
                                                                     <div class="col-lg-12 col-md-12 mt-3">
                                                                       <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> District</label>
                                                                         {{form.district}}
@@ -328,15 +325,9 @@
                                     <thead>
                                         <tr>
                                           <th class="text-center">Name</th>
-                                            <th class="text-center">Mobile</th>
-                                            <th class="text-center">Address</th>
+                                            <th class="text-center">District</th>
+                                            <th class="text-center">Union</th>
                                             <th class="text-center">Place</th>
-                                            <th class="text-center">Taluk</th>
-                                            <th class="text-center">Sakha No</th>
-                                            <th class="text-center">ID Proof</th>
-                                            <th class="text-center">ID No</th>
-                                            <th class="text-center">Payment Details</th>
-                                          
                                             <th class="text-center">Action</th>
                                             
                                         </tr>
@@ -344,16 +335,10 @@
                                     <tbody>
                                       {% for i in membership_list %}
                                         <tr>
-                                          
-                                            <th class="text-center">{{i.name}}</th>
-                                            <th class="text-center">{{i.mobile}}</th>
-                                            <th class="text-center">{{i.address}}</th>
+                                            <th class="text-center"><a href="{% url "kvs_app:join_kvs_profile_view" i.id %}">{{i.name}}</th>
+                                            <th class="text-center">{{i.district}}</th>
+                                            <th class="text-center">{{i.union}}</th>
                                             <th class="text-center">{{i.place}}</th>
-                                            <th class="text-center">{{i.taluk}}</th>
-                                            <th class="text-center">{{i.sakha_no}}</th>
-                                            <th class="text-center">{{i.id_proof}}</th>
-                                            <th class="text-center">{{i.id_proof_no}}</th>
-                                            <th class="text-center">{{i.payment_details}}</th>
                                             <td class="text-center">
                                                 <ul class="nav justify-content-center">
                                                     <li class="nav-item ">

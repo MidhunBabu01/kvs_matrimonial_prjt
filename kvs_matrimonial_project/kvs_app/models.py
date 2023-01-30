@@ -16,7 +16,7 @@ class StateCommitie(models.Model):
 
 class Taluk_choices(models.Model):
     class Meta:
-        verbose_name_plural = 'Taluk choices'
+        verbose_name_plural = 'Add Union'
     def __str__(self):
         return self.name
     name = models.CharField(max_length=50)
@@ -42,7 +42,7 @@ class Sakha(models.Model):
 
 class Gender_choices(models.Model):
     class Meta:
-        verbose_name_plural = 'Gender'
+        verbose_name_plural = 'Add Gender'
     def __str__(self):
         return self.name
     name = models.CharField(max_length=25)
@@ -51,7 +51,7 @@ class Gender_choices(models.Model):
 
 class SubCaste_choices(models.Model):
     class Meta:
-        verbose_name_plural = 'Sub Caste'
+        verbose_name_plural = 'Add Subcaste'
     def __str__(self):
         return self.name
     name = models.CharField(max_length=25)
@@ -59,6 +59,8 @@ class SubCaste_choices(models.Model):
 
 
 class Star(models.Model):
+    class Meta:
+        verbose_name_plural = 'Add Star'
     def __str__(self):
         return self.name
     name = models.CharField(max_length=25)
@@ -134,7 +136,7 @@ class Matrimonial(models.Model):
 
 class Insurence_category(models.Model):
     class Meta:
-        verbose_name_plural = 'Insurence category'
+        verbose_name_plural = 'Add Insurence category'
     def __str__(self):
         return self.name
     name = models.CharField(max_length=50)
@@ -142,7 +144,7 @@ class Insurence_category(models.Model):
 
 class Id_details_choices(models.Model):
     class Meta:
-        verbose_name_plural = 'Id card choices'
+        verbose_name_plural = 'Add Id card choices'
     def __str__(self):
         return self.name
     name = models.CharField(max_length=50)
@@ -150,7 +152,7 @@ class Id_details_choices(models.Model):
 
 class Payment_details_choices(models.Model):
     class Meta:
-        verbose_name_plural = 'Payment Details choices'
+        verbose_name_plural = 'Add Payment Details choices'
     def __str__(self):
         return self.name
     name = models.CharField(max_length=50)
@@ -179,6 +181,8 @@ class Services(models.Model):
     status = models.CharField(max_length=25,choices=STATUS_CHOISES,default='Pending')
 
 class Sex_Choices(models.Model):
+    class Meta:
+        verbose_name_plural = 'Add Sex'
     name = models.CharField(max_length=10,blank=True,null=True)
     def __str__(self):
         return self.name
@@ -192,7 +196,7 @@ class Join_Kvs(models.Model):
     mobile = models.CharField(max_length=10,blank=False,null=False)
     address = models.TextField(blank=False,null=False)
     place = models.CharField(max_length=25,blank=False,null=False)
-    taluk = models.CharField(max_length=25,blank=False,null=False)
+    # taluk = models.CharField(max_length=25,blank=False,null=False)
     DISTRICT_CHOICES = (
         ('Trivandrum','Trivandrum'),
         ('Kollam','Kollam'),

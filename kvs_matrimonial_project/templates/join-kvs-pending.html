@@ -308,47 +308,35 @@
                             {% if user.is_authenticated %}
                             <table class="table table-hover table-bordered table-responsive" id="table-id">
                                     <thead>
-                                        <tr>
-                                          <th class="text-center">Name</th>
-                                            <th class="text-center">Mobile</th>
-                                            <th class="text-center">Address</th>
-                                            <th class="text-center">Place</th>
-                                            <th class="text-center">Taluk</th>
-                                            <th class="text-center">Sakha No</th>
-                                            <th class="text-center">ID Proof</th>
-                                            <th class="text-center">ID No</th>
-                                            <th class="text-center">Payment Details</th>
+                                      <tr>
+                                        <th class="text-center">Name</th>
+                                          <th class="text-center">District</th>
+                                          <th class="text-center">Union</th>
+                                          <th class="text-center">Place</th>
+                                          <th class="text-center">Action</th>
                                           
-                                            <th class="text-center">Action</th>
-                                            
-                                        </tr>
+                                      </tr>
                                     </thead>
                                     <tbody>
                                       {% for i in pending %}
-                                        <tr>
-                                          
-                                            <th class="text-center">{{i.name}}</th>
-                                            <th class="text-center">{{i.mobile}}</th>
-                                            <th class="text-center">{{i.address}}</th>
-                                            <th class="text-center">{{i.place}}</th>
-                                            <th class="text-center">{{i.taluk}}</th>
-                                            <th class="text-center">{{i.sakha_no}}</th>
-                                            <th class="text-center">{{i.id_proof}}</th>
-                                            <th class="text-center">{{i.id_proof_no}}</th>
-                                            <th class="text-center">{{i.payment_details}}</th>
-                                            <td class="text-center">
-                                                <ul class="nav justify-content-center">
-                                                    <li class="nav-item ">
-                                                        <a class="nav-link text-success" href="{% url 'kvs_app:join_kvs_update' i.id %}"><i class="fas fa fa-edit me-3"></i>Edit</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link text-danger" href="{% url 'kvs_app:join_kvs_delete' i.id %}"><i class="fa fa-trash me-3"></i>Delete</a>
-                                                    </li> 
-                                                
-                                                </ul>
-                                                
-                                            </td>
-                                        </tr>
+                                      <tr>
+                                        <th class="text-center"><a href="{% url "kvs_app:join_kvs_profile_view" i.id %}">{{i.name}}</th>
+                                        <th class="text-center">{{i.district}}</th>
+                                        <th class="text-center">{{i.union}}</th>
+                                        <th class="text-center">{{i.place}}</th>
+                                        <td class="text-center">
+                                            <ul class="nav justify-content-center">
+                                                <li class="nav-item ">
+                                                    <a class="nav-link text-success" href="{% url 'kvs_app:join_kvs_update' i.id %}"><i class="fas fa fa-edit me-3"></i>Edit</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-danger" href="{% url 'kvs_app:join_kvs_delete' i.id %}"><i class="fa fa-trash me-3"></i>Delete</a>
+                                                </li> 
+                                            
+                                            </ul>
+                                            
+                                        </td>
+                                    </tr>
                                         {% endfor %}
                                     </tbody>
                                 </table>

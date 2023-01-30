@@ -33,6 +33,8 @@ urlpatterns = [
     path('join-kvs', views.join_kvs,name='join_kvs'),
     path('join-kvs-delete/<int:dlt_id>', views.join_kvs_delete,name='join_kvs_delete'),
     path('join-kvs-update/<int:update_id>', views.join_kvs_update,name='join_kvs_update'),
+    path('join-kvs-profile-view/<int:join_kvs_id>', views.join_kvs_profile_view,name='join_kvs_profile_view'),
+    
     path('join-kvs-pending', views.join_kvs_pending,name='join_kvs_pending'),
     
     

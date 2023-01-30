@@ -196,7 +196,6 @@ class Join_Kvs_Admin_Update(forms.ModelForm):
             'mobile': forms.NumberInput(attrs={'class':'form-control'}),
             'address': forms.Textarea(attrs={'class':'form-control','rows':4}),
             'place': forms.TextInput(attrs={'class':'form-control'}),
-            'taluk': forms.TextInput(attrs={'class':'form-control'}),
             'district': forms.Select(attrs={'class':'form-control'}),
             'union': forms.Select(attrs={'class':'form-control'}),
             'sakha_no': forms.TextInput(attrs={'class':'form-control'}),

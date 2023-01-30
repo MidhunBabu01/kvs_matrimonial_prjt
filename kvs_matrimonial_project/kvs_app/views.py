@@ -301,6 +301,11 @@ def join_kvs_update(request,update_id):
     return render(request,'join-kvs-update.html',{'form':form})
 
 
+def join_kvs_profile_view(request,join_kvs_id):
+    kvs = Join_Kvs.objects.filter(id=join_kvs_id)
+    return render (request,'join-kvs-profile-view.html',{'kvs':kvs})
+
+
 
 
 def join_kvs_pending(request):
@@ -314,10 +319,6 @@ def join_kvs_delete(request,dlt_id):
     dlt.delete()
     messages.success(request,'Succesfully Deleted')
     return redirect('kvs_app:join_kvs')
-
-
-
-
 
 def contact(request):
     if request.method == 'POST':
