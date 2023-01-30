@@ -206,6 +206,7 @@ class Join_Kvs(models.Model):
     name = models.CharField(max_length=25,blank=False,null=False)
     sex = models.ForeignKey(Sex_Choices,on_delete=models.CASCADE,blank=True,null=True)
     age = models.IntegerField(blank=True,null=True)
+    dob = models.DateField(blank=True,null=True)
     mobile = models.CharField(max_length=10,blank=False,null=False)
     address = models.TextField(blank=False,null=False)
     place = models.CharField(max_length=25,blank=False,null=False)

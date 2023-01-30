@@ -343,16 +343,13 @@ def join_kvs(request):
         membership_list = Join_Kvs.objects.filter(status='Approved').order_by('-id')
         return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
     elif request.user.is_staff:
-        if request.user.extendedusermodel.district == 'Trivandrum':
-            membership_list = Join_Kvs.objects.filter(status='Approved',district='Trivandrum').order_by('-id')
-            return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
-        else:
-            pass
+        district = request.user.extendedusermodel.district
+        membership_list = Join_Kvs.objects.filter(status='Approved',district=district).order_by('-id')
+        return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
     else:
         membership_list = Join_Kvs.objects.filter(status='Approved').order_by('-id')
         return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
     
-    return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
 
 
     
@@ -380,7 +377,11 @@ def join_kvs_profile_view(request,join_kvs_id):
 
 
 def join_kvs_pending(request):
-    pending = Join_Kvs.objects.filter(status = 'Pending').order_by('-id')
+    if request.user.is_superuser:
+        pending = Join_Kvs.objects.filter(status = 'Pending').order_by('-id')
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        pending = Join_Kvs.objects.filter(status = 'Pending',district = district).order_by('-id')
     return render(request,'join-kvs-pending.html',{'pending':pending})
 
 

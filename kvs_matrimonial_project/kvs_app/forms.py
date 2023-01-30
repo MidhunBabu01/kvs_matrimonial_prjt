@@ -170,6 +170,7 @@ class Join_Kvs_Add_Form(forms.ModelForm):
             'name': forms.TextInput(attrs={'class':'form-control'}),
             'sex': forms.Select(attrs={'class':'form-control'}),
             'age': forms.NumberInput(attrs={'class':'form-control'}),
+            'dob' : forms.DateInput(attrs={'class':'form-control','type':'date'}),
             'mobile': forms.NumberInput(attrs={'class':'form-control'}),
             'address': forms.Textarea(attrs={'class':'form-control','rows':4}),
             'place': forms.TextInput(attrs={'class':'form-control'}),
@@ -189,11 +190,12 @@ class Join_Kvs_Admin_Update(forms.ModelForm):
     class Meta:
         model = Join_Kvs
         fields = '__all__'
-        exclude = ['added_by','staff_name']
+        exclude = ['added_by']
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
             'sex': forms.Select(attrs={'class':'form-control'}),
             'age': forms.NumberInput(attrs={'class':'form-control'}),
+            'dob' : forms.DateInput(attrs={'class':'form-control','type':'date'}),
             'mobile': forms.NumberInput(attrs={'class':'form-control'}),
             'address': forms.Textarea(attrs={'class':'form-control','rows':4}),
             'place': forms.TextInput(attrs={'class':'form-control'}),
