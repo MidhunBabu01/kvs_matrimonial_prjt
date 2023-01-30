@@ -10,13 +10,14 @@ import re
 now = datetime.datetime.now()
 from django.http.response import JsonResponse
 from django.db.models import Q
-
+from django.contrib import messages
 # MAIL SENDING SECTION
 from django.core.mail import  EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
+import xlwt
 
 # Create your views here.
 def index(request):
@@ -342,8 +343,113 @@ def contact(request):
     return render(request,'contact.html')
 
 
+# REPORT SECTION (EXCEL)
+
+def join_kvs_excel_report(request):
+    # content-type of response
+    response = HttpResponse(content_type='application/ms-excel')
+
+    #decide file name
+    response['Content-Disposition'] = 'attachment; filename="Join KVS Report.xls"'
+
+    #creating workbook
+    wb = xlwt.Workbook(encoding='utf-8')
+
+    #adding sheet
+    ws = wb.add_sheet("sheet1")
+
+    # Sheet header, first row
+    row_num = 0
+
+    font_style = xlwt.XFStyle()
+    # headers are bold
+    font_style.font.bold = True
+    #column header names, you can use your own headers here
+    columns = ['Name','Sex', 'Age', 'Mobile', 'Address','Place','District','Union','Sakha No','ID Proof','ID Proof No','Payment Details','Membership No','Status']
+
+    #write column headers in sheet
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+    
+    data = Join_Kvs.objects.all().order_by('-id')
+    # for i in data:
+    #     print(i.state)
+    
+    # data1 = Leads.objects.filter(lead_source='Youtube').order_by('-date')
+    # nonee = 'None'
+    for my_row in data:
+        row_num = row_num + 1
+        ws.write(row_num, 0, my_row.name, font_style)
+        if my_row.sex == None:
+            ws.write(row_num, 1, 'None', font_style)
+        else:
+            ws.write(row_num, 1, my_row.sex.name, font_style)
+        ws.write(row_num, 2, my_row.age, font_style)
+        ws.write(row_num, 3, my_row.mobile, font_style)
+        ws.write(row_num, 4, my_row.address, font_style)
+        ws.write(row_num, 5, my_row.place, font_style)
+        ws.write(row_num, 6, my_row.district, font_style)
+        if my_row.union == None:
+            ws.write(row_num, 7, 'None', font_style)
+        else:
+            ws.write(row_num, 7, my_row.union.name, font_style)
+        ws.write(row_num, 8, my_row.sakha_no, font_style)
+        if my_row.id_proof == None:
+            ws.write(row_num, 9, 'None', font_style)
+        else:
+            ws.write(row_num, 9, my_row.id_proof.name, font_style)
+        ws.write(row_num, 10, my_row.id_proof_no, font_style)
+        if my_row.payment_details == None:
+            ws.write(row_num, 11, 'None', font_style)
+        else:
+            ws.write(row_num, 11, my_row.payment_details.name, font_style)
+        ws.write(row_num, 12, my_row.membership_no, font_style)
+        ws.write(row_num, 13, my_row.status, font_style)
+        
+    wb.save(response)
+     
+    return response
+
+
+
 
 # ACCOUNT SECTION
+
+def admin_register(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password1 = request.POST.get("password1")
+        password2 = request.POST.get("password2")  
+        if password1 == password2:
+            if User.objects.filter(username=username).exists():
+                print("username alredy exists")
+                messages.info(request,"username already exist")
+                return redirect("kvs_app:admin_register")
+            elif User.objects.filter(email=email).exists():
+                print("email alredy exists")
+                messages.info(request,"email already registered")
+                return redirect("kvs_app:admin_register")
+            else:
+                user = User.objects.create_user(username=username,email=email,password=password1,is_superuser=True,is_active=True,is_staff=True)
+                user.save();
+                print('user created')
+                # # MESSAGE SENDING CODE
+                # template = render_to_string('admin-register-email.html',{'emp_name':username})
+                # email = EmailMessage(
+                #     'Account Registration', #subject
+                #     template, #body
+                #     settings.EMAIL_HOST_USER, #sender mail id
+                #     [email] #recever mail id
+                # )
+                # email.fail_silently = False
+                # email.send()
+                return redirect('kvs_app:login')
+        else:
+            print('Password Not Matched')
+            messages.info(request,"Incorrect Password")
+            return redirect('kvs_app:admin_register')    
+    return render(request,"admin-register.html")
 
 def login(request):
     if 'username' in request.session:
@@ -373,3 +479,13 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('kvs_app:index')
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sex_Choices,StateCommitie,Taluk_choices,Taluk,Sakha,Matrimonial,SubCaste_choices,Gender_choices,Star,Insurence_category,Id_details_choices,Payment_details_choices,Services,Join_Kvs
+from .models import ExtendedUserModel, Sex_Choices,StateCommitie,Taluk_choices,Taluk,Sakha,Matrimonial,SubCaste_choices,Gender_choices,Star,Insurence_category,Id_details_choices,Payment_details_choices,Services,Join_Kvs
 
 # Register your models here.
 admin.site.register(StateCommitie)
@@ -16,6 +16,7 @@ admin.site.register(Payment_details_choices)
 admin.site.register(Services)
 admin.site.register(Join_Kvs)
 admin.site.register(Sex_Choices)
+admin.site.register(ExtendedUserModel)
 
 
 

@@ -34,14 +34,18 @@ urlpatterns = [
     path('join-kvs-delete/<int:dlt_id>', views.join_kvs_delete,name='join_kvs_delete'),
     path('join-kvs-update/<int:update_id>', views.join_kvs_update,name='join_kvs_update'),
     path('join-kvs-profile-view/<int:join_kvs_id>', views.join_kvs_profile_view,name='join_kvs_profile_view'),
-    
     path('join-kvs-pending', views.join_kvs_pending,name='join_kvs_pending'),
+    
+    # EXCEL REPORT
+    path('join-kvs-excel-report', views.join_kvs_excel_report,name='join_kvs_excel_report'),
     
     
     
     # ACCOUNT SECTION
-    path('logout', views.logout,name='logout'),
+    
+    path('admin-register', views.admin_register,name='admin_register'),    
     path('login', views.login,name='login'),
+    path('logout', views.logout,name='logout'),
     
     
 
