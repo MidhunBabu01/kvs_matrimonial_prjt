@@ -7,16 +7,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class ExtendedUserModel(models.Model):
+    def __str__(self):
+        return self.user.username
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     district = models.CharField(max_length=50)
-
-
-
-
-
-
-
-
 
 
 
@@ -208,6 +202,7 @@ class Sex_Choices(models.Model):
 class Join_Kvs(models.Model):
     class Meta:
         verbose_name_plural = 'Join Kvs'
+    added_by = models.ForeignKey(User,on_delete=models.CASCADE,blank=True,null=True)
     name = models.CharField(max_length=25,blank=False,null=False)
     sex = models.ForeignKey(Sex_Choices,on_delete=models.CASCADE,blank=True,null=True)
     age = models.IntegerField(blank=True,null=True)

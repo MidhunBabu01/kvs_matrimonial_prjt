@@ -43,7 +43,9 @@ urlpatterns = [
     
     # ACCOUNT SECTION
     
-    path('admin-register', views.admin_register,name='admin_register'),    
+    path('super-admin-register', views.super_admin_register,name='super_admin_register'),
+    path('district-admin-register', views.district_admin_register,name='district_admin_register'),
+     
     path('login', views.login,name='login'),
     path('logout', views.logout,name='logout'),
     

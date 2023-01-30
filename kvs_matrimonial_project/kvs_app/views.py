@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.models import User,auth
 from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm,MatrimonialUpdateForm,Services_Add_Form,Services_Admin_Edit_Form,Join_Kvs_Add_Form,Join_Kvs_Admin_Update
-from .models import Join_Kvs, Matrimonial, Sakha, Services, StateCommitie,Taluk
+from .models import ExtendedUserModel, Join_Kvs, Matrimonial, Sakha, Services, StateCommitie,Taluk
 import re
 now = datetime.datetime.now()
 from django.http.response import JsonResponse
@@ -275,17 +275,87 @@ def insurance_update(request,update_id):
 
 
 
+# def join_kvs(request):
+    
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = Join_Kvs_Add_Form(request.POST)
+            if form.is_valid():
+                data = form.save(commit=False)
+                staff_name = User.objects.get(username=request.user.username)
+                data.added_by = staff_name
+                data.save()
+                messages.success(request,'Membership will be Approved only after verification of Admin')
+                return redirect('kvs_app:join_kvs')
+        else:
+            form = Join_Kvs_Add_Form()
+        membership_list = Join_Kvs.objects.filter(status='Approved').order_by('-id')
+        return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
+    elif request.user.is_staff:
+        if request.method == 'POST':
+            form = Join_Kvs_Add_Form(request.POST)
+            if form.is_valid():
+                data = form.save(commit=False)
+                staff_name = User.objects.get(username=request.user.username)
+                data.added_by = staff_name
+                data.save()
+                messages.success(request,'Membership will be Approved only after verification of Admin')
+                return redirect('kvs_app:join_kvs')
+        else:
+            form = Join_Kvs_Add_Form()
+        if request.user.extendedusermodel.district == 'Trivandrum':
+            membership_list = Join_Kvs.objects.filter(status='Approved',district = 'Trivandrum').order_by('-id')
+            return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
+
+    else:
+        if request.method == 'POST':
+            form = Join_Kvs_Add_Form(request.POST)
+            if form.is_valid():
+                data = form.save(commit=False)
+                # staff_name = User.objects.get(username=request.user.username)
+                # data.added_by = staff_name
+                data.save()
+                messages.success(request,'Membership will be Approved only after verification of Admin')
+                return redirect('kvs_app:join_kvs')
+        else:
+            form = Join_Kvs_Add_Form()
+        membership_list = Join_Kvs.objects.filter(status='Approved').order_by('-id')
+        return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
+
+
 def join_kvs(request):
-    membership_list = Join_Kvs.objects.filter(status='Approved').order_by('-id')
     if request.method == 'POST':
         form = Join_Kvs_Add_Form(request.POST)
         if form.is_valid():
-            form.save()
+            data = form.save(commit=False)
+            username = request.user.username
+            if username:
+                staff_name = User.objects.get(username = username)
+                data.added_by = staff_name
+                data.save()
+            else:
+                data.save()
             messages.success(request,'Membership will be Approved only after verification of Admin')
             return redirect('kvs_app:join_kvs')
     else:
         form = Join_Kvs_Add_Form()
+    if request.user.is_superuser:
+        membership_list = Join_Kvs.objects.filter(status='Approved').order_by('-id')
+        return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
+    elif request.user.is_staff:
+        if request.user.extendedusermodel.district == 'Trivandrum':
+            membership_list = Join_Kvs.objects.filter(status='Approved',district='Trivandrum').order_by('-id')
+            return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
+        else:
+            pass
+    else:
+        membership_list = Join_Kvs.objects.filter(status='Approved').order_by('-id')
+        return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
+    
     return render(request,'join-kvs.html',{'form':form,'membership_list':membership_list})
+
+
+    
 
 
 
@@ -415,7 +485,7 @@ def join_kvs_excel_report(request):
 
 # ACCOUNT SECTION
 
-def admin_register(request):
+def super_admin_register(request):
     if request.method == "POST":
         username = request.POST.get('username')
         email = request.POST.get('email')
@@ -425,11 +495,11 @@ def admin_register(request):
             if User.objects.filter(username=username).exists():
                 print("username alredy exists")
                 messages.info(request,"username already exist")
-                return redirect("kvs_app:admin_register")
+                return redirect("kvs_app:super_admin_register")
             elif User.objects.filter(email=email).exists():
                 print("email alredy exists")
                 messages.info(request,"email already registered")
-                return redirect("kvs_app:admin_register")
+                return redirect("kvs_app:super_admin_register")
             else:
                 user = User.objects.create_user(username=username,email=email,password=password1,is_superuser=True,is_active=True,is_staff=True)
                 user.save();
@@ -448,8 +518,48 @@ def admin_register(request):
         else:
             print('Password Not Matched')
             messages.info(request,"Incorrect Password")
-            return redirect('kvs_app:admin_register')    
+            return redirect('kvs_app:super_admin_register')    
     return render(request,"admin-register.html")
+
+
+def district_admin_register(request):
+    if request.method == 'POST':
+        if request.POST.get('password1') == request.POST.get('password2'):
+            try:
+                user = User.objects.get(username=request.POST.get('username'))
+                print('username already taken')
+                return render(request,'district-admin-register.html',{'error':"Username alredy exist"})
+                
+            except User.DoesNotExist:
+                user = User.objects.create_user(username = request.POST.get('username'), password = request.POST.get('password1'),email=request.POST.get('email'),is_staff=True)
+                district = request.POST.get('district')
+                extenduser = ExtendedUserModel(user = user , district = district)
+                extenduser.save();
+                print('user created')
+                auth.login(request,user)
+                # # MESSAGE SENDING CODE
+                # template = render_to_string('resgisteremail.html',{'emp_name':emp_name,'emp_id':emp_id})
+                # email = EmailMessage(
+                #     'Account Registration', #subject
+                #     template, #body
+                #     settings.EMAIL_HOST_USER, #sender mail id
+                #     [email] #recever mail id
+                # )
+                # email.fail_silently = False
+                # email.send()
+                return redirect('kvs_app:login')
+
+        else:
+            print('password not matching')
+            return render(request,'district-admin-register.html',{'error':'Password Does Not Match'})
+    else:
+        return render(request,'district-admin-register.html')
+
+
+
+
+
+
 
 def login(request):
     if 'username' in request.session:

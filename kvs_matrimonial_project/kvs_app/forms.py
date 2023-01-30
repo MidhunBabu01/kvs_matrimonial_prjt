@@ -189,6 +189,7 @@ class Join_Kvs_Admin_Update(forms.ModelForm):
     class Meta:
         model = Join_Kvs
         fields = '__all__'
+        exclude = ['added_by','staff_name']
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
             'sex': forms.Select(attrs={'class':'form-control'}),
