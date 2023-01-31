@@ -191,56 +191,46 @@
                                       <form method="post">
                                         {% csrf_token %}
                                         <div class="row ">
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                      <label class="form-label">Name</label>
-                                                      {{form.name}}
-                                                </div>
-                                                
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label"> Sex</label>  
-                                                  {{form.sex}}
-                                                </div>
+                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                            <label class="form-label">Name</label>
+                                            {{form.name}}
+                                          </div>
+                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                            <label class="form-label"> Sex</label>  
+                                            {{form.sex}}
+                                          </div>
                                         </div>
                                         <div class="row">
                                           <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">Age</label>  
-                                              {{form.age}}
+                                            <label class="form-label">Age</label>  
+                                            {{form.age}}
                                           </div>
                                           <div class="col-lg-6 col-md-6 col-xl-6 p-2">
                                             <label class="form-label"> Dob</label>
                                             {{form.dob}}
                                           </div>
-                                        
-                                      </div>
-                                      <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label"> Mobile</label>
-                                                  {{form.mobile}}
-                                                     
-                                              </div>
-                                              <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label"> Address</label>
-                                                {{form.address}}
-                                              </div>
-                                              
-                                              
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                            <label class="form-label"> Mobile</label>
+                                            {{form.mobile}}
                                           </div>
-                                          <div class="row">
-                                        
-                                      
-                                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">Place</label>  
-                                                  {{form.place}}
-                                            </div>
+                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                            <label class="form-label"> Address</label>
+                                            {{form.address}}
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
+                                            <label class="form-label">Place</label>  
+                                            {{form.place}}
+                                          </div>
                                           <div class="col-lg-6 col-md-6 col-sm-12 col-xl-6 p-2">
                                             <label class="form-label"> District</label>  
                                             {{form.district}}
-                                        </div>
-                                        
                                           </div>
-                                  
+                                        </div>
                                     <div class="row">
-                                           
                                             <div class="col-lg-6 col-md-6 col-xl-6 p-2">
                                                  <label class="form-label">Union</label>
                                                   {{form.union}}
@@ -252,7 +242,6 @@
                                     
                                   </div>
                                   <div class="row">
-                                    
                                     <div class="col-lg-6 col-md-6 col-xl-6 p-2">
                                          <label class="form-label">ID Proof</label>
                                           {{form.id_proof}}
