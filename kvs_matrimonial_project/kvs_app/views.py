@@ -436,7 +436,7 @@ def join_kvs_excel_report(request):
     # headers are bold
     font_style.font.bold = True
     #column header names, you can use your own headers here
-    columns = ['Name','Sex', 'Age', 'Mobile', 'Address','Place','District','Union','Sakha No','ID Proof','ID Proof No','Payment Details','Membership No','Status']
+    columns = ['Name','Sex', 'Age','Dob','Mobile', 'Address','Place','District','Union','Sakha No','ID Proof','ID Proof No','Payment Details','Membership No','Status']
 
     #write column headers in sheet
     for col_num in range(len(columns)):
@@ -456,26 +456,27 @@ def join_kvs_excel_report(request):
         else:
             ws.write(row_num, 1, my_row.sex.name, font_style)
         ws.write(row_num, 2, my_row.age, font_style)
-        ws.write(row_num, 3, my_row.mobile, font_style)
-        ws.write(row_num, 4, my_row.address, font_style)
-        ws.write(row_num, 5, my_row.place, font_style)
-        ws.write(row_num, 6, my_row.district, font_style)
+        ws.write(row_num, 3, my_row.dob, font_style)
+        ws.write(row_num, 4, my_row.mobile, font_style)
+        ws.write(row_num, 5, my_row.address, font_style)
+        ws.write(row_num, 6, my_row.place, font_style)
+        ws.write(row_num, 7, my_row.district, font_style)
         if my_row.union == None:
-            ws.write(row_num, 7, 'None', font_style)
+            ws.write(row_num, 8, 'None', font_style)
         else:
-            ws.write(row_num, 7, my_row.union.name, font_style)
-        ws.write(row_num, 8, my_row.sakha_no, font_style)
+            ws.write(row_num, 8, my_row.union.name, font_style)
+        ws.write(row_num, 9, my_row.sakha_no, font_style)
         if my_row.id_proof == None:
-            ws.write(row_num, 9, 'None', font_style)
+            ws.write(row_num, 10, 'None', font_style)
         else:
-            ws.write(row_num, 9, my_row.id_proof.name, font_style)
-        ws.write(row_num, 10, my_row.id_proof_no, font_style)
+            ws.write(row_num, 10, my_row.id_proof.name, font_style)
+        ws.write(row_num, 11, my_row.id_proof_no, font_style)
         if my_row.payment_details == None:
-            ws.write(row_num, 11, 'None', font_style)
+            ws.write(row_num, 12, 'None', font_style)
         else:
-            ws.write(row_num, 11, my_row.payment_details.name, font_style)
-        ws.write(row_num, 12, my_row.membership_no, font_style)
-        ws.write(row_num, 13, my_row.status, font_style)
+            ws.write(row_num, 12, my_row.payment_details.name, font_style)
+        ws.write(row_num, 13, my_row.membership_no, font_style)
+        ws.write(row_num, 14, my_row.status, font_style)
         
     wb.save(response)
      

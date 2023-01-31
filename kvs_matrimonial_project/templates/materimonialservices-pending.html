@@ -64,6 +64,9 @@
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
                             <div id="social-right">
                               <ul class="nav justifycontentend">
+                                  {% if user.is_authenticated and user.is_superuser %}
+                                  <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:district_admin_register' %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+                                  {% endif %}
                                   {% if user.is_authenticated %}
                                   <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
                                   {% endif %}
