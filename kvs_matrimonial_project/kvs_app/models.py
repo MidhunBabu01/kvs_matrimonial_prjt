@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class ExtendedUserModel(models.Model):
+    class Meta:
+        verbose_name_plural = 'Extended User Model'
     def __str__(self):
         return self.user.username
     user = models.OneToOneField(User,on_delete=models.CASCADE)
@@ -17,6 +19,8 @@ class ExtendedUserModel(models.Model):
 
 
 class StateCommitie(models.Model):
+    class Meta:
+        verbose_name_plural = 'State Commitie'
     def __str__(self):
         return self.name
     name = models.CharField(max_length=50,blank=False,null=False)
