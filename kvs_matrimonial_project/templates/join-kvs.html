@@ -197,7 +197,7 @@
                        <div class="row mt-2">
                          <div class="col-sm-12 col-md-12 col-xl-12 col-lg-12">
                             <div class="float-right">
-                                <button type="button" class="btn btn-warning " id="btn-model" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus  mx-3"></i>Join KVS</button>
+                                <button type="button" class="btn btn-warning " id="btn-model" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus  mx-3"></i>Add Member</button>
                                 {% if user.is_authenticated and user.is_superuser %}
                                 <a href="{% url 'kvs_app:join_kvs_excel_report' %}" class="btn btn-warning"> <i class="text-black fa fas fa-file-excel-o"></i></a>
                                 {% endif %}
@@ -259,7 +259,7 @@
                                                                         {{form.id_proof}}
                                                                     </div>
                                                                     <div class="col-lg-12 col-md-12 mt-3">
-                                                                        <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> ID No</label>
+                                                                        <label  class="form-label"><span style="color: red; font-weight: 500;"></span> ID No</label>
                                                                         {{form.id_proof_no}}
                                                                       </div>
                                                                         <div class="col-lg-12 col-md-12 mt-3">
