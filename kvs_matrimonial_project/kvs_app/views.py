@@ -25,7 +25,6 @@ def index(request):
 
 
 def executiveforum(request):
-    state_commite = StateCommitie.objects.all().order_by('-id')
     if request.method == 'POST':
         form = StateCommiteForm(request.POST,request.FILES)
         if form.is_valid():
@@ -33,6 +32,7 @@ def executiveforum(request):
             return redirect('kvs_app:executiveforum')
     else:
         form = StateCommiteForm()
+    state_commite = StateCommitie.objects.all().order_by('-id')
     return render(request,'executiveforum.html',{'form':form,'state_commite':state_commite})
 
 
@@ -59,7 +59,7 @@ def executiveforum_delete(request,dlt_id):
 
 
 def taluk(request):
-    taluk = Taluk.objects.all().order_by('-id')
+    
     if request.method == 'POST':
         form = TalukForm(request.POST)
         if form.is_valid():
@@ -67,7 +67,18 @@ def taluk(request):
             return redirect('kvs_app:taluk')
     else:
         form = TalukForm()
-    return render(request,'taluk.html',{'form':form,'taluk':taluk})
+    if request.user.is_superuser:
+        taluk = Taluk.objects.all().order_by('-id')
+        return render(request,'taluk.html',{'form':form,'taluk':taluk})
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        taluk = Taluk.objects.filter(district=district).order_by('-id')
+        return render(request,'taluk.html',{'form':form,'taluk':taluk})
+    else:
+        taluk = Taluk.objects.all().order_by('-id')
+        return render(request,'taluk.html',{'form':form,'taluk':taluk})
+    # return render(request,'taluk.html',{'form':form,'taluk':taluk})
+
 
 
 def taluk_update(request,taluk_id):
@@ -92,7 +103,6 @@ def taluk_delete(request,taluk_id):
 
 
 def sakha(request):
-    sakha = Sakha.objects.all().order_by('-id')
     if request.method == 'POST':
         form = SakhaForm(request.POST)
         if form.is_valid():
@@ -100,6 +110,15 @@ def sakha(request):
             return redirect('kvs_app:sakha')
     else:
         form = SakhaForm()
+    if request.user.is_superuser:
+        sakha = Sakha.objects.all().order_by('-id')
+        return render(request,'sakha.html',{'form':form,'sakha':sakha})
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        sakha = Sakha.objects.filter(district=district).order_by('-id')
+        return render(request,'sakha.html',{'form':form,'sakha':sakha})
+    else: 
+        sakha = Sakha.objects.all().order_by('-id')
     return render(request,'sakha.html',{'form':form,'sakha':sakha})
 
 
@@ -126,16 +145,47 @@ def sakha_delete(request,sakha_id):
 
 
 def bride(request):
-    bride = Matrimonial.objects.filter(gender__name='Bride',status='Approved').order_by('-id')
-    return render(request,'materimonialservices.html',{'result':bride})
+    if request.user.is_superuser:
+        bride = Matrimonial.objects.filter(gender__name='Bride',status='Approved').order_by('-id')
+        return render(request,'materimonialservices.html',{'result':bride})
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        bride = Matrimonial.objects.filter(gender__name='Bride',status='Approved',district=district).order_by('-id')
+        return render(request,'materimonialservices.html',{'result':bride})
+    else:
+        bride = Matrimonial.objects.filter(gender__name='Bride',status='Approved').order_by('-id')
+        return render(request,'materimonialservices.html',{'result':bride})
+
 
 def grooms(request):
-    grooms = Matrimonial.objects.filter(gender__name='Groom',status='Approved').order_by('-id')
-    return render (request,'materimonialservices-grooms.html',{'result':grooms})
+    if request.user.is_superuser:
+        grooms = Matrimonial.objects.filter(gender__name='Groom',status='Approved').order_by('-id')
+        return render (request,'materimonialservices-grooms.html',{'result':grooms})
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        grooms = Matrimonial.objects.filter(gender__name='Groom',status='Approved',district=district).order_by('-id')
+        return render (request,'materimonialservices-grooms.html',{'result':grooms})
+    else:
+        grooms = Matrimonial.objects.filter(gender__name='Groom',status='Approved').order_by('-id')
+        return render (request,'materimonialservices-grooms.html',{'result':grooms})
+
+
+        
+
+
 
 def pending(request):
-    pending = Matrimonial.objects.filter(status='Pending').order_by('-id')
-    return render(request,'materimonialservices-pending.html',{'result':pending})
+    if request.user.is_superuser:
+        pending = Matrimonial.objects.filter(status='Pending').order_by('-id')
+        return render(request,'materimonialservices-pending.html',{'result':pending})
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        pending = Matrimonial.objects.filter(status='Pending',district=district).order_by('-id')
+        return render(request,'materimonialservices-pending.html',{'result':pending})
+    else:
+        pending = Matrimonial.objects.filter(status='Pending').order_by('-id')
+        return render(request,'materimonialservices-pending.html',{'result':pending})
+
 
 
 def matrimonial_update(request,update_id):
@@ -155,19 +205,44 @@ def matrimonial_update(request,update_id):
 def matrimony_bride_search(request):
     Query = None
     result = None
-    if 'q' in request.GET:
-        Query = request.GET.get('q')
-        result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Bride')
-    return render(request,'bride-search-result.html',{'result':result})
+    if request.user.is_superuser:
+        if 'q' in request.GET:
+            Query = request.GET.get('q')
+            result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Bride',status='Approved')
+        return render(request,'bride-search-result.html',{'result':result})
+    if request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        if 'q' in request.GET:
+            Query = request.GET.get('q')
+            result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Bride',status='Approved',district=district)
+        return render(request,'bride-search-result.html',{'result':result})
+    else:
+        if 'q' in request.GET:
+            Query = request.GET.get('q')
+            result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Bride',status='Approved')
+        return render(request,'bride-search-result.html',{'result':result})
 
 
 def matrimony_grooms_search(request):
     Query = None
     result = None
-    if 'q' in request.GET:
-        Query = request.GET.get('q')
-        result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Groom')
-    return render(request,'grooms-search-result.html',{'result':result})
+    if request.user.is_superuser:
+        if 'q' in request.GET:
+            Query = request.GET.get('q')
+            result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Groom',status='Approved')
+        return render(request,'grooms-search-result.html',{'result':result})
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        if 'q' in request.GET:
+            Query = request.GET.get('q')
+            result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Groom',status='Approved',district=district)
+        return render(request,'grooms-search-result.html',{'result':result})
+    else:
+        if 'q' in request.GET:
+            Query = request.GET.get('q')
+            result = Matrimonial.objects.filter(Q(name__icontains=Query),gender__name='Groom',status='Approved')
+        return render(request,'grooms-search-result.html',{'result':result})
+
 
 
 
@@ -206,7 +281,6 @@ def marrige_register(request):
 
 
 def health_insurance(request):
-    result = Services.objects.filter(category__name='Health Insurance',status='Approved').order_by('-id')
     if request.method == 'POST':
         form = Services_Add_Form(request.POST)
         if form.is_valid():
@@ -216,7 +290,16 @@ def health_insurance(request):
             return redirect('kvs_app:index')
     else:
         form = Services_Add_Form()
-    return render(request,'health-insurance.html',{'form':form,'result':result})
+    if request.user.is_superuser:
+        result = Services.objects.filter(category__name='Health Insurance',status='Approved').order_by('-id')
+        return render(request,'health-insurance.html',{'form':form,'result':result})
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        result = Services.objects.filter(category__name='Health Insurance',status='Approved',district=district).order_by('-id')
+        return render(request,'health-insurance.html',{'form':form,'result':result})
+    else:
+        result = Services.objects.filter(category__name='Health Insurance',status='Approved').order_by('-id')
+        return render(request,'health-insurance.html',{'form':form,'result':result})
 
 
 
@@ -241,7 +324,6 @@ def insurance_delete(request,dlt_id):
 
 
 def accident_insurance(request):
-    result = Services.objects.filter(category__name='Accident Insurance',status='Approved').order_by('-id')
     if request.method == 'POST':
         form = Services_Add_Form(request.POST)
         if form.is_valid():
@@ -251,14 +333,29 @@ def accident_insurance(request):
             return redirect('kvs_app:index')
     else:
         form = Services_Add_Form()
+    if request.user.is_superuser:
+        result = Services.objects.filter(category__name='Accident Insurance',status='Approved').order_by('-id')
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        result = Services.objects.filter(category__name='Accident Insurance',status='Approved',district=district).order_by('-id')
+    else:
+        result = Services.objects.filter(category__name='Accident Insurance',status='Approved').order_by('-id')
     return render(request,'accident-insurance.html',{'form':form,'result':result})
 
 
 
 
 def insurance_pending(request):
-    pending = Services.objects.filter(status='Pending').order_by('-id')
-    return render(request,'insurance-pending.html',{'pending':pending})
+    if request.user.is_superuser:
+        pending = Services.objects.filter(status='Pending').order_by('-id')
+        return render(request,'insurance-pending.html',{'pending':pending})
+    elif request.user.is_staff:
+        district = request.user.extendedusermodel.district
+        pending = Services.objects.filter(status='Pending',district=district).order_by('-id')
+        return render(request,'insurance-pending.html',{'pending':pending})
+    else:
+        pending = Services.objects.filter(status='Pending').order_by('-id')
+        return render(request,'insurance-pending.html',{'pending':pending})
 
 
 def insurance_update(request,update_id):

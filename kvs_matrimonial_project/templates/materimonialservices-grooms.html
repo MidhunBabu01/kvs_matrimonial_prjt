@@ -232,7 +232,7 @@
                                     <button type="button" class="btn btn-primary custom-text2 ">
                                         <a href="{% url 'kvs_app:profile_details' i.id %}">  <i class="fa fa-eye me-2"></i></a>  
                                     </button>
-                                    {% if user.is_authenticated %}
+                                    {% if user.is_authenticated and user.is_superuser %}
                                     <button type="button" class="btn btn-primary custom-text2 ">
                                       <a href="{% url 'kvs_app:matrimonial_update' i.id %}">  <i class="fa fa-edit me-2"></i></a>  
                                     </button>

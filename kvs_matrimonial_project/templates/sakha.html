@@ -210,6 +210,9 @@
                                                                         {{form.sakaha_name}}
                                                                     </div>
                                                                     <div class="col-lg-12 col-md-12 mt-3">
+                                                                      {{form.district}}
+                                                                  </div>
+                                                                    <div class="col-lg-12 col-md-12 mt-3">
                                                                         {{form.taluk}}
                                                                     </div>
                                                                     <div class=" col-12 col-sm-12 col-lg-12 col-md-12 mt-3">
@@ -270,8 +273,9 @@
                                         <tr>
                                             <th class="text-center">Sakha No</th>
                                             <th class="text-center">Sakha Name</th>
+                                            <th class="text-center">District</th>
                                             <th class="text-center">Union</th>
-                                            {% if user.is_authenticated %}
+                                            {% if user.is_authenticated and user.is_superuser %}
                                             <th class="text-center">Action</th>
                                             {% endif %}
                                         </tr>
@@ -281,8 +285,9 @@
                                         <tr>
                                             <td class="text-center" >{{i.sakha_no}}</td>
                                             <td class="text-center">{{i.sakaha_name}}</td>
+                                            <td class="text-center">{{i.district}}</td>
                                             <td class="text-center">{{i.taluk}}</td>
-                                            {% if user.is_authenticated %}
+                                            {% if user.is_authenticated and user.is_superuser %}
                                             <td class="text-center">
                                                 <ul class="nav justify-content-center">
                                                         <li class="nav-item ">

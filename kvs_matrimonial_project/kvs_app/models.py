@@ -43,6 +43,23 @@ class Taluk(models.Model):
         return self.name
     name = models.CharField(max_length=50,blank=False,null=False)
     phone = models.CharField(max_length=10,blank=False,null=False)
+    DISTRICT_CHOICES = (
+        ('Trivandrum','Trivandrum'),
+        ('Kollam','Kollam'),
+        ('Pathanamthitta','Pathanamthitta'),
+        ('Alappuzha','Alappuzha'),
+        ('Kottayam','Kottayam'),
+        ('Idukki','Idukki'),
+        ('Ernakulam','Ernakulam'),
+        ('Thrissur','Thrissur'),
+        ('Palakkad','Palakkad'),
+        ('Malappuram','Malappuram'),
+        ('Kozhikode','Kozhikode'),
+        ('Wayanad','Wayanad'),
+        ('Kannur','Kannur'),
+        ('Kasaragod','Kasaragod'),
+    )
+    district = models.CharField(max_length=50,choices=DISTRICT_CHOICES)
     taluk  = models.ForeignKey(Taluk_choices,on_delete=models.CASCADE,blank=False,null=False)
 
 
@@ -52,6 +69,23 @@ class Sakha(models.Model):
         return self.sakha_no
     sakha_no = models.CharField(max_length=50,blank=False,null=False)
     sakaha_name = models.CharField(max_length=50,blank=True,null=True)
+    DISTRICT_CHOICES = (
+        ('Trivandrum','Trivandrum'),
+        ('Kollam','Kollam'),
+        ('Pathanamthitta','Pathanamthitta'),
+        ('Alappuzha','Alappuzha'),
+        ('Kottayam','Kottayam'),
+        ('Idukki','Idukki'),
+        ('Ernakulam','Ernakulam'),
+        ('Thrissur','Thrissur'),
+        ('Palakkad','Palakkad'),
+        ('Malappuram','Malappuram'),
+        ('Kozhikode','Kozhikode'),
+        ('Wayanad','Wayanad'),
+        ('Kannur','Kannur'),
+        ('Kasaragod','Kasaragod'),
+    )
+    district = models.CharField(max_length=50,choices=DISTRICT_CHOICES)
     taluk  = models.ForeignKey(Taluk_choices,on_delete=models.CASCADE,blank=False,null=False)
 
 
@@ -186,6 +220,23 @@ class Services(models.Model):
     id_details = models.ForeignKey(Id_details_choices,on_delete=models.CASCADE,blank=False,null=False)
     id_no = models.CharField(max_length=25,blank=False,null=False)
     sakha_no = models.CharField(max_length=25,blank=False,null=False)
+    DISTRICT_CHOICES = (
+        ('Trivandrum','Trivandrum'),
+        ('Kollam','Kollam'),
+        ('Pathanamthitta','Pathanamthitta'),
+        ('Alappuzha','Alappuzha'),
+        ('Kottayam','Kottayam'),
+        ('Idukki','Idukki'),
+        ('Ernakulam','Ernakulam'),
+        ('Thrissur','Thrissur'),
+        ('Palakkad','Palakkad'),
+        ('Malappuram','Malappuram'),
+        ('Kozhikode','Kozhikode'),
+        ('Wayanad','Wayanad'),
+        ('Kannur','Kannur'),
+        ('Kasaragod','Kasaragod'),
+    )
+    district = models.CharField(max_length=50,choices=DISTRICT_CHOICES)
     taluk = models.CharField(max_length=25,blank=False,null=False)
     payment_details = models.ForeignKey(Payment_details_choices,on_delete=models.CASCADE,blank=False,null=False)
     proposed_by_name = models.CharField(max_length=25,blank=True,null=True)

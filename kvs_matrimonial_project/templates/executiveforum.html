@@ -399,6 +399,7 @@
                                           {% comment %} <input type="text" class="form-control" name="place" placeholder="Enter place"> {% endcomment %}
                                           {{form.place}}
                                       </div>
+                                      
                                       <div class="col-lg-12 col-md-12 mt-3">
                                         {% comment %} <input type="text" class="form-control" name="place" placeholder="Enter place"> {% endcomment %}
                                         {{form.photo}}
@@ -466,7 +467,7 @@
                                                               <th class="text-center">Mobile Number</th>
                                                               <th class="text-center">Photo</th>
                                                               <th class="text-center">Place</th>
-                                                              {% if user.is_authenticated %}
+                                                              {% if user.is_authenticated and user.is_superuser %}
                                                               <th class="text-center">Action</th>
                                                               {% endif %}
                                                           </tr>
@@ -482,7 +483,7 @@
                                                               <td class="text-center">None</td>
                                                               {% endif %}
                                                               <td class="text-center">{{i.place}}</td>
-                                                              {% if user.is_authenticated %}
+                                                              {% if user.is_authenticated and user.is_superuser %}
                                                               <td class="text-center">
                                                                 <ul class="nav justify-content-center">
                                                                   <li class="nav-item ">
@@ -495,7 +496,6 @@
                                                                 </ul>
                                                                 </div>
                                                               </td>
-                                                              
                                                               {% endif %}
                                                           </tr>
                                                           {% endfor %}

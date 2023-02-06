@@ -24,6 +24,7 @@ class TalukForm(forms.ModelForm):
         widgets = {
             'name' : forms.TextInput(attrs={'class':'form-control','placeholder':'Name'}),
             'phone' : forms.NumberInput(attrs={'class':'form-control','placeholder':'Mobile'}),
+            'district': forms.Select(attrs={'class':'form-control','placeholder':'District'}),
             'taluk' : forms.Select(attrs={'class':'form-control','placeholder':'Place'})
         }
 
@@ -36,6 +37,7 @@ class SakhaForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'sakha_no' : forms.NumberInput(attrs={'class':'form-control','placeholder':'Sakha Number'}),
+            'district': forms.Select(attrs={'class':'form-control'}),
             'taluk' : forms.Select(attrs={'class':'form-control','placeholder':'Taluk'}),
             'sakaha_name' : forms.TextInput(attrs={'class':'form-control','placeholder':'Sakha Name'}),
         }
@@ -129,6 +131,7 @@ class Services_Add_Form(forms.ModelForm):
             'id_details' : forms.Select(attrs={'class':'form-control'}),
             'id_no' : forms.TextInput(attrs={'class':'form-control'}),
             'sakha_no' : forms.TextInput(attrs={'class':'form-control'}),
+            'district' : forms.Select(attrs={'class':'form-control'}),
             'taluk' : forms.TextInput(attrs={'class':'form-control'}),
             'payment_details' : forms.Select(attrs={'class':'form-control'}),
             'proposed_by_name' : forms.TextInput(attrs={'class':'form-control'}),
@@ -153,6 +156,7 @@ class Services_Admin_Edit_Form(forms.ModelForm):
             'id_no' : forms.TextInput(attrs={'class':'form-control'}),
             'sakha_no' : forms.TextInput(attrs={'class':'form-control'}),
             'taluk' : forms.TextInput(attrs={'class':'form-control'}),
+            'district' : forms.Select(attrs={'class':'form-control'}),
             'payment_details' : forms.Select(attrs={'class':'form-control'}),
             'proposed_by_name' : forms.TextInput(attrs={'class':'form-control'}),
             'proposed_by_contact_no' : forms.NumberInput(attrs={'class':'form-control'}),

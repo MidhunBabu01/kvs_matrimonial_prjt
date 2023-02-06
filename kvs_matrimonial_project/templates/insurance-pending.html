@@ -328,11 +328,14 @@
                                           <th class="">ID Details</th>
                                           <th class="">ID Number</th>
                                           <th class="">Sakha No</th>
+                                          <th class="">District</th>
                                           <th class="">Taluk</th>
                                           <th class="">Payment Details</th>
                                           <th class="">Proposed By Name</th>
                                           <th class="">Proposed By contact Number</th>
+                                          {% if user.is_authenticated and user.is_superuser %}
                                           <th class="">Action</th>
+                                          {% endif %}
                                         </tr>
                                     </thead>
                                     <tbody class="tbody-health">
@@ -345,12 +348,13 @@
                                             <th class="text-center">{{i.id_details}}</th>
                                             <th class="text-center">{{i.id_no}}</th>
                                             <th class="text-center">{{i.sakha_no}}</th>
+                                            <th class="text-center">{{i.district}}</th>
                                             <th class="text-center">{{i.taluk}}</th>
                                             <th class="text-center">{{i.payment_details}}</th>
                                             <th class="text-center">{{i.proposed_by_name}}</th>
                                             <th class="text-center">{{i.proposed_by_contact_no}}</th>
                                        
-                                            
+                                            {% if user.is_authenticated and user.is_superuser %}
                                             <td class="text-center">
                                                 <ul class="nav justify-content-center" id="nav-health">
                                                         <li class="nav-item ">
@@ -363,6 +367,7 @@
                                                 </ul>
                                                 
                                             </td>
+                                            {% endif %}
                                         </tr>
                                         {% endfor %}
                                     </tbody>
