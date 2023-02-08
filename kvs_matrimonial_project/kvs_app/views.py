@@ -545,6 +545,8 @@ def join_kvs_excel_report(request):
     
     # data1 = Leads.objects.filter(lead_source='Youtube').order_by('-date')
     # nonee = 'None'
+    Male='M'
+    Female = 'F'
     for my_row in data:
         row_num = row_num + 1
         ws.write(row_num, 0, my_row.name, font_style)
@@ -553,7 +555,10 @@ def join_kvs_excel_report(request):
         if my_row.sex == None:
             ws.write(row_num, 3, 'None', font_style)
         else:
-            ws.write(row_num, 3, my_row.sex.name, font_style)
+            if my_row.sex.name == 'Male':
+                ws.write(row_num, 3, Male, font_style)
+            elif my_row.sex.name == 'Female':
+                ws.write(row_num, 3, Female, font_style)
         ws.write(row_num, 4, my_row.address, font_style)
         ws.write(row_num, 5, my_row.mobile, font_style)
         ws.write(row_num, 6, my_row.district, font_style)

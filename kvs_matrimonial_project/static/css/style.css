@@ -14,6 +14,28 @@
     font-family:Roboto;
     src:url("/keralaviswakarmasabha2022/font/RobotoCondensed-Regular.ttf")format("truetype");
   }
+  .icon-bar a {
+    display: block;
+    padding: 6px;
+   float: right;
+    border-radius: 100%;
+    height: 51px;
+}
+.whatsapp {
+    background: #53d365;
+    color: #448edd;
+}
+.fa-whatsapp
+{
+font-size:42px !important;
+}
+  .icon-bar {
+      position: fixed;
+      top: 80%;
+     margin-left: 90px;
+      z-index:99999;
+      
+    } 
 
  .custom-text
   {
@@ -470,6 +492,13 @@ div#n2-ss-5 .n-uc-VU1qjFbjQtxP-inner {
 and (min-device-width: 220px)
 and (max-device-width:360px)
 {   
+    .icon-bar {
+        position: fixed;
+        top: 80%;
+       margin-left:-40px !important;
+        z-index:99999;
+        
+      } 
     #tmp-card_row
     {
         width: 581px !important;
@@ -663,6 +692,17 @@ and (max-device-width:360px)
 and (min-device-width: 360px)
 and (max-device-width: 420px)
 {
+    .icon-bar {
+        position: fixed;
+        top: 80%;
+       margin-left:-40px !important;
+        z-index:99999;
+        
+      } 
+    .navbar-brand
+    {
+        font-size: 15px !important;
+    }
     #tmp-card_row
     {    width: 680px !important;
         margin-left: -170px !important; 
@@ -853,6 +893,14 @@ and (max-device-width: 420px)
 and (min-device-width: 420px)
 and (max-device-width: 540px)
 {
+    .icon-bar {
+        position: fixed;
+        top: 80%;
+       margin-left:-40px !important;
+        z-index:99999;
+        
+      } 
+    
     #tmp-card_row
     {
         width: 680px !important;
@@ -1045,6 +1093,13 @@ margin-top: -52px !important;
 and (min-device-width:540px)
 and (max-device-width:720px)
 {
+    .icon-bar {
+        position: fixed;
+        top: 80%;
+       margin-left:-40px !important;
+        z-index:99999;
+        
+      } 
     #tmp-card_row
     {
         width: 680px !important;
@@ -1197,6 +1252,13 @@ margin-top: -52px !important;
 and (min-device-width:720px)
 and (max-device-width:760px)
 {
+    .icon-bar {
+        position: fixed;
+        top: 80%;
+       margin-left:-40px !important;
+        z-index:99999;
+        
+      } 
     #tmp-card_row
     {
         width: 680px !important;
@@ -1268,6 +1330,17 @@ margin-top: -37px !important;
 and (min-device-width:760px)
 and (max-device-width:1024px)
 {
+    .quick_2 {
+        list-style-type: none;
+        display: contents !important;
+    }
+    .icon-bar {
+        position: fixed;
+        top: 80%;
+       margin-left:-40px !important;
+        z-index:99999;
+        
+      } 
     #tmp-card_row
     {
         width: 680px !important;
