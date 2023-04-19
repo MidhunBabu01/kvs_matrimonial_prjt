@@ -146,27 +146,27 @@ def sakha_delete(request,sakha_id):
 
 def bride(request):
     if request.user.is_superuser:
-        bride = Matrimonial.objects.filter(gender__name='Bride').order_by('-id')
+        bride = Matrimonial.objects.filter(gender__name='Bride (വധു)',status='Approved').order_by('-id')
         return render(request,'materimonialservices.html',{'result':bride})
     elif request.user.is_staff:
         district = request.user.extendedusermodel.district
-        bride = Matrimonial.objects.filter(gender__name='Bride',status='Approved',district=district).order_by('-id')
+        bride = Matrimonial.objects.filter(gender__name='Bride (വധു)',status='Approved',district=district).order_by('-id')
         return render(request,'materimonialservices.html',{'result':bride})
     else:
-        bride = Matrimonial.objects.filter(gender__name='Bride',status='Approved').order_by('-id')
+        bride = Matrimonial.objects.filter(gender__name='Bride (വധു)',status='Approved').order_by('-id')
         return render(request,'materimonialservices.html',{'result':bride})
 
 
 def grooms(request):
     if request.user.is_superuser:
-        grooms = Matrimonial.objects.filter(gender__name='Groom').order_by('-id')
+        grooms = Matrimonial.objects.filter(gender__name='Groom (വരൻ)',status='Approved').order_by('-id')
         return render (request,'materimonialservices-grooms.html',{'result':grooms})
     elif request.user.is_staff:
         district = request.user.extendedusermodel.district
-        grooms = Matrimonial.objects.filter(gender__name='Groom',status='Approved',district=district).order_by('-id')
+        grooms = Matrimonial.objects.filter(gender__name='Groom (വരൻ)',status='Approved',district=district).order_by('-id')
         return render (request,'materimonialservices-grooms.html',{'result':grooms})
     else:
-        grooms = Matrimonial.objects.filter(gender__name='Groom',status='Approved').order_by('-id')
+        grooms = Matrimonial.objects.filter(gender__name='Groom (വരൻ)',status='Approved').order_by('-id')
         return render (request,'materimonialservices-grooms.html',{'result':grooms})
 
 
