@@ -178,7 +178,7 @@ class Matrimonial(models.Model):
         ('Pending','Pending'),
         ('Approved','Approved')
     )
-    status = models.CharField(max_length=25,choices=status_choices,default='Pending')
+    status = models.CharField(max_length=25,choices=status_choices,default='Approved')
 
 
 
