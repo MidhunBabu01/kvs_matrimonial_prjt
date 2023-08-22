@@ -36,8 +36,7 @@ font-size:42px !important;
       z-index:99999;
       
     } 
-
- .custom-text
+.custom-text
   {
     font-family: Alegreya;
   }
@@ -68,10 +67,17 @@ font-size:42px !important;
   }
   .custom-text6
   {
-    font-family: Roboto;
+    font-family: 'Noto Sans Malayalam', sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
    
   }
+.nav-item
+{
+  font-family:Josefin Slab !important;
+  font-weight:500;
 
+}
  #card-bg {
     background: linear-gradient(277deg, #dddddd, transparent);
     width:820px;
@@ -187,6 +193,10 @@ font-size:42px !important;
     background-color: #da8616;
     /* transform: skewx(148deg); */
 }
+.about_head ,.navbar-brand
+{
+    font-family: Berkshire Swash !important;
+}
 .about_us
 {
     margin-top: 50px;
@@ -195,7 +205,21 @@ font-size:42px !important;
 .about_para
 {
     margin-top: 50px;
+    font-family:Gentium Book Plus;
+    font-weight: 400;
+    font-size: 18px;
+    
    
+}
+.foot_head, address,.foot_para,#Copyright
+{
+    font-family:Josefin Slab !important;
+    font-weight:500; 
+}
+.icon-head
+{font-family: Berkshire Swash;
+    font-weight: 500;
+    margin-top: 10px;
 }
 .quick_1
 {
@@ -242,7 +266,7 @@ footer {
 #head-breadcrump
 {
     margin-top: 30px;
-
+   font-family:Gentium Book Plus;
 }
 .box-warapper:hover {
   
@@ -256,7 +280,7 @@ footer {
     background-color:#ffffff;
     padding-top: 14px;
     padding-bottom: 14px;
-    height: 600px;
+    height:max-content;
     border-radius: 5px;
 }
 .textarea
@@ -419,9 +443,11 @@ div#n2-ss-5 .n-uc-VU1qjFbjQtxP-inner {
 {
     text-align: center;
 }
-.icon_text
+.icon_text, th
 {
     text-align: center;
+    font-family: Josefin Slab;
+    font-weight:bold;
 }
 /* search */
 .form_search
@@ -463,7 +489,7 @@ div#n2-ss-5 .n-uc-VU1qjFbjQtxP-inner {
   }
   .text-padding
   {
-    padding:15px;
+   padding: 15px;
    
   }
   .text_justifiy 
@@ -509,15 +535,9 @@ and (max-device-width:360px)
 {
     margin-left: 0px !important;
 }
-    .box-warapper{
-        background-color:#ffffff;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        height:max-content !important;
-        border-radius: 5px;
-    }
+   
     .text-padding {
-        padding: 15px;
+       
         font-size: 12px !important;
     }
     /* search */
@@ -711,15 +731,9 @@ and (max-device-width: 420px)
 {
     margin-left: 20px !important;
 }
-    .box-warapper{
-        background-color:#ffffff;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        height:max-content !important;
-        border-radius: 5px;
-    }
+  
     .text-padding {
-        padding: 15px;
+   
         font-size: 14px !important;
     }
        /* search */
@@ -911,15 +925,9 @@ and (max-device-width: 540px)
 {
     margin-left: 40px !important;
 }
-    .box-warapper{
-        background-color:#ffffff;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        height:max-content !important;
-        border-radius: 5px;
-    }
+
     .text-padding {
-        padding: 15px;
+        
         font-size: 14px !important;
     }
          /* search */
@@ -1109,15 +1117,9 @@ and (max-device-width:720px)
     {
         margin-left: 80px !important;
     }
-    .box-warapper{
-        background-color:#ffffff;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        height:max-content !important;
-        border-radius: 5px;
-    }
+   
     .text-padding {
-        padding: 15px;
+       
         font-size: 14px !important;
     }
  
@@ -1272,15 +1274,9 @@ and (max-device-width:760px)
     {
        width: 694px !important;
     }
-    .box-warapper{
-        background-color:#ffffff;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        height:max-content !important;
-        border-radius: 5px;
-    }
+
     .text-padding {
-        padding: 15px;
+        
         font-size: 14px !important;
     }
     .navbar-brand
@@ -1353,13 +1349,7 @@ and (max-device-width:1024px)
     /* #card_bg {
         margin-left: 50px !important;
     } */
-    .box-warapper{
-        background-color:#ffffff;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        height:860px !important;
-        border-radius: 5px;
-    }
+   
     .text-padding {
         padding: 15px;
         font-size: 14px !important;

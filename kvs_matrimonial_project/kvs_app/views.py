@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.models import User,auth
-from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,MatrimonialForm,MatrimonialUpdateForm,Services_Add_Form,Services_Admin_Edit_Form,Join_Kvs_Add_Form,Join_Kvs_Admin_Update
-from .models import ExtendedUserModel, Join_Kvs, Matrimonial, Sakha, Services, StateCommitie,Taluk
+from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,DatabankAddForm,MatrimonialUpdateForm,Services_Add_Form,Services_Admin_Edit_Form,Join_Kvs_Add_Form,Join_Kvs_Admin_Update
+from .models import Databank, ExtendedUserModel, Join_Kvs, Matrimonial, Sakha, Services, StateCommitie,Taluk
 import re
 now = datetime.datetime.now()
 from django.http.response import JsonResponse
@@ -188,18 +188,23 @@ def pending(request):
 
 
 
-def matrimonial_update(request,update_id):
-    if request.method == 'POST':
-        update = Matrimonial.objects.filter(id=update_id).first()
-        form = MatrimonialUpdateForm(request.POST,request.FILES,instance=update)
-        if form.is_valid():
-            form.save()
-            messages.success(request,'Succesfully Updated')
-            return redirect('kvs_app:index')
-    else:
-        update = Matrimonial.objects.filter(id=update_id).first()
-        form = MatrimonialUpdateForm(instance=update)
-    return render(request,'matrimony-update.html',{'form':form})
+# def matrimonial_update(request,update_id):
+#     if request.method == 'POST':
+#         update = Matrimonial.objects.filter(id=update_id).first()
+#         form = MatrimonialUpdateForm(request.POST,request.FILES,instance=update)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request,'Succesfully Updated')
+#             return redirect('kvs_app:index')
+#     else:
+#         update = Matrimonial.objects.filter(id=update_id).first()
+#         form = MatrimonialUpdateForm(instance=update)
+#     return render(request,'matrimony-update.html',{'form':form})
+
+
+
+
+
 
 
 def matrimony_bride_search(request):
@@ -247,35 +252,84 @@ def matrimony_grooms_search(request):
 
 
 def profile_details(request,details_id):
-    details = Matrimonial.objects.filter(id=details_id)
+    details = Databank.objects.filter(id=details_id)
     return render(request,'viewprofile.html',{'details':details})
 
 
 
 
-def matrimoni_delete(request,dlt_id):
+def databank_delete(request,dlt_id):
     dlt = Matrimonial.objects.filter(id=dlt_id)
     dlt.delete()
     return redirect('kvs_app:bride')
 
 
-def marrige_register(request):
+# def data_bank_register(request):
+#     if request.method == 'POST':
+#         form = MatrimonialForm(request.POST,request.FILES)
+#         if form.is_valid():
+#             data = form.save(commit=False)
+#             year = form.cleaned_data['dob']
+#             year = re.split(r'-',str(year))[0]
+#             age = int(now.year)-int(year)
+#             data.age = age
+#             data.save()
+#             print('UPDATED')
+#             messages.success(request,'Please wait for the Admin approval')
+#             return redirect('kvs_app:data_bank_register')
+#     else:
+#         form = MatrimonialForm()
+#         print('NOT UPDATED')
+#     return render(request,'marriageregister.html',{'form':form})
+
+
+def data_bank_register(request):
     if request.method == 'POST':
-        form = MatrimonialForm(request.POST,request.FILES)
+        form = DatabankAddForm(request.POST,request.FILES)
+        print(request.POST)
+        print(form.errors)
         if form.is_valid():
-            data = form.save(commit=False)
-            year = form.cleaned_data['dob']
-            year = re.split(r'-',str(year))[0]
-            age = int(now.year)-int(year)
-            data.age = age
-            data.save()
+            form.save()
             print('UPDATED')
             messages.success(request,'Please wait for the Admin approval')
-            return redirect('kvs_app:marrige_register')
+            return redirect('kvs_app:data_bank_register')
     else:
-        form = MatrimonialForm()
-        print('NOT UPDATED')
+        form = DatabankAddForm()
     return render(request,'marriageregister.html',{'form':form})
+
+
+def data_bank(request):
+    result = Databank.objects.all()
+    return render(request,'data-bank.html',{'result':result})
+
+def databank_update(request,update_id):
+    if request.method == 'POST':
+        update = Databank.objects.filter(id=update_id).first()
+        form = DatabankAddForm(request.POST,request.FILES,instance=update)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Succesfully Updated')
+            return redirect('kvs_app:data_bank')
+    else:
+        update = Databank.objects.filter(id=update_id).first()
+        form = DatabankAddForm(instance=update)
+    return render(request,'matrimony-update.html',{'form':form})
+
+
+def databank_delete(request,dlt_id):
+    dlt = Databank.objects.filter(id=dlt_id)
+    dlt.delete()
+    messages.success(request,'Deleted..')
+    return redirect('kvs_app:data_bank')
+
+
+def data_bank_search(request):
+    Query = None
+    result = None
+    if 'q' in request.GET:
+        Query = request.GET.get('q')
+        result = Databank.objects.filter(Q(name__icontains=Query))
+    return render(request,'bride-search-result.html',{'result':result})
 
 
 

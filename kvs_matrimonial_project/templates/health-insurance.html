@@ -47,6 +47,12 @@
     _N2.r(["documentReady","smartslider-frontend","smartslider-backgroundanimation","SmartSliderWidgetArrowImage","ss-simple"],function(){new _N2.SmartSliderSimple('n2-ss-5', {"admin":false,"callbacks":"","background.video.mobile":1,"loadingTime":2000,"alias":{"id":0,"smoothScroll":0,"slideSwitch":0,"scroll":1},"align":"normal","isDelayed":0,"responsive":{"mediaQueries":{"all":false,"desktopportrait":["(min-width: 1200px)"],"tabletportrait":["(orientation: landscape) and (max-width: 1199px) and (min-width: 901px)","(orientation: portrait) and (max-width: 1199px) and (min-width: 701px)"],"mobileportrait":["(orientation: landscape) and (max-width: 900px)","(orientation: portrait) and (max-width: 700px)"]},"base":{"slideOuterWidth":1200,"slideOuterHeight":500,"sliderWidth":1200,"sliderHeight":500,"slideWidth":1200,"slideHeight":500},"hideOn":{"desktopLandscape":false,"desktopPortrait":false,"tabletLandscape":false,"tabletPortrait":false,"mobileLandscape":false,"mobilePortrait":false},"onResizeEnabled":true,"type":"fullwidth","sliderHeightBasedOn":"real","focusUser":1,"focusEdge":"auto","breakpoints":[{"device":"tabletPortrait","type":"max-screen-width","portraitWidth":1199,"landscapeWidth":1199},{"device":"mobilePortrait","type":"max-screen-width","portraitWidth":700,"landscapeWidth":900}],"enabledDevices":{"desktopLandscape":0,"desktopPortrait":1,"tabletLandscape":0,"tabletPortrait":1,"mobileLandscape":0,"mobilePortrait":1},"sizes":{"desktopPortrait":{"width":1200,"height":500,"max":3000,"min":1200},"tabletPortrait":{"width":701,"height":292,"customHeight":false,"max":1199,"min":701},"mobilePortrait":{"width":320,"height":133,"customHeight":false,"max":900,"min":320}},"overflowHiddenPage":0,"focus":{"offsetTop":"#wpadminbar","offsetBottom":""}},"controls":{"mousewheel":0,"touch":"horizontal","keyboard":1,"blockCarouselInteraction":1},"playWhenVisible":1,"playWhenVisibleAt":0.5,"lazyLoad":0,"lazyLoadNeighbor":0,"blockrightclick":0,"maintainSession":0,"autoplay":{"enabled":1,"start":1,"duration":8000,"autoplayLoop":1,"allowReStart":0,"pause":{"click":1,"mouse":"0","mediaStarted":1},"resume":{"click":0,"mouse":"0","mediaEnded":1,"slidechanged":0},"interval":1,"intervalModifier":"loop","intervalSlide":"current"},"perspective":1500,"layerMode":{"playOnce":0,"playFirstLayer":1,"mode":"skippable","inAnimation":"mainInEnd"},"bgAnimations":{"global":[{"type":"Flat","rows":5,"columns":7,"tiles":{"delay":1,"sequence":"Random"},"main":{"type":"next","duration":0.8,"next":{"ease":"easeInQuart","opacity":0}}}],"color":"RGBA(51,51,51,1)","speed":"normal"},"mainanimation":{"type":"horizontal","duration":1500,"delay":0,"ease":"easeOutQuad","shiftedBackgroundAnimation":0},"carousel":1,"initCallbacks":function(){new _N2.SmartSliderWidgetArrowImage(this);}});});
     });
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam&display=swap" rel="stylesheet"> 
+   
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Gentium Book Plus' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'> 
   </head>
 <body class="materimonialservices">
   <!-- <div class="container">
@@ -78,38 +84,39 @@
 </div>
 </section>
 <header>
+ 
+ 
     <div class="social-head">
           <div class="container-fluid">
                   <div class="row">
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                          <div id="social-left">
+                              <div id="social-left">
                                   <ul class="nav">
-                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                </ul>
-                          </div>
-                               
+                                        <li class="nav-item"><a class="nav-link text-white" href="mailto:artisankendram@gmail.com"><i class="fa fa-envelope me-2"></i>artisankendram@gmail.com</a></li>
+                                  </ul>
+                                </div>     
                          </div>
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                                <div id="social-right">
-                                        <ul class="nav justifycontentend">
-                                            {% if user.is_authenticated and user.is_superuser %}
-                                            <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:district_admin_register' %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
-                                            {% endif %}
-                                            {% if user.is_authenticated %}
-                                            <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
-                                            {% endif %}
-                                            <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
-                                            <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
-                                            <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
-                                      </ul>
-                                </div>
+                            <div id="social-right">
+                                <ul class="nav justifycontentend">
+                                  {% if user.is_authenticated and user.is_superuser %}
+                                  <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:district_admin_register' %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+                                  {% endif %}
+                                    {% if user.is_authenticated %}
+                                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
+                                    {% endif %}
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                   </div>
           </div>
     </div>
     <nav class="navbar navbar-expand-lg bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Kerala Viswakarma Sabha (KVS)</a>
+        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Artisan Sevana Kendram</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -131,24 +138,16 @@
       
                     </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial</a>
-                  <ul class="dropdown-menu sub">
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
-                  
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:grooms' %}">Grooms</a></li>
-                    {% if user.is_authenticated %}
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:pending' %}">Pendings</a></li>
-                    {% endif %}
-    
-                  </ul>
+              <li class="nav-item ">
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank' %}" >Data Bank</a>
+              
               </li>
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank_register' %}">Data Bank Register</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join KVS</a>
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join ASK</a>
                   <ul class="dropdown-menu sub">
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs' %}">Approved</a></li>
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs_pending' %}">Pendings</a></li>
@@ -156,7 +155,7 @@
               </li>
               {% else %}
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join KVS</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join ASK</a>
               </li>
               {% endif %}
               <li class="nav-item dropdown">
@@ -251,7 +250,7 @@
                                                                   
                                                                       </div>
                                                                       <div class="col-lg-12 col-md-12 mt-3">
-                                                                          <label class="form-label"><span style="color:red; font-weight:600">*</span> Sakha</label>
+                                                                          <label class="form-label"><span style="color:red; font-weight:600">*</span> Place</label>
                                                                           {{form.sakha_no}}
                                                                   
                                                                       </div>
@@ -343,7 +342,7 @@
                                           <th class="">Mobile Number</th>
                                           <th class="">ID Details</th>
                                           <th class="">ID Number</th>
-                                          <th class="">Sakha No</th>
+                                          <th class="">Place</th>
                                           <th class="">District</th>
                                           <th class="">Taluk</th>
                                           <th class="">Payment Details</th>
@@ -422,12 +421,14 @@
 <div class="mt-4"></div>
 <!-- footer -->
 <footer >
+  
   <div class="container-fluid">
+  
          <div class="row p-2">
                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                          <div class="foot_about">
                                  <h4 class="foot_head">About Us</h4>
-                                 <p class="foot_para">Kerala Viswakarma Sabha ( KVS ) is committed to moving forward with a clear vision of uniting the community members so that they can become an organized force of  Viswakarma community in Kerala.</p>
+                                 <p class="foot_para"> A  worker in a skilled trade, especially one that involves making things by hand.</p>
                                    <ul class="nav">
                                          <li class="nav-item"><a class="nav-link"><i class="fa  fa-facebook"></i></a></li>
                                          <li class="nav-item"><a class="nav-link"><i class="fa fa-twitter"></i></a></li>
@@ -442,7 +443,7 @@
                       <ul class="quick_1">
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:data_bank_register' %}">Data Bank Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
                   </div>
@@ -450,12 +451,13 @@
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="foot_address">
                       <h4 class="foot_head">Address</h4>
-                      <address>KERALA VISWAKARMA SABHA (KVS)<br>Reg No: S.277/2003,Cherooty Rd<br>Kozhikode, Kerala </address>
+                      <address>Artisan sevana kendram <br>Janathamukku,Edva P.O(via)<br>Varkala ,TVM Dist. </address>
                       <div class="social-link">
                                <ul class="quick_2">
                                
-                                <li class="nav-item"><a class="nav-link" href="mailto:keralaviswakarmasabhas277@gmail.com"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tel:+919995487001"><i class="fa fa-phone me-2"></i>+91 9995487001</a></li>
+                                <li class="nav-item"><a class="nav-link" href="mailto:artisankendram@gmail.com"><i class="fa fa-envelope me-2"></i>artisankendram@gmail.com</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tel:+917012958534"><i class="fa fa-phone me-2"></i> +91 9995487001</a></li>
+                               
                                </ul>
                       </div>
                 
@@ -465,12 +467,13 @@
                 </div>
          </div>
   </div>
+  
 </footer>
 <footer id="foot">
       <div class="container">
              <div class="row">
                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
-                       <p id="copyright">Copyright © 2022  <a href="https://a2zalphabetsolutionz.com/"> A2Z Alphabetsolutionz</a>. All rights reserved. </p>  
+                       <p id="Copyright">Copyright © 2022  <a href="https://a2zalphabetsolutionz.com/"> A2Z Alphabetsolutionz</a>. All rights reserved. </p>  
                    </div>
              </div>
       </div>

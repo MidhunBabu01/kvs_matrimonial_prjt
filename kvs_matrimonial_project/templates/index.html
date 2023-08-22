@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Kerala Viswakarma Sabha</title>
+  <title>Artisan Sevana Kendram</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -49,12 +49,14 @@
   });
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam&display=swap" rel="stylesheet"> 
    
-  {% comment %} <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Gentium Book Plus' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'> {% endcomment %}
+  <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'> 
 </head>
 <body>
     <!-- <div class="container">
@@ -94,7 +96,7 @@
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
                               <div id="social-left">
                                   <ul class="nav">
-                                        <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                        <li class="nav-item"><a class="nav-link text-white" href="mailto:artisankendram@gmail.com"><i class="fa fa-envelope me-2"></i>artisankendram@gmail.com</a></li>
                                   </ul>
                                 </div>     
                          </div>
@@ -118,7 +120,7 @@
     </div>
     <nav class="navbar navbar-expand-lg bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Kerala Viswakarma Sabha (KVS)</a>
+        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Artisan Sevana Kendram</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -140,24 +142,16 @@
       
                     </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial</a>
-                  <ul class="dropdown-menu sub">
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
-                  
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:grooms' %}">Grooms</a></li>
-                    {% if user.is_authenticated %}
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:pending' %}">Pendings</a></li>
-                    {% endif %}
-    
-                  </ul>
+              <li class="nav-item ">
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank' %}" >Data Bank</a>
+              
               </li>
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank_register' %}">Data Bank Register</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join KVS</a>
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join ASK</a>
                   <ul class="dropdown-menu sub">
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs' %}">Approved</a></li>
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs_pending' %}">Pendings</a></li>
@@ -165,7 +159,7 @@
               </li>
               {% else %}
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join KVS</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join ASK</a>
               </li>
               {% endif %}
               <li class="nav-item dropdown">
@@ -236,18 +230,12 @@
 col-sm-12 col-12">
                    <div class="about_us">
                          <h3 class="text-center
-about_head">Welcome To  Kerala Vishwakarma Sabha</h3>
+about_head">Welcome To  Artisankendram</h3>
                          <p class="text-center about_para
-custom-text6">The VISWAKARMMAS are believed to be the decedents of the
-Creator of the Universe,LORD VISWABRAHMA . In “ Mundakopanishad ”
-Manthra :
-                        <span style="font-weight: 600;"> "Bhrahma
-Devanaam Pradhama Samba Bhuva"</span> promulgates the non-existence of
-any other geneology before the Lord Bhrahma.VEDAS are unquestionably
-regarded as the oldest literary composition in any language in the
-world wherein RIGVEDA is the foremost among all. The word VISWAKARMMA
-was firstly used in Rigveda to depict Lord Viswabrahma as the Creator
-of the Universe in its 80 and 81 SUKTAS in the 10th MANDALA.</p>
+"> 
+An artisan is someone that works with their hands to create unique, functional and  decorative items using traditional techniques. Artisans are masters of their craft and create products such as clothes, toys, tools or furnishings.
+Artisans specialized in any one of a number of crafts. Workers in this class included carpenters, jewelers, leatherworkers, metalworkers, painters, potters, sculptors, and weavers. Artisans made many beautiful objects, including stunning jewellery and elegant furniture.
+</p>
                     </div>
                  </div>
          </div>
@@ -266,24 +254,22 @@ style="text-align: -webkit-center;">
                                 <i class="fa fa-2x fa-eye" id="icon"></i>
                             </div>
                     </div>
-                        <h3 class="text-center">Our Vision</h3>
-                        <p class="text_justifiy   text-padding
-custom-text6">
-VISWAKARMMAS  later came to be known after the name of the Creator of Universe  owing to their skillful creative contribution to the entire human race. At the outset they supplied the essentials needed in the making of  basic human necessities such as food, clothe and shelter. Their constructive benefaction in the advent of cultural development in  later stages of human evolution was very significant. Their adroit gifts for the development of art, literature, music and spirituality were fabulous than  their own grandeur in agricultural , industrial and tertiary sector. But in the later stages of evolution the community gradually lost their extensive predominance in  the society due to socio-economic and cultural transition. Thus it becomes the primary organizational vision of SABHA to regain the lost majesty of Viswakarmmas to benefit the entire humanity.
+                        <h3 class="text-center icon-head">Our Vision</h3>
+                        <p class="  text-padding custom-text6">
+                          വിദഗ്ദ്ധ നിർമ്മിതികൾക്ക് വേണ്ടി കൈത്തൊഴിലിലൂടെ പരമ്പരാഗത വൈഭവം കൈമുതലാക്കിയ ആർട്ടിസാൻ സമൂഹം. നൂതനയുഗത്തെ  ഉൾക്കൊള്ളാൻ കഴിയാതെ സമർപ്പണം ഒന്നുകൊണ്ടു മാത്രം നിലനിൽക്കുന്നു എന്ന യാഥാർഥ്യം ഓർകുക. സ്വന്തം തൊഴിലിൽ മനസ്സ് അർപ്പിച്ച ഈ സമൂഹം കേന്ദ്ര - സംസ്ഥാന സർക്കാറുകൾ നടപ്പിലാക്കുന്ന വിവിധ ക്ഷേമ പദ്ധതികളെക്കുറിച്ചു അജ്ഞരാണ്. അറിവും പിന്തുണയും ഇല്ലാത്തതു കൊണ്ടുതന്നെ ആനുകൂല്യങ്ങൾ അർഹരായവരിൽ എത്തുന്നില്ല. ഇവിടെ ആർട്ടിസാൻ സേവന കേന്ദ്രത്തിന്റെ ലക്ഷ്യം അവസരത്തിൽ ആർട്ടിസാൻ സമൂഹത്തെ ക്ഷേമ - പെൻഷൻ - ഇൻഷുറൻസ് പദ്ധതികളെക്കുറിച്ചു ബോധവത്കരികുകയും ആനുകൂല്യം അർഹരായവർക്ക്‌  ലഭ്യമാക്കാൻ വേണ്ട പദ്ധതികൾ ആവിഷ്ക്കരിച്ചു നടപ്പിലാക്കുക എന്നതാണ്.
                         </p>
                 </div>
          </div>
          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" id="col">
           <div class="box-warapper ">
-            <div class="justify-content-center" style="text-align:
--webkit-center;">
+            <div class="justify-content-center" style="text-align:-webkit-center;">
                    <div class="icon-box">
                         <i class="fa fa-2x fa-space-shuttle" id="icon"></i>
                    </div>
             </div>
-                   <h3 class="text-center">Our Mission</h3>
-                   <p class="text_justifiy text-padding custom-text6">
-                    The past glory of the country subsists in her marvelous colossal fabrics. But even modern science fail to unveil the mystery behind their design, engineering and craftsmanship either to maintain or to reconstruct them for the posterity without losing their ingenuity. Many such environmental-friendly  wonders now face irrecoverable ruin. All the creations of Viswakarmas were based on the principle of Preservation of Mother Nature. Hence the mission of Sabha is to bring back the magnificence of Country's exquisite past through the development of Reverse Engineering .
+                   <h3 class="text-center icon-head">Our Mission</h3>
+                   <p class="text-padding custom-text6">
+                    നിർമ്മാണ തൊഴിലാളി ക്ഷേമനിധി ബോർഡ്,  കരകൗശല വികസന കോർപ്പറേഷൻ,  ആഭരണ നിർമ്മാണ തൊഴിലാളി ക്ഷേമനിധി ബോർഡ്,  ആർട്ടിസാൻ ഡെവലപ്മെന്റ് കോർപ്പറേഷൻ,  കേന്ദ്രസർക്കാർ ആരോഗ്യ ഇൻഷുറൻസ് പദ്ധതികൾ,  ഭൂമി - കെട്ടിട ആനുകൂല്യങ്ങൾക്ക് വേണ്ട നടപടിക്രമങ്ങൾ എന്നിവ ആർട്ടിസാൻ സമൂഹത്തിന്റെ ശ്രദ്ധയിൽപ്പെടുത്തി യോഗ്യതയുള്ളവർക്ക് വേണ്ട പിന്തുണയും,  അപേക്ഷാനന്തര തുടർ സഹായം നൽകി ആനുകൂല്യങ്ങൾക്ക് അർഹരാക്കി അതിന്റെ പ്രയോജനം നേടിക്കൊടുക്കുക എന്നതാണ് ആർട്ടിസാൻ സേവന കേന്ദ്രത്തിന്റെ പ്രഥമ ദൗത്യം. തുടർന്ന്  കേരളാ ആർട്ടിസാൻസ് ട്രേഡ് യൂണിയനുമായി (KATU) സഹകരിച്ചു അംഗങ്ങൾക്ക് വേണ്ടതായ തൊഴിൽ പരിചയ സെര്ടിഫിവറ്റുകൾ നൽകുന്നതിനുള്ള നടപടികളും ആർട്ടിസാൻ കേന്ദ്രം ആവിഷ്കരിക്കുന്നു.
                    </p>
            </div>
     </div>
@@ -295,9 +281,13 @@ VISWAKARMMAS  later came to be known after the name of the Creator of Universe  
                         <i class="fa fa-2x fa-trophy" id="icon"></i>
                    </div>
             </div>
-                   <h3 class="text-center">Our Goal</h3>
-                   <p class="text_justifiy   text-padding custom-text6">
-                    Sabha aims to equip a future  generation having a Bharatheeya educational, cultural and ethical vision. Today the new generation transcends an  appalling socio-cultural and economical arena amidst terrorism , narcotism and sedition . Our country  needs  a posterity with high scientific temperament containing pure patriotic insight . Such a generation can only elevate  patriotic intellectuals who would stand up for the country and the  Universe as well to recite the impressive world famous Orison <span style="font-weight:900"> "LOKA SAMASTHA SUKHINO BHAVANTHU" . </span>So in the making of a New glorified lndia Sabha owes to bestow its part.
+                   <h3 class="text-center icon-head">Our Goal</h3>
+                   <p class="  text-padding custom-text6">
+                    തുടർ പ്രവർത്തനങ്ങളിലൂടെ ആർട്ടിസാൻ മേഖലയിൽ പണിയെടുത്തു ജീവ സന്ധാരണം നടത്തുന്ന പരമ്പരാഗത തൊഴിലാളികൾ ഉൾപ്പടെയുള്ളവർക്ക്  കേന്ദ്ര - സംസ്ഥാന സർക്കാരുകൾ നടപ്പിലാക്കിയിട്ടുള്ള സാമ്പത്തിക ആനുകൂല്യങ്ങൾ  അർഹതയില്ലാത്തവർ കൈക്കലാക്കുന്നതിനെതിരെ ജാഗ്രതയോടെ പ്രവർത്തിച്ചു,  രാജ്യത്തെ അടിസ്ഥാന തൊഴിൽ സമൂഹത്തിനെ കൈപിടിച്ചുയർത്തി,  അർഹതപ്പെട്ടവർക്ക് ആനുകൂല്യങ്ങൾ നേടിക്കൊടുത്തു ജീവിതനിലവാരം മെച്ചപ്പെടുത്താനും 
+<span class="fw-bold">"സാമൂഹ്യ നീതി
+അവസര സമത്വം
+ഭരണ പങ്കാളിത്തം"</span>
+എന്നത്  ആർട്ടിസാൻ സമൂഹത്തിനു കൂടി ഉറപ്പു വരുത്തുന്നതിലേക്കുള്ള മഹത്തായ പ്രവർത്തനങ്ങൾക്ക് ആർട്ടിസാൻ കേന്ദ്രത്തിന്റെ സേവനം ലഭ്യമാക്കുക എന്നതാണ്  ഈ കൂട്ടായ്‌മയുടെ ലക്ഷ്യം.<br><br>
                    </p>
            </div>
     </div>
@@ -328,7 +318,7 @@ VISWAKARMMAS  later came to be known after the name of the Creator of Universe  
                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                          <div class="foot_about">
                                  <h4 class="foot_head">About Us</h4>
-                                 <p class="foot_para">Kerala Viswakarma Sabha ( KVS ) is committed to moving forward with a clear vision of uniting the community members so that they can become an organized force of  Viswakarma community in Kerala.</p>
+                                 <p class="foot_para"> A  worker in a skilled trade, especially one that involves making things by hand.</p>
                                    <ul class="nav">
                                          <li class="nav-item"><a class="nav-link"><i class="fa  fa-facebook"></i></a></li>
                                          <li class="nav-item"><a class="nav-link"><i class="fa fa-twitter"></i></a></li>
@@ -343,7 +333,7 @@ VISWAKARMMAS  later came to be known after the name of the Creator of Universe  
                       <ul class="quick_1">
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:data_bank_register' %}">Data Bank Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
                   </div>
@@ -351,11 +341,11 @@ VISWAKARMMAS  later came to be known after the name of the Creator of Universe  
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="foot_address">
                       <h4 class="foot_head">Address</h4>
-                      <address>KERALA VISWAKARMA SABHA (KVS)<br>Reg No: S.277/2003,Cherooty Rd<br>Kozhikode, Kerala </address>
+                      <address>Artisan sevana kendram <br>Janathamukku,Edva P.O(via)<br>Varkala ,TVM Dist. </address>
                       <div class="social-link">
                                <ul class="quick_2">
                                
-                                <li class="nav-item"><a class="nav-link" href="mailto:keralaviswakarmasabhas277@gmail.com"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                <li class="nav-item"><a class="nav-link" href="mailto:artisankendram@gmail.com"><i class="fa fa-envelope me-2"></i>artisankendram@gmail.com</a></li>
                                 <li class="nav-item"><a class="nav-link" href="tel:+917012958534"><i class="fa fa-phone me-2"></i> +91 9995487001</a></li>
                                
                                </ul>

@@ -47,6 +47,12 @@
     _N2.r(["documentReady","smartslider-frontend","smartslider-backgroundanimation","SmartSliderWidgetArrowImage","ss-simple"],function(){new _N2.SmartSliderSimple('n2-ss-5', {"admin":false,"callbacks":"","background.video.mobile":1,"loadingTime":2000,"alias":{"id":0,"smoothScroll":0,"slideSwitch":0,"scroll":1},"align":"normal","isDelayed":0,"responsive":{"mediaQueries":{"all":false,"desktopportrait":["(min-width: 1200px)"],"tabletportrait":["(orientation: landscape) and (max-width: 1199px) and (min-width: 901px)","(orientation: portrait) and (max-width: 1199px) and (min-width: 701px)"],"mobileportrait":["(orientation: landscape) and (max-width: 900px)","(orientation: portrait) and (max-width: 700px)"]},"base":{"slideOuterWidth":1200,"slideOuterHeight":500,"sliderWidth":1200,"sliderHeight":500,"slideWidth":1200,"slideHeight":500},"hideOn":{"desktopLandscape":false,"desktopPortrait":false,"tabletLandscape":false,"tabletPortrait":false,"mobileLandscape":false,"mobilePortrait":false},"onResizeEnabled":true,"type":"fullwidth","sliderHeightBasedOn":"real","focusUser":1,"focusEdge":"auto","breakpoints":[{"device":"tabletPortrait","type":"max-screen-width","portraitWidth":1199,"landscapeWidth":1199},{"device":"mobilePortrait","type":"max-screen-width","portraitWidth":700,"landscapeWidth":900}],"enabledDevices":{"desktopLandscape":0,"desktopPortrait":1,"tabletLandscape":0,"tabletPortrait":1,"mobileLandscape":0,"mobilePortrait":1},"sizes":{"desktopPortrait":{"width":1200,"height":500,"max":3000,"min":1200},"tabletPortrait":{"width":701,"height":292,"customHeight":false,"max":1199,"min":701},"mobilePortrait":{"width":320,"height":133,"customHeight":false,"max":900,"min":320}},"overflowHiddenPage":0,"focus":{"offsetTop":"#wpadminbar","offsetBottom":""}},"controls":{"mousewheel":0,"touch":"horizontal","keyboard":1,"blockCarouselInteraction":1},"playWhenVisible":1,"playWhenVisibleAt":0.5,"lazyLoad":0,"lazyLoadNeighbor":0,"blockrightclick":0,"maintainSession":0,"autoplay":{"enabled":1,"start":1,"duration":8000,"autoplayLoop":1,"allowReStart":0,"pause":{"click":1,"mouse":"0","mediaStarted":1},"resume":{"click":0,"mouse":"0","mediaEnded":1,"slidechanged":0},"interval":1,"intervalModifier":"loop","intervalSlide":"current"},"perspective":1500,"layerMode":{"playOnce":0,"playFirstLayer":1,"mode":"skippable","inAnimation":"mainInEnd"},"bgAnimations":{"global":[{"type":"Flat","rows":5,"columns":7,"tiles":{"delay":1,"sequence":"Random"},"main":{"type":"next","duration":0.8,"next":{"ease":"easeInQuart","opacity":0}}}],"color":"RGBA(51,51,51,1)","speed":"normal"},"mainanimation":{"type":"horizontal","duration":1500,"delay":0,"ease":"easeOutQuad","shiftedBackgroundAnimation":0},"carousel":1,"initCallbacks":function(){new _N2.SmartSliderWidgetArrowImage(this);}});});
     });
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam&display=swap" rel="stylesheet"> 
+   
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Gentium Book Plus' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'> 
   </head>
 <body class="materimonialservices">
   <!-- <div class="container">
@@ -62,90 +68,115 @@
     </div>
 
   </div> -->
-  <header>
+  <section style="background-color:#da8616"> 
+    <div class="container">
+      <div class="row">
+            
+             <div class="col-lg-12 ">
+               <div class="float-right">
+                   <div class="icon-bar">
+                    
+                     <a href="https://wa.me/917012958534?text=" class="whatsapp"><i class="fa fa-whatsapp"></i></a> 
+                   </div>
+               </div>    
+             </div>
+      </div>
+</div>
+</section>
+<header>
+ 
+ 
     <div class="social-head">
           <div class="container-fluid">
                   <div class="row">
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                                <div id="social-left">
-                                    <ul class="nav">
-                                          <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                    </ul>
+                              <div id="social-left">
+                                  <ul class="nav">
+                                        <li class="nav-item"><a class="nav-link text-white" href="mailto:artisankendram@gmail.com"><i class="fa fa-envelope me-2"></i>artisankendram@gmail.com</a></li>
+                                  </ul>
                                 </div>     
                          </div>
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                          <div id="social-right">
-                            <ul class="nav justifycontentend">
-                              <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
-                              <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
-                              <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
-                            </ul>
-                          </div>
-                          
+                            <div id="social-right">
+                                <ul class="nav justifycontentend">
+                                  {% if user.is_authenticated and user.is_superuser %}
+                                  <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:district_admin_register' %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+                                  {% endif %}
+                                    {% if user.is_authenticated %}
+                                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
+                                    {% endif %}
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                   </div>
           </div>
     </div>
-    <nav class="navbar navbar-expand-sm bg-color navbar-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Logo</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-              <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:index' %}">Home</a>
+    <nav class="navbar navbar-expand-lg bg-color navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Artisan Sevana Kendram</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item" id="nav-item">
+              <a class="nav-link text-white" href="{% url 'kvs_app:index' %}">Home</a>
+            </li>
+            <li class="nav-item" id="nav-item">
+              <a class="nav-link text-white" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a>
+            </li>
+              
+            <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Union</a>
+                    <ul class="dropdown-menu sub">
+                      <li><a class="dropdown-item text-white" href="{% url 'kvs_app:taluk' %}">Taluk</a></li>
+                    
+                      <li><a class="dropdown-item text-white" href="{% url 'kvs_app:sakha' %}">Sakha</a></li>
+      
+                    </ul>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank' %}" >Data Bank</a>
+              
               </li>
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank_register' %}">Data Bank Register</a>
               </li>
-                
+              {% if user.is_authenticated %}
               <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Union</a>
-                      <ul class="dropdown-menu sub">
-                        <li><a class="dropdown-item text-white" href="taluk.html">Taluk</a></li>
-                      
-                        <li><a class="dropdown-item text-white" href="{% url 'kvs_app:sakha' %}">Sakha</a></li>
-        
-                      </ul>
-                </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial Services</a>
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join ASK</a>
                   <ul class="dropdown-menu sub">
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
-                  
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:grooms' %}">Grooms</a></li>
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs' %}">Approved</a></li>
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs_pending' %}">Pendings</a></li>
+                  </ul>
+              </li>
+              {% else %}
+              <li class="nav-item" id="nav-item">
+                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join ASK</a>
+              </li>
+              {% endif %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Services</a>
+                  <ul class="dropdown-menu sub">
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:accident_insurance' %}">Accident Insurance</a></li>
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:health_insurance' %}">Health Insurance</a></li>
                     {% if user.is_authenticated %}
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:pending' %}">Pendings</a></li>
+                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:insurance_pending' %}">Pendings</a></li>
                     {% endif %}
     
                   </ul>
               </li>
-                
-                <li class="nav-item" id="nav-item">
-                  <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
-                </li>
-                <!-- <li class="nav-item dropdown ">
-                  <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-bs-toggle="dropdown">Services</a>
-                  <ul class="dropdown-menu sub">
-                    <li><a class="dropdown-item text-white" href="#">Materimonial Services</a></li>
-                     <li><a class="dropdown-item text-white" href="#">Vivahapathrika</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Nichyakarar</a></li> 
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a></li>
-                    <li><a class="dropdown-item text-white" href="membershipform.html">Membership Form</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Recipts | Vouchers</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Mints Book</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Nalvazhi</a></li> 
-                  </ul>
-                </li> -->
-                <li class="nav-item" id="nav-item">
-                  <a class="nav-link text-white" href="{% url 'kvs_app:contact' %}">Contact</a>
-                </li>  
-            </ul>
-          </div>
+             
+              <li class="nav-item" id="nav-item">
+                <a class="nav-link text-white" href="{% url 'kvs_app:contact' %}">Contact</a>
+              </li>  
+          </ul>
         </div>
-    </nav>
+      </div>
+  </nav>
 </header>
 
 <!-- Abouts -->
@@ -159,7 +190,7 @@
                                         <ul class="nav justify-content-center">
                                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                                             <li class="nav-item"><a class="nav-link"><i class="fa  fa-chevron-right"></i></a></li> 
-                                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:data_bank_register' %}">Marriage Register</a></li>
                                        </ul>
                               
                             
@@ -181,37 +212,37 @@
                                             {% csrf_token %}
                                             <div class="row ">
                                                     <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                        <label class="form-label">Bride /Groom</label>
-                                                          {{form.gender}}
+                                                        <label class="form-label">Name</label>
+                                                          {{form.name}}
                                                     </div>
                                                     
                                                     <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                      <label class="form-label">Name</label>  
-                                                      {{form.name}}
+                                                      <label class="form-label">Category</label>  
+                                                      {{form.category}}
                                                       {% comment %} <input type="date" name="dob" placeholder="Enter The DOB" class="form-control"> {% endcomment %}
                                                     </div>
                                             </div>
                                             <div class="row">
                                               <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">DOB</label>  
-                                                  {{form.dob}}
+                                                  <label class="form-label">Mobile</label>  
+                                                  {{form.mobile}}
                                               {% comment %} <input type="text" name="phone" placeholder="Enter The Contact" class="form-control"> {% endcomment %}
                                               </div>
                                               <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label">Star</label>
-                                                {{form.star}}
+                                                <label class="form-label">Photo</label>
+                                                {{form.photo}}
                                                 {% comment %} <input type="text" name="email" placeholder="Enter The Email" class="form-control"> {% endcomment %}
                                               </div>
                                             
                                           </div>
                                           <div class="row">
                                                     <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                      <label class="form-label">Marital status</label>
-                                                        {{form.marital_status}}
+                                                      <label class="form-label">Occupation</label>
+                                                        {{form.occupation}}
                                                   </div>
                                                   <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                      <label class="form-label">Subcaste</label>  
-                                                      {{form.subcaste}}
+                                                      <label class="form-label">District</label>  
+                                                      {{form.district}}
                                                   </div>
                                                   
                                                   
@@ -219,119 +250,23 @@
                                               <div class="row">
                                             
                                                   <div class="col-lg-6 col-md-6 col-sm-12 col-xl-6 p-2">
-                                                    <label class="form-label"> Upload  Photo</label><br>  
-                                                    {{form.photo}}
+                                                    <label class="form-label">Taluk</label><br>  
+                                                    {{form.taluk}}
                                                   </div>
                                                   <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                    <label class="form-label">Education Qualification</label> 
-                                                    {{form.education_qualification}} 
+                                                    <label class="form-label">Workplace</label> 
+                                                    {{form.workplace}} 
                                                 </div>
                                             
                                               </div>
                                           <div class="row">
                                                     
                                                   <div class="col-lg-6 col-md-6 col-xl-6 p-2 ">
-                                                      <label class="form-label"> Occupation </label> 
-                                                      {{form.occupation}} 
+                                                      <label class="form-label">Contact person </label> 
+                                                      {{form.contact_person}} 
                                                       {% comment %} <input type="text" name="Occupation" placeholder="Enter Education Occupation" class="form-control"> {% endcomment %}
                                                   </div>
-                                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                    <label class="form-label">District</label> 
-                                                    {{form.district}} 
-                                                  </div>
-                                                  
-                                        </div>
-                                        <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                    <label class="form-label">Taluk</label> 
-                                                    {{form.taluk}} 
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                  <label class="form-label">Height</label>
-                                                  {{form.height}}
-                                                </div>
-                                        
-                                      </div>
-                                      <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label">Workplace</label>  
-                                                {{form.work_place}}
-                                            {% comment %} <input type="text" name="language" placeholder="Enter The language" class="form-control"> {% endcomment %}
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">Languages</label>
-                                              {{form.languages}}
-                                            </div>
-                                
-                                    </div>
-                                    <div class="row">
-                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">Hobbies</label>  
-                                              {{form.hobbies}}
-                                          </div>
-                                          <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                            <label class="form-label">Brothers</label>
-                                            {{form.brother}}
-                                          </div>
-                          
-                                    </div>
-                                    <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                <label class="form-label">Sisters</label>  
-                                                {{form.sister}}
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">Father's Name</label>
-                                              {{form.father_name}}
-                                            </div>
-                      
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                          <label class="form-label">Father's occupation</label>  
-                                          {{form.father_occupation}}
-                                      </div>
-                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                        <label class="form-label">Mother's Name</label>
-                                        {{form.mother_name}}
-                                      </div>
-                                    </div>
-                
-                                    <div class="row">
-                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                        <label class="form-label">Mother's Occupation</label>
-                                        {{form.mother_occupation}}
-                                      </div>
-                                      <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                        <label class="form-label">Family Members</label>
-                                        {{form.total_family_members}}
-                                      </div>
-                                      
-                                      
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                      <label class="form-label">Name of Guardian/Contact person</label>
-                                      {{form.gaurdian_name}}
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                      <label class="form-label">Mobile/Contact No.</label>
-                                      {{form.phone}}
-                                    </div>
-                                    
-                                    
-                                </div>
-                                <div class="row">
-                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                    <label class="form-label">Email</label>
-                                    {{form.email}}
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                    <label class="form-label">Status</label>
-                                    {{form.status}}
-                                  </div>
                                   
-                              </div>
                                   
                                 <div class="row">
                                   
@@ -356,14 +291,15 @@
 <!-- end -->
 
 <!-- footer -->
-<footer>
+<footer >
+  
   <div class="container-fluid">
+  
          <div class="row p-2">
                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                          <div class="foot_about">
-                                 <h4 class="foot_head">Abouts</h4>
-                                 <p class="foot_para">The Viswakarma (sometimes Viswakarma) community refer to themselves as 
-                                   the Viswabrahmin, and are sometimes described as an Indian caste</p>
+                                 <h4 class="foot_head">About Us</h4>
+                                 <p class="foot_para"> A  worker in a skilled trade, especially one that involves making things by hand.</p>
                                    <ul class="nav">
                                          <li class="nav-item"><a class="nav-link"><i class="fa  fa-facebook"></i></a></li>
                                          <li class="nav-item"><a class="nav-link"><i class="fa fa-twitter"></i></a></li>
@@ -376,21 +312,23 @@
                     <h4 class="foot_head">Quick Link</h4>
                     
                       <ul class="quick_1">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}" >Marriage Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:data_bank_register' %}">Data Bank Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
                   </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="foot_address">
                       <h4 class="foot_head">Address</h4>
-                      <address>KERALA VISWAKARMA SABHA (KVS)<br>Reg No: S.277/2003,Cherooty Rd<br>Kozhikode, Kerala </address>
+                      <address>Artisan sevana kendram <br>Janathamukku,Edva P.O(via)<br>Varkala ,TVM Dist. </address>
                       <div class="social-link">
                                <ul class="quick_2">
-                                <li class="nav-item"><a class="nav-link"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
-                                <li class="nav-item"><a class="nav-link"><i class="fa fa-phone me-2"></i>+91  9048675860</a></li>
+                               
+                                <li class="nav-item"><a class="nav-link" href="mailto:artisankendram@gmail.com"><i class="fa fa-envelope me-2"></i>artisankendram@gmail.com</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tel:+917012958534"><i class="fa fa-phone me-2"></i> +91 9995487001</a></li>
+                               
                                </ul>
                       </div>
                 
@@ -400,6 +338,7 @@
                 </div>
          </div>
   </div>
+  
 </footer>
 <footer id="foot">
       <div class="container">

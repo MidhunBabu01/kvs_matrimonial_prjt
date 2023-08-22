@@ -47,6 +47,12 @@
     _N2.r(["documentReady","smartslider-frontend","smartslider-backgroundanimation","SmartSliderWidgetArrowImage","ss-simple"],function(){new _N2.SmartSliderSimple('n2-ss-5', {"admin":false,"callbacks":"","background.video.mobile":1,"loadingTime":2000,"alias":{"id":0,"smoothScroll":0,"slideSwitch":0,"scroll":1},"align":"normal","isDelayed":0,"responsive":{"mediaQueries":{"all":false,"desktopportrait":["(min-width: 1200px)"],"tabletportrait":["(orientation: landscape) and (max-width: 1199px) and (min-width: 901px)","(orientation: portrait) and (max-width: 1199px) and (min-width: 701px)"],"mobileportrait":["(orientation: landscape) and (max-width: 900px)","(orientation: portrait) and (max-width: 700px)"]},"base":{"slideOuterWidth":1200,"slideOuterHeight":500,"sliderWidth":1200,"sliderHeight":500,"slideWidth":1200,"slideHeight":500},"hideOn":{"desktopLandscape":false,"desktopPortrait":false,"tabletLandscape":false,"tabletPortrait":false,"mobileLandscape":false,"mobilePortrait":false},"onResizeEnabled":true,"type":"fullwidth","sliderHeightBasedOn":"real","focusUser":1,"focusEdge":"auto","breakpoints":[{"device":"tabletPortrait","type":"max-screen-width","portraitWidth":1199,"landscapeWidth":1199},{"device":"mobilePortrait","type":"max-screen-width","portraitWidth":700,"landscapeWidth":900}],"enabledDevices":{"desktopLandscape":0,"desktopPortrait":1,"tabletLandscape":0,"tabletPortrait":1,"mobileLandscape":0,"mobilePortrait":1},"sizes":{"desktopPortrait":{"width":1200,"height":500,"max":3000,"min":1200},"tabletPortrait":{"width":701,"height":292,"customHeight":false,"max":1199,"min":701},"mobilePortrait":{"width":320,"height":133,"customHeight":false,"max":900,"min":320}},"overflowHiddenPage":0,"focus":{"offsetTop":"#wpadminbar","offsetBottom":""}},"controls":{"mousewheel":0,"touch":"horizontal","keyboard":1,"blockCarouselInteraction":1},"playWhenVisible":1,"playWhenVisibleAt":0.5,"lazyLoad":0,"lazyLoadNeighbor":0,"blockrightclick":0,"maintainSession":0,"autoplay":{"enabled":1,"start":1,"duration":8000,"autoplayLoop":1,"allowReStart":0,"pause":{"click":1,"mouse":"0","mediaStarted":1},"resume":{"click":0,"mouse":"0","mediaEnded":1,"slidechanged":0},"interval":1,"intervalModifier":"loop","intervalSlide":"current"},"perspective":1500,"layerMode":{"playOnce":0,"playFirstLayer":1,"mode":"skippable","inAnimation":"mainInEnd"},"bgAnimations":{"global":[{"type":"Flat","rows":5,"columns":7,"tiles":{"delay":1,"sequence":"Random"},"main":{"type":"next","duration":0.8,"next":{"ease":"easeInQuart","opacity":0}}}],"color":"RGBA(51,51,51,1)","speed":"normal"},"mainanimation":{"type":"horizontal","duration":1500,"delay":0,"ease":"easeOutQuad","shiftedBackgroundAnimation":0},"carousel":1,"initCallbacks":function(){new _N2.SmartSliderWidgetArrowImage(this);}});});
     });
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam&display=swap" rel="stylesheet"> 
+   
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Gentium Book Plus' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'> 
   </head>
 </head>
 <body class="materimonialservices">
@@ -131,7 +137,7 @@
                   </ul>
               </li>
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank_register' %}">Marriage Register</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item dropdown">
@@ -223,10 +229,10 @@
                                     </button>
                                     {% if user.is_authenticated %}
                                     <button type="button" class="btn btn-primary custom-text2 ">
-                                      <a href="{% url 'kvs_app:matrimonial_update' i.id %}">  <i class="fa fa-edit me-2"></i></a>  
+                                      <a href="{% url 'kvs_app:databank_update' i.id %}">  <i class="fa fa-edit me-2"></i></a>  
                                     </button>
                                     <button type="button" class="btn btn-primary custom-text2 ">
-                                      <a href="{% url 'kvs_app:matrimoni_delete' i.id %}">  <i class="fa fa-trash me-2"></i></a>  
+                                      <a href="{% url 'kvs_app:databank_delete' i.id %}">  <i class="fa fa-trash me-2"></i></a>  
                                     </button>
                                     {% endif %}
                                 </div> 
@@ -270,7 +276,7 @@
                       <ul class="quick_1">
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:data_bank_register' %}">Marrige Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
                   </div>

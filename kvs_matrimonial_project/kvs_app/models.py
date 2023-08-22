@@ -213,6 +213,9 @@ class Payment_details_choices(models.Model):
 class Services(models.Model):
     class Meta:
         verbose_name_plural = 'Services'
+
+    def __str__(self):
+        return self.name
     category = models.ForeignKey(Insurence_category,on_delete=models.CASCADE,blank=False,null=False)
     name = models.CharField(max_length=25,blank=False,null=False)
     mobile_no = models.CharField(max_length=10,blank=False,null=False)
@@ -298,3 +301,16 @@ class Join_Kvs(models.Model):
 
 
 
+class Databank(models.Model):
+    def __str__(self):
+        return self.name
+    category = models.CharField(max_length=50,blank=False,null=False)
+    name = models.CharField(max_length=50,blank=False,null=False)
+    mobile = models.CharField(max_length=10,blank=False,null=False)
+    photo = models.ImageField(upload_to='databankpic',blank=True,null=True)
+    occupation = models.CharField(max_length=50,blank=False,null=False)
+    district = models.CharField(max_length=50,blank=False,null=False)
+    taluk = models.CharField(max_length=50,blank=False,null=False)
+    workplace = models.CharField(max_length=50,blank=False,null=False)
+    contact_person = models.CharField(max_length=50,blank=False,null=False)
+    

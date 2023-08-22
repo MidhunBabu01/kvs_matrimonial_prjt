@@ -17,11 +17,19 @@ urlpatterns = [
     path('matrimonial-service-grooms', views.grooms,name='grooms'),
     path('matrimonial-service-pending', views.pending,name='pending'),
     path('profile-details/<int:details_id>', views.profile_details,name='profile_details'),
-    path('marrige-register', views.marrige_register,name='marrige_register'),
+    # path('marrige-register', views.marrige_register,name='marrige_register'),
+    path('data-bank-register', views.data_bank_register,name='data_bank_register'),
+    path('data-bank', views.data_bank,name='data_bank'),
+    path('databank-update/<int:update_id>', views.databank_update,name='databank_update'),
+    path('databank-delete/<int:dlt_id>', views.databank_delete,name='databank_delete'),
+    path('data-bank-search', views.data_bank_search,name='data_bank_search'),
+
+    
+    
     path('contact', views.contact,name='contact'),
-    path('matrimoni-delete/<int:dlt_id>', views.matrimoni_delete,name='matrimoni_delete'),
-    path('matrimonial-update', views.matrimonial_update,name='matrimonial_update'),
-    path('matrimonial-update/<int:update_id>', views.matrimonial_update,name='matrimonial_update'),
+    path('matrimoni-delete/<int:dlt_id>', views.databank_delete,name='databank_delete'),
+    # path('matrimonial-update', views.matrimonial_update,name='matrimonial_update'),
+    # path('matrimonial-update/<int:update_id>', views.matrimonial_update,name='matrimonial_update'),
     path('matrimony-bride-search', views.matrimony_bride_search,name='matrimony_bride_search'),
     path('matrimony-groom-search', views.matrimony_grooms_search,name='matrimony_grooms_search'),
     path('health-insurance', views.health_insurance,name='health_insurance'),

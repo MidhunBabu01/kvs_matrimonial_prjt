@@ -41,6 +41,14 @@
 <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'css/fonticons.css' %}" type="text/css" >
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam&display=swap" rel="stylesheet"> 
+   
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Gentium Book Plus' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'> 
 <style>
     .img-fluid{
       width:80px;
@@ -64,43 +72,32 @@
       </div>
 </div>
 </section>
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-  <div id="preloader">
-    
-              <div id="status"><h1 class="text-center">The website is under maintenance</h1></div>
-            </div>
-            
-          </div>
-   
-    </div>
-
-  </div> -->
-  <header>
+<header>
+ 
+ 
     <div class="social-head">
           <div class="container-fluid">
                   <div class="row">
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
                               <div id="social-left">
                                   <ul class="nav">
-                                        <li class="nav-item"><a class="nav-link text-white"><i class="fa fa-envelope me-2"></i>keralaviswakarmasabhas277@gmail.com</a></li>
+                                        <li class="nav-item"><a class="nav-link text-white" href="mailto:artisankendram@gmail.com"><i class="fa fa-envelope me-2"></i>artisankendram@gmail.com</a></li>
                                   </ul>
                                 </div>     
                          </div>
                          <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6">
                             <div id="social-right">
-                              <ul class="nav justifycontentend">
+                                <ul class="nav justifycontentend">
                                   {% if user.is_authenticated and user.is_superuser %}
                                   <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:district_admin_register' %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
                                   {% endif %}
-                                  {% if user.is_authenticated %}
-                                  <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
-                                  {% endif %}
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
-                                  <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
-                            </ul>
+                                    {% if user.is_authenticated %}
+                                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'kvs_app:logout' %}"><i class="fa fas fa-x fa-sign-in fa-rotate-180"></i></a></li>
+                                    {% endif %}
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-facebook"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-instagram"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link text-white"><i class="fa fas fa-x fa-linkedin"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                   </div>
@@ -108,7 +105,7 @@
     </div>
     <nav class="navbar navbar-expand-lg bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Kerala Viswakarma Sabha (KVS)</a>
+        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Artisan Sevana Kendram</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -130,24 +127,16 @@
       
                     </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="#" role="button" data-toggle="dropdown">Matrimonial</a>
-                  <ul class="dropdown-menu sub">
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:bride' %}">Brides</a></li>
-                  
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:grooms' %}">Grooms</a></li>
-                    {% if user.is_authenticated %}
-                    <li><a class="dropdown-item text-white" href="{% url 'kvs_app:pending' %}">Pendings</a></li>
-                    {% endif %}
-    
-                  </ul>
+              <li class="nav-item ">
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank' %}" >Data Bank</a>
+              
               </li>
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:marrige_register' %}">Marriage Register</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank_register' %}">Data Bank Register</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join KVS</a>
+                <a class="nav-link dropdown-toggle text-white " id="nav-item" href="{% url 'kvs_app:join_kvs' %}" role="button" data-toggle="dropdown">Join ASK</a>
                   <ul class="dropdown-menu sub">
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs' %}">Approved</a></li>
                     <li><a class="dropdown-item text-white" href="{% url 'kvs_app:join_kvs_pending' %}">Pendings</a></li>
@@ -155,7 +144,7 @@
               </li>
               {% else %}
               <li class="nav-item" id="nav-item">
-                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join KVS</a>
+                <a class="nav-link text-white" href="{% url 'kvs_app:join_kvs' %}">Join ASK</a>
               </li>
               {% endif %}
               <li class="nav-item dropdown">
@@ -177,8 +166,7 @@
         </div>
       </div>
   </nav>
-</header>
-<!-- Abouts -->
+</header><!-- Abouts -->
 <section id="cd-breadcrumb">
   <div class="container">
          <div class="row">
@@ -533,7 +521,7 @@
 </section>
 <div class="pt-5"></div>
 <!-- footer -->
-<footer >
+<footer style="margin-top:90px">
   <div class="container-fluid">
          <div class="row p-2">
                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -554,7 +542,7 @@
                       <ul class="quick_1">
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:index' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:executiveforum' %}">Executive Forum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:marrige_register' %}">Marrige Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:data_bank_register' %}">Marrige Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'kvs_app:contact' %}">Contact</a></li>
                       </ul>
                   </div>
