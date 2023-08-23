@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Kerala Viswakarma Sabha</title>
+  <title>Artisan Sevana Kendram</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <!------ Include the above in your HEAD tag ---------->
@@ -108,7 +108,7 @@
     </div>
     <nav class="navbar navbar-expand-lg bg-color navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'kvs_app:index' %}">Artisan Sevana Kendram</a>
+        <a class="navbar-brand" href="{% url 'kvs_app:index' %}"><img src="{% static 'images/logo.jpg' %}" class="logo"><span class="me-2">Artisan Sevana Kendram</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -130,9 +130,14 @@
       
                     </ul>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link text-white" href="{% url 'kvs_app:data_bank' %}" >Data Bank</a>
-              
+              <li class="nav-item dropdown ">
+                <a class="nav-link text-white dropdown-toggle " id="nav-item" href="#" role="button" data-toggle="dropdown" href="{% url 'kvs_app:data_bank' %}" >Data Bank</a>
+                <ul class="dropdown-menu sub">
+                  <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank' %}">Data bank List</a></li>
+                
+                  <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank_hide' %}">Hided List</a></li>
+  
+                </ul>
               </li>
               <li class="nav-item" id="nav-item">
                 <a class="nav-link text-white" href="{% url 'kvs_app:data_bank_register' %}">Data Bank Register</a>
@@ -176,7 +181,7 @@
              <div class="row">
                      <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12" id="head-breadcrump">
                       
-                             <h1 class="text-center text-white">Join KVS</h1> 
+                             <h1 class="text-center text-white">Join ASK</h1> 
                                <div class="text-breadcrump4">
                                         
                               

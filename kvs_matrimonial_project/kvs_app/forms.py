@@ -84,6 +84,7 @@ class DatabankAddForm(forms.ModelForm):
     class Meta:
         model = Databank
         fields = '__all__'
+        exclude = ['status']
         widgets = {
             'category' : forms.TextInput(attrs={'class':'form-control'}),
             'name' : forms.TextInput(attrs={'class':'form-control',}),
@@ -95,6 +96,24 @@ class DatabankAddForm(forms.ModelForm):
             'workplace' : forms.TextInput(attrs={'class':'form-control'}),
             'contact_person' : forms.TextInput(attrs={'class':'form-control'}),
         }
+
+class DatabankEditForm(forms.ModelForm):
+    class Meta:
+        model = Databank
+        fields = '__all__'
+        widgets = {
+            'category' : forms.TextInput(attrs={'class':'form-control'}),
+            'name' : forms.TextInput(attrs={'class':'form-control',}),
+            'mobile' : forms.NumberInput(attrs={'class':'form-control'}),
+            'photo' : forms.ClearableFileInput(attrs={'class':'form-control'}),
+            'occupation' : forms.TextInput(attrs={'class':'form-control'}),
+            'district' : forms.TextInput(attrs={'class':'form-control'}),
+            'taluk' : forms.TextInput(attrs={'class':'form-control'}),
+            'workplace' : forms.TextInput(attrs={'class':'form-control'}),
+            'contact_person' : forms.TextInput(attrs={'class':'form-control'}),
+            'status' : forms.Select(attrs={'class':'form-control'})
+        }
+
 
 
 

@@ -313,4 +313,9 @@ class Databank(models.Model):
     taluk = models.CharField(max_length=50,blank=False,null=False)
     workplace = models.CharField(max_length=50,blank=False,null=False)
     contact_person = models.CharField(max_length=50,blank=False,null=False)
+    status_choices = (
+        ('Hide','Hide'),
+        ('Unhide','Unhide')
+    )
+    status = models.CharField(max_length=25,choices=status_choices,default='Unhide')
     

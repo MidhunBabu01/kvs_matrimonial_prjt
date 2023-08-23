@@ -23,6 +23,8 @@ urlpatterns = [
     path('databank-update/<int:update_id>', views.databank_update,name='databank_update'),
     path('databank-delete/<int:dlt_id>', views.databank_delete,name='databank_delete'),
     path('data-bank-search', views.data_bank_search,name='data_bank_search'),
+    path('data-bank-hide', views.data_bank_hide,name='data_bank_hide'),
+    
 
     
     

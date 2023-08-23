@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.models import User,auth
-from .forms import MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,DatabankAddForm,MatrimonialUpdateForm,Services_Add_Form,Services_Admin_Edit_Form,Join_Kvs_Add_Form,Join_Kvs_Admin_Update
+from .forms import DatabankEditForm, MatrimonialUpdateForm, StateCommiteForm,TalukForm,SakhaForm,DatabankAddForm,MatrimonialUpdateForm,Services_Add_Form,Services_Admin_Edit_Form,Join_Kvs_Add_Form,Join_Kvs_Admin_Update
 from .models import Databank, ExtendedUserModel, Join_Kvs, Matrimonial, Sakha, Services, StateCommitie,Taluk
 import re
 now = datetime.datetime.now()
@@ -299,20 +299,20 @@ def data_bank_register(request):
 
 
 def data_bank(request):
-    result = Databank.objects.all()
+    result = Databank.objects.filter(status = 'Unhide')
     return render(request,'data-bank.html',{'result':result})
 
 def databank_update(request,update_id):
     if request.method == 'POST':
         update = Databank.objects.filter(id=update_id).first()
-        form = DatabankAddForm(request.POST,request.FILES,instance=update)
+        form = DatabankEditForm(request.POST,request.FILES,instance=update)
         if form.is_valid():
             form.save()
             messages.success(request,'Succesfully Updated')
             return redirect('kvs_app:data_bank')
     else:
         update = Databank.objects.filter(id=update_id).first()
-        form = DatabankAddForm(instance=update)
+        form = DatabankEditForm(instance=update)
     return render(request,'matrimony-update.html',{'form':form})
 
 
@@ -328,8 +328,15 @@ def data_bank_search(request):
     result = None
     if 'q' in request.GET:
         Query = request.GET.get('q')
-        result = Databank.objects.filter(Q(name__icontains=Query))
+        result = Databank.objects.filter(Q(name__icontains=Query),status = 'Unhide')
     return render(request,'bride-search-result.html',{'result':result})
+
+
+
+
+def data_bank_hide(request):
+    result = Databank.objects.filter(status = 'Hide')
+    return render(request,'data-bank.html',{'result':result})
 
 
 

@@ -113,6 +113,10 @@ font-size:42px !important;
    text-align: center;
     color:#fff;
   }
+  div#n2-ss-5 .n2-ss-slide-limiter {
+    max-width: 1200px;
+    height: 1200px !important;
+}
   .arrow-right::after{
     content: "";
     position: absolute;
@@ -276,11 +280,16 @@ footer {
     border-radius: 10px;
     
 }
+.logo
+{
+    width: 30px;
+    height: 30px;
+}
 .box-warapper{
     background-color:#ffffff;
     padding-top: 14px;
     padding-bottom: 14px;
-    height:max-content;
+    height:730px;
     border-radius: 5px;
 }
 .textarea
