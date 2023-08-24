@@ -24,15 +24,16 @@
 .whatsapp {
     background: #53d365;
     color: #448edd;
+    border-radius: 100%;
 }
 .fa-whatsapp
 {
-font-size:42px !important;
+font-size:38px !important;
 }
   .icon-bar {
       position: fixed;
       top: 80%;
-     margin-left: 90px;
+     margin-left: 65px;
       z-index:99999;
       
     } 
@@ -115,7 +116,7 @@ font-size:42px !important;
   }
   div#n2-ss-5 .n2-ss-slide-limiter {
     max-width: 1200px;
-    height: 550px !important;
+    height: 480px !important;
 }
   .arrow-right::after{
     content: "";
@@ -420,7 +421,7 @@ div#n2-ss-5 .n-uc-VU1qjFbjQtxP-inner {
     background: linear-gradient(45deg, black, transparent);
 }
 #cd-breadcrumb {
-    background: linear-gradient(45deg,black,transparent),url('../images/slider1.jpg');
+    background: linear-gradient(45deg,black,transparent),url('../images/slider.jpg');
     background-size: cover;
     height: 250px;
 }
@@ -443,7 +444,7 @@ div#n2-ss-5 .n-uc-VU1qjFbjQtxP-inner {
 }
 
     #cd-breadcrumb {
-        background: linear-gradient(45deg,black,transparent),url('../images/slider1.jpg');
+        background: linear-gradient(45deg,black,transparent),url('../images/slider.jpg');
         background-size: cover;
         height: 250px;
         background-position-x: center;
@@ -715,6 +716,11 @@ and (max-device-width:360px)
     text-align: center !important;
     font-size: 14px !important;
 }
+.img-fluid
+{
+    width: 50px !important;
+    height: 50px !important;
+}
 }
 
 @media only screen
@@ -910,7 +916,11 @@ and (max-device-width: 420px)
      text-align: center !important;
      font-size: 14px !important;
  }
- 
+ .img-fluid
+{
+    width: 50px !important;
+    height: 50px !important;
+}
 }
 @media only screen
 and (min-device-width: 420px)
@@ -1105,11 +1115,21 @@ margin-top: -52px !important;
 {
    font-size: 11px !important;
 }
+.img-fluid
+{
+    width: 50px !important;
+    height: 50px !important;
+}
 }
 @media only screen
 and (min-device-width:540px)
 and (max-device-width:720px)
 {
+    .img-fluid
+{
+    width: 50px !important;
+    height: 50px !important;
+}
     .icon-bar {
         position: fixed;
         top: 80%;
