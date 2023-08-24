@@ -261,7 +261,7 @@ def profile_details(request,details_id):
 def databank_delete(request,dlt_id):
     dlt = Matrimonial.objects.filter(id=dlt_id)
     dlt.delete()
-    return redirect('kvs_app:bride')
+    return redirect('kvs_app:data_bank')
 
 
 # def data_bank_register(request):
