@@ -135,7 +135,9 @@
                 <ul class="dropdown-menu sub">
                   <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank' %}">Data bank List</a></li>
                 
+                  {% if user.is_authenticated %}
                   <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank_hide' %}">Hided List</a></li>
+                  {% endif %}
   
                 </ul>
               </li>
@@ -251,14 +253,8 @@
                                                                       <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> District</label>
                                                                         {{form.district}}
                                                                     </div>
-                                                                    <div class="col-lg-12 col-md-12 mt-3">
-                                                                      <label  class="form-label"><span style="color: red; font-weight: 500;">*</span> Union</label>
-                                                                        {{form.union}}
-                                                                    </div>
-                                                                    <div class="col-lg-12 col-md-12 mt-3">
-                                                                        <label  class="form-label">Sakha No</label>
-                                                                        {{form.sakha_no}}
-                                                                      </div>
+                                                                    
+                                                                    
                                                                     <div class="col-lg-12 col-md-12 mt-3">
                                                                         <label class="form-label"><span style="color: red; font-weight: 500;">*</span> ID Proof</label>
                                                                         {{form.id_proof}}
@@ -341,7 +337,6 @@
                                         <tr>
                                           <th class="text-center">Name</th>
                                             <th class="text-center">District</th>
-                                            <th class="text-center">Union</th>
                                             <th class="text-center">Place</th>
                                             {% if user.is_authenticated and user.is_superuser %}
                                             <th class="text-center">Action</th>
@@ -353,8 +348,8 @@
                                         <tr>
                                             <th class="text-center"><a href="{% url "kvs_app:join_kvs_profile_view" i.id %}">{{i.name}}</th>
                                             <th class="text-center">{{i.district}}</th>
-                                            <th class="text-center">{{i.union}}</th>
-                                            <th class="text-center">{{i.place}}</th>
+                                            {% comment %} <th class="text-center">{{i.union}}</th> {% endcomment %}
+                                            <th class="text-center">{{i.place}}</th> 
                                             {% if user.is_authenticated and user.is_superuser %}
                                             <td class="text-center">
                                                 <ul class="nav justify-content-center">
@@ -379,8 +374,8 @@
                                       <tr>
                                         <th class="">Name</th>
                                           <th class="">District</th>
-                                          <th class="">Union</th>
                                           <th class="">Place</th>
+                                          <th class="">Action</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -389,7 +384,6 @@
                                         
                                           <th class="">{{i.name}}</th>
                                           <th class="">{{i.district}}</th>
-                                          <th class="">{{i.union}}</th>
                                           <th class="">{{i.place}}</th>
                   
                                       </tr>

@@ -146,7 +146,9 @@
                 <ul class="dropdown-menu sub">
                   <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank' %}">Data bank List</a></li>
                 
+                  {% if user.is_authenticated %}
                   <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank_hide' %}">Hided List</a></li>
+                  {% endif %}
   
                 </ul>
               </li>
@@ -328,7 +330,6 @@
                                       <tr>
                                         <th class="text-center">Name</th>
                                           <th class="text-center">District</th>
-                                          <th class="text-center">Union</th>
                                           <th class="text-center">Place</th>
                                           {% if user.is_authenticated and user.is_superuser %}
                                           <th class="text-center">Action</th>
@@ -341,7 +342,6 @@
                                       <tr>
                                         <th class="text-center"><a href="{% url "kvs_app:join_kvs_profile_view" i.id %}">{{i.name}}</th>
                                         <th class="text-center">{{i.district}}</th>
-                                        <th class="text-center">{{i.union}}</th>
                                         <th class="text-center">{{i.place}}</th>
                                         {% if user.is_authenticated and user.is_superuser %}
                                         <td class="text-center">

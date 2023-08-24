@@ -147,7 +147,9 @@
                 <ul class="dropdown-menu sub">
                   <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank' %}">Data bank List</a></li>
                 
+                  {% if user.is_authenticated %}
                   <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank_hide' %}">Hided List</a></li>
+                  {% endif %}
   
                 </ul>
               </li>

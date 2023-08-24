@@ -147,7 +147,9 @@
                 <ul class="dropdown-menu sub">
                   <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank' %}">Data bank List</a></li>
                 
+                  {% if user.is_authenticated %}
                   <li><a class="dropdown-item text-white" href="{% url 'kvs_app:data_bank_hide' %}">Hided List</a></li>
+                  {% endif %}
   
                 </ul>
               </li>
@@ -248,17 +250,7 @@
                                             {{form.district}}
                                           </div>
                                         </div>
-                                    <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                                 <label class="form-label">Union</label>
-                                                  {{form.union}}
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-xl-6 p-2">
-                                              <label class="form-label">Sakha No</label>  
-                                              {{form.sakha_no}}
-                                        </div>
-                                    
-                                  </div>
+                                   
                                   <div class="row">
                                     <div class="col-lg-6 col-md-6 col-xl-6 p-2">
                                          <label class="form-label">ID Proof</label>
