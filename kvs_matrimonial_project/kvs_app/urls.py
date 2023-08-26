@@ -25,9 +25,6 @@ urlpatterns = [
     path('data-bank-search', views.data_bank_search,name='data_bank_search'),
     path('data-bank-hide', views.data_bank_hide,name='data_bank_hide'),
     
-
-    
-    
     path('contact', views.contact,name='contact'),
     path('matrimoni-delete/<int:dlt_id>', views.databank_delete,name='databank_delete'),
     # path('matrimonial-update', views.matrimonial_update,name='matrimonial_update'),
@@ -45,14 +42,11 @@ urlpatterns = [
     path('join-kvs-update/<int:update_id>', views.join_kvs_update,name='join_kvs_update'),
     path('join-kvs-profile-view/<int:join_kvs_id>', views.join_kvs_profile_view,name='join_kvs_profile_view'),
     path('join-kvs-pending', views.join_kvs_pending,name='join_kvs_pending'),
-    
     # EXCEL REPORT
     path('join-kvs-excel-report', views.join_kvs_excel_report,name='join_kvs_excel_report'),
     
     
-    
     # ACCOUNT SECTION
-    
     path('super-admin-register', views.super_admin_register,name='super_admin_register'),
     path('district-admin-register', views.district_admin_register,name='district_admin_register'),
      

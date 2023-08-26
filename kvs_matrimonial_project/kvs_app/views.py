@@ -559,7 +559,7 @@ def contact(request):
         message = request.POST.get('message')
         template = render_to_string('email.html',{'name':name,'phone':phone,'subject':subject,'message':message,'emaill':emaill})
         email = EmailMessage(
-            'Kerala Viswakarma Sabha', #subject
+            'Artisan Sevana Kendram', #subject
             template, #body
             emaill, #sender mail id
             ['artisankendram@gmail.com'] #recever mail id
